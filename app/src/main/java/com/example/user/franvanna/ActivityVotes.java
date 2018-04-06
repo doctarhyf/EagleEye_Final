@@ -51,11 +51,7 @@ public class ActivityVotes extends AppCompatActivity
     public void onBackPressed() {
         super.onBackPressed();
 
-        if(alertDialog != null){
-            alertDialog.cancel();
-        }
-
-        Log.e(TAG, "onBackPressed: " );
+        alertDialog.cancel();
 
         finish();
     }
@@ -149,5 +145,14 @@ public class ActivityVotes extends AppCompatActivity
 
     private void selectCandidate(Candidate candidate) {
         Log.e(TAG, "CANDIDATE SELECTED" );
+
+        if(candidate.getCandType() == Candidate.CAND_TYPE_PREZ){
+
+            showVotePane("Elections Legislatives Nationales", null);
+
+
+        }else if (candidate.getCandType() == Candidate.CAND_TYPE_LEG_NAT){
+            showVotePane("Election Legislatives Provinciales", null);
+        }
     }
 }

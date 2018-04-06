@@ -3,7 +3,7 @@ package com.example.user.franvanna;
 import java.util.ArrayList;
 import java.util.List;
 
-class ObjectCandidatesData {
+class CandidatesData {
     public static final int CAND_TYPE_PREZ = 0;
 
     public static List<Candidate> getCandidates(int candType) {

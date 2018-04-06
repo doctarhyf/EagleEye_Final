@@ -52,7 +52,7 @@ public class FragmentElecPrez extends Fragment
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fragment_elec_prez, container, false);
 
-        candidates = ObjectCandidatesData.getCandidates(ObjectCandidatesData.CAND_TYPE_PREZ);
+        candidates = CandidatesData.getCandidates(CandidatesData.CAND_TYPE_PREZ);
 
         adapter = new AdapterCandsPrez(getContext(), candidates, new AdapterCandsPrez.CallbacksAdapterCandidates() {
             @Override

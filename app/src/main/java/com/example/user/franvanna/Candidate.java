@@ -9,6 +9,10 @@ public class Candidate {
     private int partiLogo;
     private int candType;
 
+    public static final int CAND_TYPE_PREZ = 0;
+    public static final int CAND_TYPE_LEG_NAT = 1;
+    public static final int CAND_TYPE_LEG_PROV = 2;
+
 
     public Candidate(){
 
