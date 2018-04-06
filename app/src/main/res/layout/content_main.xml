@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.user.franvanna.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+
+
+
+    <LinearLayout
+
+        android:id="@+id/mainMenuVoteSimulation"
+        style="@style/MenuMain">
+
+
+        <ImageView
+
+            android:layout_width="40dp"
+            android:layout_height="40dp" android:scaleType="centerInside" 
+            
+            android:layout_marginRight="20dp"
+            android:src="@drawable/sim"
+            />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:text="@string/menu_vote_sim"
+                style="@style/MenuTextLarge" />
+
+            <TextView
+                android:text="@string/subemenu_vote_sim_subtitle"
+                style="@style/MenuTextSubtitle" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/mainMenuListElec"
+        style="@style/MenuMain">
+
+
+        <ImageView
+
+            android:layout_width="40dp"
+            android:layout_height="40dp" android:scaleType="centerInside" 
+            android:layout_marginRight="20dp"
+            android:src="@drawable/le"
+            />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:text="@string/menu_list_elec"
+                style="@style/MenuTextLarge" />
+
+            <TextView
+                android:text="@string/subemenu_list_elec"
+                style="@style/MenuTextSubtitle" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainMenuBuroVote"
+        style="@style/MenuMain">
+
+
+        <ImageView
+
+            android:layout_width="40dp"
+            android:layout_height="40dp" android:scaleType="centerInside" 
+            android:layout_marginRight="20dp"
+            android:src="@drawable/bv"
+            />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:text="@string/menu_buro_vote"
+                style="@style/MenuTextLarge" />
+
+            <TextView
+                android:text="@string/subemenu_buro_vote"
+                style="@style/MenuTextSubtitle" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainMenuCands"
+        style="@style/MenuMain">
+
+
+        <ImageView
+
+            android:layout_width="40dp"
+            android:layout_height="40dp" android:scaleType="centerInside" 
+            android:layout_marginRight="20dp"
+            android:src="@drawable/cands"
+            />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:text="@string/menu_cands"
+                style="@style/MenuTextLarge" />
+
+            <TextView
+                android:text="@string/subemenu_cands"
+                style="@style/MenuTextSubtitle" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainMenuResults"
+        style="@style/MenuMain">
+
+
+        <ImageView
+
+            android:layout_width="40dp"
+            android:layout_height="40dp" android:scaleType="centerInside" 
+            android:layout_marginRight="20dp"
+            android:src="@drawable/res"
+            />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:text="@string/menu_results"
+                style="@style/MenuTextLarge" />
+
+            <TextView
+                android:text="@string/subemenu_results"
+                style="@style/MenuTextSubtitle" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainMenuFaq"
+        style="@style/MenuMain">
+
+
+        <ImageView
+
+            android:layout_width="40dp"
+            android:layout_height="40dp" android:scaleType="centerInside" 
+            android:layout_marginRight="20dp"
+            android:src="@drawable/faq"
+            />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:text="@string/menu_faq"
+                style="@style/MenuTextLarge" />
+
+            <TextView
+                android:text="@string/subemenu_faq"
+                style="@style/MenuTextSubtitle" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

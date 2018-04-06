@@ -1,0 +1,631 @@
+<resources>
+    <string name="app_name">CENI RDC</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="action_settings">Settings</string>
+    <string name="about">A propos</string>
+    <string name="welcome">Accueil</string>
+    <string name="txt_ceni">Votons pour le bien etre du pays.</string>
+    <string name="menu_list_elec">Liste electorale</string>
+    <string name="subemenu_list_elec">Suis-je inscrit sur la liste electorale</string>
+    <string name="menu_buro_vote">Mon bureau de vote</string>
+    <string name="subemenu_buro_vote">Ou se trouve mon bureau de vote</string>
+    <string name="menu_cands">Candidats</string>
+    <string name="subemenu_cands">Candidat inscrits aux scrutins</string>
+    <string name="menu_results">Resultats Officiel</string>
+    <string name="subemenu_results">Resultast officiel des scrutins</string>
+    <string name="menu_faq">Foire aux questions</string>
+    <string name="subemenu_faq">Questions frequentes sur les elections</string>
+    <string name="title_activity_about">A propos</string>
+    <string name="txt_about">Elections General 2018</string>
+    <string name="txt_vesion">Version 1.0</string>
+    <string name="txt_copyright">Copyright &#169; 2018 CENI. Tous droits reserves.</string>
+    <string name="title_about">A propos</string>
+    <string name="title_activity_candidates">ActivityCandidates</string>
+    <string name="title_activity_cands">Choix de l\'echecance</string>
+    <string name="menu_cands_prez">Presidentielle</string>
+    <string name="txt_vote_choice_prez">PRESIDENTIELLE</string>
+    <string name="txt_vote_choice_legs">LEGISTLATIVES</string>
+    <string name="txt_vote_choice_prov">PROVINCIALES</string>
+    <string name="txt_vote_choice_urbs">URBAINES</string>
+    <string name="txt_vote_choice_loc">LOCALES</string>
+    <string name="menu_vote_sim">Simuler un vote</string>
+    <string name="subemenu_vote_sim_subtitle">Comment utiliser la machine a voter</string>
+    <string name="menuSimInstallation">Installation</string>
+    <string name="menuSimOpenVote">Ouvrir les votes</string>
+    <string name="menuSimPasserAuvote">Passer au vote</string>
+    <string name="menuSimCloturerLeVote">Cloturer les votes</string>
+    <string name="menuSimParametrage">Parametrage</string>
+    <string name="menuSimImprimer">Imprimer</string>
+    <string name="menuSimTransmetre">Transmettres resultas</string>
+    <string name="title_menu">Election 2018</string>
+    <string name="title_activity_lois_elec">ActivityLoisElec</string>
+    <string name="txt_lois_elec">
+L’original  du  procès
+-
+verbal et les pièces jointes sont déposés par le Secrétariat exécutif
+provincial de la Commission
+électorale nationale indépendante au Bureau provisoire de
+l’Assemblée  provinciale  dans  les  quarante
+-
+huit heures suivant son adoption.
+Article 157
+: Les réclamations et contestations relatives à la désignation sont portées devant la
+Cour  administrative  d’a
+ppel du ressort dans les quarante
+-
+huit heures suivant la notification des
+copies du procès
+-
+verbal de désignation par la Commission électorale nationale indépendante.
+La  Cour  Administrative  d’appel  statue  sans  frais  dans  les  sept  jours  à  compter  de  la  date
+de sa
+saisine.
+Le  dispositif  de  l’arrêt  est  signifié  à  la  Commission  électorale  nationale  indépendante,  au
+candidat  et  au  Bureau  provisoire  de  l’Assemblée  provinciale.
+Article 160
+:  En  cas  de  décès,  de  démission,  d’empêchement  définitif,  de  mise  en  accusat
+ion ou
+de révocation du Gouverneur de province, le Gouvernement provincial est réputé
+démissionnaire.
+Le Gouvernement provincial, sous la direction du Vice
+-
+gouverneur expédie les affaires
+courantes.
+Un nouveau scrutin est organisé dans les trente jours par
+la Commission électorale nationale
+indépendante.
+En  cas  de  décès,  de  démission,  d’empêchement  définitif,  de  mise  en  accusation  ou  d  révocation
+du Vice
+-
+gouverneur, le parti politique, le regroupement politique ou le Gouverneur indépendant
+concerné présente
+le candidat Vice
+-
+gouverneur  dans  les  quinze  jours  à  l’élection  partielle.
+Les  dispositions  du  présent  article  s’appliquent,  mutatis  mutandis,  au  Maire  et  au  Maire  adjoint,
+au  Bourgmestre  et  au  Bourgmestre  adjoint  ainsi  qu’au  chef  de  secteur  et  chef  de  sec
+teur adjoint.
+Article 161 :
+La liste des candidats Gouverneur et Vice
+-
+gouverneur est présentée par un parti
+politique ou un regroupement politique. Les candidats indépendants présentent également leur
+candidature.
+Nul ne peut devenir Gouverneur ou Vice
+-
+gou
+verneur  s’il  ne  remplit  les  conditions  suivantes  :
+1. être de nationalité congolaise;
+2. être âgé de dix huit ans révolus à la date de clôture du dépôt de candidatures ;
+3. jouir de la plénitude de ses droits civils et politiques ;
+4.  avoir  la  qualité  d’él
+ecteur ou se faire identifier et enrôler lors du dépôt de sa candidature ;
+5.  avoir  un  diplôme  de  graduat  au  moins  ou  justifier  d’une  expérience  professionnelle  d’au  moins
+cinq  ans  dans  l’un  des  domaines  suivants  :  politique,  administratif,  économique  ou  s
+ocio
+-
+culturel.
+Article 162 :
+La liste des candidats Gouverneur et Vice
+-
+gouverneur est présentée par un parti
+politique ou un regroupement politique. Les candidats indépendants présentent également leur
+candidature.
+Nul ne peut devenir Gouverneur ou Vice
+-
+go
+uverneur  s’il  ne  remplit  les  conditions  suivantes  :
+1. être de nationalité congolaise;
+2, être âgé de dix huit ans révolus à la date de clôture du dépôt de candidatures ;
+3. jouir de la plénitude de ses droits civils et politiques ;
+4.  avoir  la  qualité  d’é
+lecteur ou se faire identifier et enrôler lors du dépôt de sa candidature ;
+5.  avoir  un  diplôme  de  graduat  au  moins  ou  justifier  d’une  expérience  professionnelle  d’au  moins
+cinq  ans  dans  l’un  des  domaines  suivants  :  politique,  administratif,  économique  ou
+socio
+-
+culturel.
+Les  candidats  à  l’élection  du  Gouverneur  et  du  Vice
+-
+gouverneur font acte de candidature auprès
+du Bureau local de la Commission électorale nationale indépendante.
+La déclaration de candidature comprend:
+1, une lettre de consentement conform
+e au modèle fixé par la Commission électorale nationale
+indépendante et signée par le candidat ;
+2.  une  fiche  d’identité  suivie  d’un  curriculum  vitae  détaillé,  le  tout  se  terminant  par  la  formule
+«
+Je  jure  sur  l’honneur  que  les  renseignements  ci
+-
+dessus son
+t sincères et exacts
+»;
+3. quatre photos format passeport ;
+4. un symbole ou un logo par parti politique ou regroupement politique.
+Sont jointes à la déclaration de candidature, les pièces ci
+-
+après :
+a)  une  photocopie  de  la  carte  d’électeur;;
+b) une attesta
+tion de naissance;
+c)  un  récépissé  du  versement,  dans  le  compte  du  Trésor  public,  d’un  cautionnement  électoral  non
+remboursable de 1.250.000 francs congolais par liste ;
+d)  une  lettre  d’investiture  du  candidat  par  son  parti  politique  ou  par  son  regroupemen
+t politique.
+e)  une  photocopie  certifiée  conforme  du  diplôme  de  graduat  au  moins  ou  de  l’attestation  en
+tenant lieu ou une attestation de services rendus
+Article 163 : Le Secrétariat exécutif provincial de la Commission électorale nationale
+indépendante re
+çoit les déclarations des candidatures au poste de Gouverneur et de Vice
+-
+gouverneur de Province dans le délai fixé par la Commission électorale nationale
+indépendante. Il les transmet au Bureau de la Commission électorale nationale
+indépendante pour traite
+ment.
+Article 164 :
+Après examen de la conformité de chaque candidature aux dispositions de la
+Constitution et de la présente loi, la Commission électorale nationale indépendante arrête et rend
+publique la liste des candidatures déclarées recevables et cel
+le des candidatures déclarées non
+recevables dans les dix jours de la clôture de leur dépôt.
+Lesdites  listes  sont  publiées  conformément  à  I’  article  134  alinéa  2  de  la  présente  loi.  Une
+décision dûment motivée est notifiée sans délai à chaque candidat ou à
+son mandataire par la
+Commission électorale nationale indépendante.
+Article 165 :
+Les  réclamations  et  contestations  relatives  à  la  validité  d’une  candidature  sont
+portées  devant  la  Cour  Administrative  d’appel  du  ressort  dans  les  quarante
+-
+huit heures suiva
+nt la
+notification de la décision par la Commission électorale nationale indépendante. La Cour
+administrative  d’appel  statue  sans  frais  dans  les  sept  jours  de  sa  saisine.  Le  dispositif  de  I’arrêt
+est signifié à la Commission électorale nationale indépendan
+te à chaque candidat ou à son
+mandataire et publié dans les conditions fixées à article 134, alinéa 2 de la présente loi.
+Article 166 :
+La Commission électorale nationale indépendante arrête et publie la liste définitive
+des candidats quinze jours avant le
+jour du scrutin.
+Article 171:
+Le procès
+-
+verbal des opérations conforme au modèle établi par la Commission
+électorale nationale indépendante est dressé séance tenante en quatre exemplaires. Il porte la
+signature des membres du bureau de dépouillement et de
+s témoins présents. Une copie est
+transmise  à  la  Cour  Administrative  d’appel  du  ressort,  une  autre  est  remise  aux  témoins.
+L’original  est  transmis  au  Bureau  de  la  Commission  électorale  nationale  indépendante  pour
+publication des résultats provisoires.
+Arti
+cle 172 :
+Les  réclamations  et  contestations  des  résultats  de  l’élection  gouverneur  sont
+portées  devant  la  Cour  Administrative  d’appel  du  ressort  qui  statue,  sans  frais,  dans  les  sept  jours
+de  sa  saisine.  Le  dispositif  de  I’arrêt  est  signifié  à  la  Commissio
+n électorale nationale
+indépendante,  au  candidat  ou  à  son  mandataire  et  au  bureau  provisoire  de  l’Assemblée
+provinciale.  Il  est  publié  conformément  aux  dispositions  de  I’article  134  alinéa  2  de  la  présente
+loi.
+Article 177 :
+Les  candidats  à  l’élection  du  C
+onseiller Urbain font acte de candidature auprès du
+bureau local de la Commission électorale nationale indépendante.
+La déclaration de candidature comprend:
+1. une lettre de consentement conforme au modèle fixé par la Commission électorale nationale
+indépe
+ndante et signée par le candidat ;
+2.  une  fiche  d’identité  suivie  d’un  curriculum  vitae  détaillé,  le  tout  se  terminant  par  la  formule
+«
+Je  jure  sur  I’honneur  que  les  renseignements  ci
+-
+dessus sont sincères et exacts
+» ;
+3. quatre photos format passeport ;
+4
+. un symbole ou un logo par parti politique ou par regroupement politique ;
+5. les noms de deux suppléants.
+Sont jointes à la déclaration de candidature, les pièces ci
+-
+après :
+a)  une  photocopie  de  la  carte  d’électeur  ;;
+b) une attestation de naissance ;
+c)
+un  récépissé  du  versement,  dans  le  compte  du  Trésor  public,  d’un  cautionnement  électoral  non
+remboursable de 50.000 francs congolais par liste ou par candidat indépendant ;
+d)  une  lettre  d’investiture  du  candidat  par  son  parti  politique  ou  par  son  regroupe
+ment politique.
+e) une photocopie certifiée conforme du
+diplôme  de  graduat  au  moins  ou  de  l’attestation  en
+tenant
+lieu ou une attestation de services rendus.
+Article 186 :
+La liste des candidats Maire et Maire adjoint est présentée par un parti politique
+ou
+par un regroupement politique. Les candidats indépendants se présentent individuellement.
+Les  candidats  à  l’élection  du  Maire  et  du  Maire  adjoint  font  acte  de  candidature  auprès  du  bureau
+local de la Commission électorale nationale indépendante.
+La décl
+aration de candidature comprend:
+1. une lettre de consentement rédigée à la main et signée par le candidat ;
+2.  une  fiche  d’identité  suivie  d’un  curriculum  vitae  détaillé,  le  tout  se  terminant  par  la  formule,
+«
+Je  jure  sur  l’honneur  que  les  renseignements
+ci
+-
+dessus sont sincères et exacts
+» ;
+3. quatre photos format passeport;
+4. un symbole ou un logo par parti politique ou par regroupement politique.
+5. les noms de deux suppléants.
+Sont jointes à la déclaration des candidatures les pièces ci
+-
+après :
+a) une
+photocopie  de  la  carte  d’électeur  ;;
+b) une attestation de naissance ;
+c)  un  récépissé  du  versement,  dans  le  compte  du  Trésor  public,  d’un  cautionnement  électoral  non
+remboursable  de  200’000  Francs  congolais  par  liste  ou  par  candidat  indépendant  ;;
+d) une le
+ttre  d’investiture  du  candidat  par  son  parti  politique  ou  par  son  groupe  politique  ;;
+e)  une  photocopie  certifiée  conforme  du  diplôme  de  fin  d’études  secondaires  ou  de  l’attestation
+en tenant lieu ou une attestation de services rendus.
+Article 195 :
+Article
+196 :
+Les  candidats  à  l’élection  des  conseillers  communaux  font  acte  de  candidature
+auprès du bureau local de la commission électorale nationale indépendante.
+La déclaration de candidature comprend:
+1.
+une lettre de consentement conforme au modèle fixé
+par la commission électorale nationale
+indépendante signée par le candidat ;
+2.
+une  fiche  d’identité  suivie  d’un  curriculum  vitae  détaillé,  le  tout  se  terminant  par  la  formule
+»  Je  jure  sur  l’honneur  que  les  renseignements  ci
+-
+dessus sont sincères et e
+xacts
+» ;
+3.
+quatre photos format passeport ;
+4.
+un symbole ou un logo par parti politique ou par regroupement politique ;
+5.
+les noms de deux suppléants.
+Sont jointes à la déclaration de candidatures les pièces ci
+-
+après :
+a)
+une photocopie de
+la  carte  d’électeur;;
+b)
+une attestation de naissance ;
+c)
+un  récépissé  du  versement,  dans  le  compte  du  Trésor  public,  d’un  cautionnement  électoral
+non remboursable de 50.000 francs congolais par liste ou par candidat indépendant ;
+d)
+une lettre d
+’investiture  du  candidat  par  son  parti  politique  ou  par  son  regroupement  politique
+;
+e)
+une  photocopie  certifiée  conforme  du  diplôme  de  fin  d’étude  secondaire  en  tenant  lieu  ou
+une attestation de services rendus.
+Sans  préjudice  des  dispositions  de  l’art
+icle 28 de la présente loi, la durée de la campagne pour
+l’élection  des  conseillers  communaux  est  de  quinze  jours.  Elle  prend  fin  vingt
+-
+quatre heures
+avant  la  date  du  scrutin.  Les  dispositions  des  articles  29  à  36  de  la  présente  loi  s’appliquent,
+mutatis m
+utandis,  à  la  campagne  pour  l’élection  des  conseillers  communaux,
+Article 199 :
+Le Bourgmestre et le Bourgmestre adjoint sont élus sur une même liste au scrutin
+majoritaire à deux tours par les conseillers communaux, au sein ou en dehors du conseil, pour u
+n
+mandat de cinq ans renouvelable.
+Article 202 :
+Les  candidats  à  l’élection  du  Bourgmestre  et  du  Bourgmestre  adjoint  font  acte  de
+candidature auprès du bureau local de la Commission électorale nationale indépendante.
+La déclaration de candidature comprend
+:
+1.
+une lettre de consentement conforme au modèle fixé par la Commission électorale nationale
+indépendante signée par le candidat;
+2.
+une  fiche  d’identité  suivie  d’un  curriculum  vitae  détaillé,  le  tout  se  terminant  par  !a  formule
+«
+Je  jure  sur  I’hon
+neur que les renseignements ci
+-
+dessus sont sincères et exacts
+» ;
+3.
+quatre photos format passeport;
+4.
+un symbole ou un logo par parti politique ou par regroupement politique.
+Sont jointes à la déclaration de candidature les pièces ci
+-
+après :
+a. une
+photocopie  de  la  carte  d’électeur;;
+b. une attestation de naissance ;
+c.  un  récépissé  du  versement,  dans  le  compte  du  Trésor  public.  d’un  cautionnement  électoral  non
+remboursable de 100.000 francs congolais par liste ou par candidat indépendant ;
+d. une le
+ttre  d’investiture  du  candidat  par  son  parti  politique  ou  par  son  regroupement  politique.
+e.  une  photocopie  certifiée  conforme  du  diplôme  de  fin  d’études  secondaires  ou  de  l’attestation
+en tenant lieu ou une attestation de services rendus.
+Article 203 :
+Le
+s  candidats  à  l’élection  du  Bourgmestre  et  du  Bourgmestre  adjoint  font  acte  de
+candidature auprès du bureau local de la Commission électorale nationale indépendante.
+La déclaration de candidature comprend :
+1.
+une lettre de consentement conforme au modè
+le fixé par la Commission électorale nationale
+indépendante signée par le candidat;
+2.
+une  fiche  d’identité  suivie  d’un  curriculum  vitae  détaillé,  le  tout  se  terminant  par  la  formule
+«
+Je  jure  sur  I’honneur  que  les  renseignements  ci
+-
+dessus sont sincères
+et exacts
+» ;
+3.
+quatre photos format passeport ;
+4.
+un symbole ou un logo par parti politique ou par regroupement politique.
+Sont jointes à la déclaration de candidature les pièces ci
+-
+après :
+a)
+une  photocopie  de  la  carte  d’électeur;;
+b)
+une a
+ttestation de naissance ;
+c)
+un  récépissé  du  versement,  dans  le  compte  du  Trésor  public,  d’un  cautionnement  électoral
+non remboursable de 100,000 francs congolais par liste ou par candidat indépendant ;
+d)
+une  lettre  d’investiture  du  candidat  par  son
+parti politique ou par son regroupement
+politique.
+e)
+une  photocopie  certifiée  conforme  du  diplôme  de  fin  d’études  secondaires  ou  de  I’attestation
+en tenant lieu ou une attestation de services rendus.
+Sans  préjudice  des  dispositions  de  l’article  28  de
+la présente loi, la durée de la campagne pour
+l’élection  de  bourgmestre  et  de  bourgmestre  adjoint  est  de  trois  jours.  Elle  commence  dès
+l’installation  du  Bureau  définitif  du  Conseil  communal  et  prend  fin  vingt
+-
+quatre heures avant la
+date du scrutin.
+Les di
+spositions  des  articles  29  à  36  s’appliquent,  mutatis  mutandis,  à  la  campagne  pour
+l’élection  de  bourgmestre  et  de  bourgmestre  adjoint.
+Article 208 :
+Le nombre de sièges à pourvoir pour chaque Conseil de secteur ou de chefferie est
+de :
+1. 13 sièges pour u
+n Conseil de secteur ou de chefferie comptant plus de 15.000 électeurs
+enrôlés;
+2. 11 sièges pour un Conseil de secteur ou de chefferie comptant de 1û 001 à 15 000 électeurs
+enrôlés;
+3. 9 sièges pour un Conseil de secteur ou de chefferie comptant de 5.000
+à 10.000 électeurs
+enrôlés;
+4. 7 sièges pour un Conseil de secteur ou de chefferie comptant moins de 5.000 électeurs enrôlés,
+Toutefois, si le nombre de sièges est inférieur au nombre de groupements, chaque groupement
+estreprésenté par un Conseiller de sec
+teur ou de Chefferie.
+Article 211 :
+Les candidats aux élections de Conseillers de Secteur ou de Chefferie font acte de
+candidature auprès du bureau local de la Commission électorale nationale indépendante.
+La déclaration de candidature comprend :
+1. une le
+ttre de consentement conforme au modèle fixé par la Commission électorale nationale
+indépendante et signée par le candidat ;
+2.  une  fiche  d’identité  suivie  d’un  curriculum  vitae  détaillé,  le  tout  se  terminant  par  la  formule
+»
+Je jure
+sur  I’honneur  que  les
+renseignements ci
+-
+dessus sont sincères et exacts
+» ;
+3. quatre photos format passeport ;
+4. un symbole ou un logo par parti politique ou par regroupement politique ;
+5. les noms de deux suppléants.
+Sont jointes à la déclaration des candidatures les pièce
+s ci
+-
+après :
+a)  une  photocopie  de  la  carte  d’électeur;;
+b) une attestation de naissance;
+c)  un  récépissé  du  versement,  dans  le  compte  du  Trésor  public,  d’un  cautionnement  électoral  non
+remboursable de 20.000 francs congolais par liste ou par candidat indépe
+ndant;
+d)  une  lettre  d’investiture  du  candidat  par  son  parti  politique  ou  par  son  regroupement  politique  ;;
+e)  une  photocopie  certifiée  conforme  du  diplôme  de  fin  d’études  secondaires  ou  de  l’attestation
+en
+tenant lieu ou une attestation de services rendus.
+Article 218 :
+Article 233 :
+Les  candidats  à  l’élection  de  Chef  de  secteur  et  de  chef  de  secteur  adjoint  font  acte
+de candidature auprès du bureau local de la Commission .électorale nationale indépendante.
+La déclaration de candidature comprend :
+1. une le
+ttre de consentement conforme au modèle fixé par la commission électorale nationale
+indépendante et signée par le candidat ;
+2.  une  fiche  d’identité  suivie  d’un  curriculum  vitae  détaillé,  le  tout  se  terminant  par  la  formule  «
+Je jure
+sur  I’  honneur  que  l
+es renseignements ci
+-
+dessus sont sincères et exact
+3. quatre photos format passeport ;
+4. un symbole ou un logo choisi par parti politique ou par regroupement politique.
+Sont jointes à la déclaration de candidature les pièces ci
+-
+après :
+a)
+une photocopie
+de  la  carte  d’électeur;;
+b) une attestation de naissance ;
+c)  un  récépissé  du  versement,  dans  le  compte  du  Trésor  public,  d’un  cautionnement  électoral  non
+remboursable de 50.000 francs congolais par liste ou par candidat indépendant ;
+d)  une  lettre  d’invest
+iture du candidat par son parti politique ou par son regroupement politique ;
+e)  une  photocopie  certifiée  conforme  du  diplôme  de  fin  d’études  secondaires  ou  de  l’attestation
+en tenant lieu ou une attestation de services rendus.
+Les dispositions des article
+s 224 à 229,237 et
+-
+232  de  la  présente  loi  s’appliquent,  mutatis
+mutandis,  à  I’Assemblée  provinciale,  au  conseil  urbain,  au  conseil  communal,  au  Conseil  de
+secteur et au conseil de chefferie
+Article 237 :
+Les modalités de répartition déterminées par Ia Comm
+ission électorale nationale et
+le Sénat.
+Article  241  :  Sans  préjudice  de  dispositions  de  I’article  198  de  la  constitution  et  de  l’article  158
+de la présente loi, le mandat des membres
+de  l’exécutif  des  provinces  à  découper  cesse  à
+l’installation  des  Insti
+tutions  des  nouvelles  provinces  énumérées  à  I’article  2  de  la  Constitution.
+La Commission
+électorale  nationale  indépendante  organise  l’élection  des  Gouverneurs,  vice
+-
+gouverneur, maires et maires adjoints de ces nouvelles provinces. Ces derniers achèvent l
+es
+mandats de la législature en cours «
+.
+Article 2 :
+Il est inséré à la loi no. 06/006 du 09 mars 2006 portant organisation des élections présidentielle,
+législatives, municipales et locales, les dispositions suivantes :
+Article 74 bis :
+Le contentieux de
+s élections présidentielle, législatives, provinciales, urbaines, communales et
+locales est jugé par une juridiction siégeant au nombre de trois juges au moins. Ces juridictions
+statuent  sans  frais  et  le  ministère  de  l’avocat  n’est  pas  obligatoire.
+Article
+74 ter :
+La  requête  en  contestation  des  résultats  d’une  élection  doit  être  datée  et  signée  par  son  ou  ses
+auteurs ou,
+-
+les noms, prénoms, qualité, demeure ou siège de la partie requérante ;
+-
+l’objet  de  Ia  demande  ;;
+-
+l’inventaire  des  pièces  formant  le  d
+ossier.
+Elle  indique  les  griefs  allégués  et  comporte  les  éléments  de  preuve  sur  lesquels  s’appuie  la
+demande.
+Elle  est  inscrite  par  les  soins  du  greffier  dans  un  rôle.  L’inscription  au  rôle  se  fait  dans  I’ordre
+des dates de dépôt suivant une numérotation c
+ontinue, en indiquant les noms du demandeur et la
+circonscription électorale concernée.
+Le  greffier  délivre  un  récépissé  indiquant  le  rôle,  le  numéro  d’ordre,  les  références  au  nom  du
+demandeur et à la circonscription concernée.
+La requête est notifiée au
+candidat  dont  l’élection  est  contestée,  au  parti  politique  ou
+regroupement  politique  ayant  présenté  un  candidat  ainsi  qu’à  la  commission  électorale  nationale
+indépendante. ceux
+-
+ci peuvent adresser à la juridiction saisie un mémoire en réponse dans un
+délai
+de  trois  jours  après  notification,  L’absence  de  mémoire  en  réponse  n’est  pas  suspensive
+procédure.
+Article 74 quater :
+A  la  date  de  réception  des  mémoires  ou  à  l’expiration  du  délai  d’introduction  de  ceux
+-
+ci, la
+juridiction saisie communique le dossier au
+Ministère public pour son avis à intervenir dans un
+délai de quarante
+-
+huit heures.
+La  juridiction  saisie  prend  toutes  les  mesures  d’instruction  nécessaires.  La  Commission
+électorale nationale indépendante ainsi que toute autorité politique ou administrati
+ve sont tenues
+de lui communiquer toutes informations nécessaires en leur possession.
+Le  requérant  et  le  candidat  dont  l’élection  est  contestée  peuvent  demander  à  être  entendus,
+assistés,  s’ils  le  souhaitent,  d’un  avocat.
+Article 74 quinquies :
+La décision
+de  la  juridiction  est  notifiée  au  requérant,  au  candidat  dont  l’élection  est  contestée
+ainsi  qu’à  la  Commission  électorale  nationale  indépendante,  Elle  est  susceptible  de  recours/  sauf
+en ce qui concerne les arrêts de la Cour constitutionnelle.
+Le recours
+contre  les  décisions  de  la  Cour  administrative  d’appel,  du  Tribunal  administratif  est
+introduit, dans les trois jours à compter de leur signification.
+Les juridictions saisies peuvent toutefois, à la requête des parties ou du Ministère public, rectifier
+l
+es erreurs matérielles de leurs décisions ou en donner interprétation, toutes les parties entendues.
+Article 110 bis :
+A la date de publication de la liste définitive des candidats présidents de la République, tous les
+candidats ont droit à une égale prote
+ction.
+Chaque  candidat  Président  de  la  République  bénéficie  d’une  garde  de  vingt
+-
+cinq policiers afin
+d’assurer  sa  sécurité  jusqu’à  l’investiture  du  Président  élu.
+Les frais de prise en charge de cette garde sont imputés au Trésor public.
+Article 237 bis :
+En  attendant  I’installation  des  juridictions  de  l’ordre  administratif,  la  Cour  suprême  de  justice,
+d’appel  et  le  Tribunal  de  grande  instance  exercent  les  compétences  dévolues  respectivement  au
+d’Etat,  à  la  Cour  administrative  d’appel  et  au  Tribunal  adminis
+tratif.
+Aux  fins  d’assurer  un  exercice  efficace  de  la  compétence  prévue  à  l’alinéa  précédent,  le  Premier
+président  de  la  Cour  d’appel,  le  Président  du  Tribunal  de  grande  instance  peut  assumer  les
+magistrats du parquet, les avocats et les défenseurs judicia
+ires du ressort au titre de juges
+assumés,
+Article 237 ter :
+Le mode de vote électronique ne peut être appliqué pour les
+élections de
+» 2011
+-
+2013′′.
+Article 3 :
+Les articles 3, 109 et 244 de la loi no 06/006 du 09 mars 2006 portant organisation des élections
+présidentielle, législatives, municipales et locales sont abrogés,
+Article 4 :
+La présente loi entre en vigueur à la
+date de sa promulgation.
+Fait à Kinshasa, le 25 juin 2011
+Joseph KABILA KABANGE
+Pour  copie  certifiée  conforme  à  I’original
+Le 27 juin 2011
+Le Cabinet du Président de la République
+Gustave BEYA SIKU
+Directeur de Cabinet
+</string>
+    <string name="nav_lois_elec">Lois electorale</string>
+    <string name="txt_remplir">Veuillez remplir toutes les cases ci-dessous</string>
+    <string name="txt_hint_name">Nom</string>
+    <string name="txt_hint_surname">Post-nom</string>
+    <string name="txt_hint_birthplace">Lieu de naissance</string>
+    <string name="txt_hint_dob">Date de naissance</string>
+    <string name="txt_zone_cands">Zone reservee aux candidats.</string>
+    <string name="txt_btn_insc">Suis-je inscrit dans la liste electorale?</string>
+    <string name="title_results">Choix de l\'echeance</string>
+    <string name="txt_msg_buro_vote">Merci de saisir, ci-dessous, votre numero d\'electeur tel que ecrit sur votre carte d\'electeur.</string>
+    <string name="votre_numero_d_electeur">votre numero d\'electeur</string>
+    <string name="ou_se_trouve_mon_bureau_de_vote">Ou se trouve mon bureau de vote ?</string>
+    <string name="action_play">PLAY</string>
+    <string name="action_news">News</string>
+    <string name="title_news">News</string>
+    <string name="title_officiel_result">Resultas Officiel</string>
+    <string name="txt_hint_annee">AAAA</string>
+    <string name="txt_hint_jour">JJ</string>
+    <string name="txt_hint_mois">MM</string>
+    <string name="vt_faq">Foire aux questions</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

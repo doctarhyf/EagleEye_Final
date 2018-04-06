@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cdBlueDark">#01698f</color>
+    <color name="cdBlue">#00a2dd</color>
+    <color name="cdYellow">#f2d620</color>
+    <color name="cdRed">#b3172a</color>
+    <color name="transp">#0000</color>
+    <color name="gray">#cacaca</color>
+
+    <color name="lightGrayA">#b5e4e4e4</color>
+    <color name="grayMenu">#5fdbdbdb</color>
+    <color name="black">#000</color>
+    <color name="colorPrimary">#00f</color>
+</resources>

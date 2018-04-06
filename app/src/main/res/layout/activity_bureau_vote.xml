@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.franvanna.ActivityBureauVote">
+
+    <TextView
+        android:textColor="#333"
+        android:padding="14dp"
+        android:gravity="center"
+        android:text="@string/txt_msg_buro_vote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:padding="14dp"
+        android:inputType="number"
+        android:hint="@string/votre_numero_d_electeur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_marginTop="14dp"
+        android:padding="14dp"
+        android:layout_gravity="center"
+        android:text="@string/ou_se_trouve_mon_bureau_de_vote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

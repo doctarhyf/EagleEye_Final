@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.user.franvanna.ActivityVoteSimulation">
+
+
+
+
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_weight="6"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ceni"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_weight="4"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+       <TextView
+
+           android:layout_marginTop="12dp"
+           android:text="@string/menuSimInstallation"
+           style="@style/MenuSim" />
+
+        <TextView
+
+            android:text="@string/menuSimOpenVote"
+            style="@style/MenuSim" />
+
+        <TextView
+
+
+            android:onClick="startVote"
+            android:clickable="true"
+            android:background="@drawable/color_state_row_menu_blue"
+            android:text="@string/menuSimPasserAuvote"
+            style="@style/MenuSim" />
+
+
+        <TextView
+
+            android:text="@string/menuSimCloturerLeVote"
+            style="@style/MenuSim" />
+
+
+        <TextView
+
+            android:text="@string/menuSimParametrage"
+            style="@style/MenuSim" />
+
+
+        <TextView
+
+            android:text="@string/menuSimImprimer"
+            style="@style/MenuSim" />
+
+
+        <TextView
+
+            android:text="@string/menuSimTransmetre"
+            style="@style/MenuSim" />
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

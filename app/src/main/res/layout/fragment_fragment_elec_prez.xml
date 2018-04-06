@@ -1,0 +1,165 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.user.franvanna.FragmentElecPrez">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        >
+
+        <TextView
+            android:textSize="10sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:textColor="@color/cdRed"
+            android:text="Pour choisir votre candidat, touchez sur sa photo."
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+
+            android:gravity="center"
+            android:textColor="@color/cdBlue"
+            android:text="Elections Presidentielle"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="10sp"
+                android:textColor="@color/cdRed"
+                android:text="Pour vous abstenir, toucher sur le boutton VOTE BLANC."
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="VOTER BLANC"
+                android:id="@+id/btnVoteBlancPrez"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvCandsPrez"
+        android:layout_width="match_parent"
+        android:layout_weight="4"
+        android:layout_height="0dp"/>
+
+
+    <LinearLayout
+
+        android:orientation="vertical"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        >
+
+        <TextView
+            android:textColor="@color/cdRed"
+            android:text="Composer le numero de votre candidat"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="NUMERO"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:padding="4dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="5"
+                android:layout_height="match_parent" >
+
+
+                <Button
+                    android:text="1"
+                    style="@style/style_btn_select_cand" />
+
+                <Button
+                    android:text="2"
+                    style="@style/style_btn_select_cand" />
+
+                <Button
+                    android:text="3"
+                    style="@style/style_btn_select_cand" />
+
+                <Button
+                    android:text="4"
+                    style="@style/style_btn_select_cand" />
+
+                <Button
+                    android:text="5"
+                    style="@style/style_btn_select_cand" />
+
+                <Button
+                    android:text="6"
+                    style="@style/style_btn_select_cand" />
+
+                <Button
+                    android:text="7"
+                    style="@style/style_btn_select_cand" />
+
+                <Button
+                    android:text="8"
+                    style="@style/style_btn_select_cand" />
+
+                <Button
+                    android:text="9"
+                    style="@style/style_btn_select_cand" />
+
+                <Button
+                    android:text="0"
+                    style="@style/style_btn_select_cand" />
+
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:text="NUMERO"
+                android:textSize="14sp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
