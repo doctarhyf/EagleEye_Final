@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    android:layout_height="match_parent"
-    android:elevation="4dp"
-    android:layout_margin="8dp"
-    android:clickable="true"
-    android:focusable="true"
-
-
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    >
 <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:padding="8dp"
     android:clickable="true"
     android:focusable="true"
@@ -90,4 +81,3 @@
         android:layout_height="0dp" />
 
 </LinearLayout>
-</android.support.v7.widget.CardView>

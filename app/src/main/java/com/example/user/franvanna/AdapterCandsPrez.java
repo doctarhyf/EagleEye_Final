@@ -77,7 +77,9 @@ public class AdapterCandsPrez extends RecyclerView.Adapter<AdapterCandsPrez.View
 
         final Candidate candidate = candidates.get(position);
 
-
+        holder.tvFullName.setText(candidate.getNomPostnom());
+        holder.tvPrenom.setText(candidate.getPrenom());
+        holder.tvCandNum.setText((candidate.getId() + 1) + "");
 
         //holder.ivMenuText.setText(menuItem.getMenuText());
         //holder.ivMenuIco.setImageDrawable(context.getResources().getDrawable(menuItem.getMenuIco()));

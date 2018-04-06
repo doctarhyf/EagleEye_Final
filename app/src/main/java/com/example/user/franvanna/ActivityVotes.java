@@ -1,12 +1,15 @@
 package com.example.user.franvanna;
 
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import java.util.concurrent.Delayed;
@@ -93,6 +96,27 @@ public class ActivityVotes extends AppCompatActivity
     @Override
     public void onCandidateClicked(Candidate candidate) {
 
-        Log.e(TAG, "onCandidateClicked: -> " + candidate.getNomPostnom() );
+        //Log.e(TAG, "onCandidateClicked: -> " + candidate.getNomPostnom() );
+
+        View view = getLayoutInflater().inflate(R.layout.layout_dialog_cand_badge, null);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(view);
+        builder.setPositiveButton("CONFIRMER", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setNegativeButton("ANNULER", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setCancelable(false);
+
+        AlertDialog alertDialog = builder.show();
+
     }
 }
