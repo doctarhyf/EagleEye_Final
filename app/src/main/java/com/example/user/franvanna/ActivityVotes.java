@@ -10,7 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import java.util.concurrent.Delayed;
 
@@ -25,6 +27,7 @@ public class ActivityVotes extends AppCompatActivity
     FrameLayout fragCont;
     FragmentCardAnim fragmentCardAnim;
     FragmentElecPrez fragmentElecPrez;
+    private AlertDialog alertDialog = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,13 @@ public class ActivityVotes extends AppCompatActivity
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+
+        if(alertDialog != null){
+            alertDialog.cancel();
+        }
+
+        Log.e(TAG, "onBackPressed: " );
+
         finish();
     }
 
@@ -94,29 +104,50 @@ public class ActivityVotes extends AppCompatActivity
     }
 
     @Override
-    public void onCandidateClicked(Candidate candidate) {
+    public void onCandidateClicked(final Candidate candidate) {
 
-        //Log.e(TAG, "onCandidateClicked: -> " + candidate.getNomPostnom() );
+        Log.e(TAG, "onCandidateClicked: -> " + candidate.getNomPostnom() );
 
         View view = getLayoutInflater().inflate(R.layout.layout_dialog_cand_badge, null);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(view);
-        builder.setPositiveButton("CONFIRMER", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
 
-            }
-        });
-        builder.setNegativeButton("ANNULER", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        });
         builder.setCancelable(false);
 
-        AlertDialog alertDialog = builder.show();
+        alertDialog = builder.create();
 
+        Button btnConfirm = view.findViewById(R.id.btnCandBadgeConfirm);
+        Button btnCancel = view.findViewById(R.id.btnCandBadgeCanc);
+
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.hide();
+                selectCandidate(candidate);
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.cancel();
+            }
+        });
+
+
+
+        alertDialog.show();
+
+        //Toast.makeText(this, "CAND CLICKED", Toast.LENGTH_LONG).show();
+
+
+
+    }
+
+
+
+    private void selectCandidate(Candidate candidate) {
+        Log.e(TAG, "CANDIDATE SELECTED" );
     }
 }

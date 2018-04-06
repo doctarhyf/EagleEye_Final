@@ -89,6 +89,8 @@ public class AdapterCandsPrez extends RecyclerView.Adapter<AdapterCandsPrez.View
             @Override
             public void onClick(View view) {
 
+                Log.e(TAG, "CAND CLICKED " );
+
                 if(callbacksAdapterCandidates != null) {
                     callbacksAdapterCandidates.onCandidateClicked(candidate);
                 }else{
