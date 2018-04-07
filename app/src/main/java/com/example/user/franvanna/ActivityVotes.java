@@ -1,6 +1,6 @@
 package com.example.user.franvanna;
 
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.CountDownTimer;
@@ -12,21 +12,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.Toast;
-
-import java.util.concurrent.Delayed;
 
 public class ActivityVotes extends AppCompatActivity
     implements FragmentCardAnim.FragListenerFragCardAnim,
         FragmentElectionsPane.OnFragmentInteractionListener,
-        FragmentElecPrez.ListenerFragElecPrez
+        FragmentElections.ListenerFragElecPrez
 {
 
     private static final String TAG = "CENI";
     private static final long PANE_DELAY = 2500;
     FrameLayout fragCont;
     FragmentCardAnim fragmentCardAnim;
-    FragmentElecPrez fragmentElecPrez;
+    FragmentElections fragmentElections;
     private AlertDialog alertDialog = null;
 
     @Override
@@ -37,7 +34,7 @@ public class ActivityVotes extends AppCompatActivity
         fragCont = findViewById(R.id.fragContVotes);
 
         fragmentCardAnim = FragmentCardAnim.newInstance("a", "b");
-        fragmentElecPrez = FragmentElecPrez.newInstance();
+        fragmentElections = FragmentElections.newInstance(Candidate.CAND_TYPE_PREZ);
 
         getSupportFragmentManager().beginTransaction().add(R.id.fragContVotes, fragmentCardAnim).commit();
 
@@ -62,7 +59,7 @@ public class ActivityVotes extends AppCompatActivity
         Log.e(TAG, "onInsertCard: "  );
 
 
-        showVotePane("Election Presidentielle",  fragmentElecPrez);
+        showVotePane("Election Presidentielle", fragmentElections);
     }
 
     FragmentElectionsPane fragmentElectionsPane = null;
@@ -78,7 +75,7 @@ public class ActivityVotes extends AppCompatActivity
         if (nextFragment != null) {
 
 
-            CountDownTimer timer = new CountDownTimer(PANE_DELAY, 1000) {
+            new CountDownTimer(PANE_DELAY, 1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
                     Log.e(TAG, "onTick: ");
@@ -148,11 +145,18 @@ public class ActivityVotes extends AppCompatActivity
 
         if(candidate.getCandType() == Candidate.CAND_TYPE_PREZ){
 
-            showVotePane("Elections Legislatives Nationales", null);
+            fragmentElections = FragmentElections.newInstance(Candidate.CAND_TYPE_LEG_NAT);
+            showVotePane("Elections Legislatives Nationales", fragmentElections);
 
 
         }else if (candidate.getCandType() == Candidate.CAND_TYPE_LEG_NAT){
-            showVotePane("Election Legislatives Provinciales", null);
+            fragmentElections = FragmentElections.newInstance(Candidate.CAND_TYPE_LEG_PROV);
+            showVotePane("Election Legislatives Provinciales", fragmentElections);
+        } else {
+
+            Intent intent = new Intent(this, ActivityPrintVoteResult.class);
+            startActivity(intent);
+
         }
     }
 }

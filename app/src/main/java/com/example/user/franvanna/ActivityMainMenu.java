@@ -11,7 +11,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityMain2 extends AppCompatActivity implements AdapterMainMenu.CallbacksAdapterMenuItems {
+public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMenu.CallbacksAdapterMenuItems {
 
 
     private static final String TAG = "EE2";

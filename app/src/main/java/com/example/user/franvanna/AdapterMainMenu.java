@@ -28,14 +28,16 @@ public class AdapterMainMenu extends RecyclerView.Adapter<AdapterMainMenu.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView ivMenuIco;
-        TextView ivMenuText;
+        TextView tvMenuTitle, tvMenuSubtitle;
+
         View layout;
 
         public ViewHolder(View view) {
             super(view);
             layout = view;
             ivMenuIco = (ImageView) layout.findViewById(R.id.ivMenuIco);
-            ivMenuText = (TextView) layout.findViewById(R.id.ivMenuText);
+            tvMenuTitle = (TextView) layout.findViewById(R.id.tvMainMenuTitle);
+            tvMenuSubtitle = (TextView) layout.findViewById(R.id.tvMainMenuSubtitle);
         }
     }
 
@@ -70,7 +72,8 @@ public class AdapterMainMenu extends RecyclerView.Adapter<AdapterMainMenu.ViewHo
 
 
 
-        holder.ivMenuText.setText(menuItem.getMenuText());
+        holder.tvMenuTitle.setText(menuItem.getMenuText());
+        holder.tvMenuSubtitle.setText(menuItem.getMenuSubtitle());
         holder.ivMenuIco.setImageDrawable(context.getResources().getDrawable(menuItem.getMenuIco()));
 
 

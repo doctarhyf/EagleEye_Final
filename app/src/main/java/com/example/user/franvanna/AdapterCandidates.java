@@ -21,7 +21,7 @@ import java.util.List;
  * Created by Franvanna on 1/10/2018.
  */
 
-public class AdapterCandsPrez extends RecyclerView.Adapter<AdapterCandsPrez.ViewHolder>
+public class AdapterCandidates extends RecyclerView.Adapter<AdapterCandidates.ViewHolder>
 {
 
 
@@ -53,7 +53,7 @@ public class AdapterCandsPrez extends RecyclerView.Adapter<AdapterCandsPrez.View
     private CallbacksAdapterCandidates callbacksAdapterCandidates;
 
 
-    public AdapterCandsPrez(Context context, List<Candidate> candidates, CallbacksAdapterCandidates callbacksAdapterCandidates){
+    public AdapterCandidates(Context context, List<Candidate> candidates, CallbacksAdapterCandidates callbacksAdapterCandidates){
 
         this.context = context;
         this.candidates = candidates;
@@ -77,12 +77,21 @@ public class AdapterCandsPrez extends RecyclerView.Adapter<AdapterCandsPrez.View
 
         final Candidate candidate = candidates.get(position);
 
-        holder.tvFullName.setText(candidate.getNomPostnom());
-        holder.tvPrenom.setText(candidate.getPrenom());
+        holder.tvFullName.setText(candidate.getNomPostnom().toUpperCase());
+
+        String prenom = candidate.getPrenom();
+        String prenomCamelCase = prenom.substring(0,1).toUpperCase()+prenom.substring(1);
+
+        holder.tvPrenom.setText(prenomCamelCase);
         holder.tvCandNum.setText((candidate.getId() + 1) + "");
 
-        //holder.ivMenuText.setText(menuItem.getMenuText());
+        //holder.tvMenuTitle.setText(menuItem.getMenuText());
         //holder.ivMenuIco.setImageDrawable(context.getResources().getDrawable(menuItem.getMenuIco()));
+
+
+        holder.ivPartiLogo.setImageResource(candidate.getPartiLogo());
+
+        holder.tvPartiName.setText(candidate.getPartiName());
 
 
         holder.layout.setOnClickListener(new View.OnClickListener() {

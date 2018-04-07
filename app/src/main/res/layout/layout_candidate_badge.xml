@@ -41,8 +41,8 @@
                 android:textColor="@color/white"
                 android:text="1"
                 android:gravity="center"
-                android:padding="10dp"
-                android:textSize="16sp"
+                android:padding="8dp"
+                android:textSize="14sp"
                 android:layout_height="wrap_content" />
 
             <ImageView
@@ -50,9 +50,10 @@
                 android:layout_width="match_parent"
                 android:layout_weight="1"
                 android:src="@mipmap/ic_launcher"
-                android:layout_height="match_parent" />
+                android:layout_height="0dp" />
 
             <TextView
+                android:textAllCaps="true"
                 android:id="@+id/cbTvPartiName"
                 android:layout_width="match_parent"
                 android:text="Parti"
@@ -79,6 +80,7 @@
         android:layout_height="0dp" />
 
     <TextView
+
         android:id="@+id/cbTvPrenom"
         android:gravity="center"
         android:layout_weight="1"

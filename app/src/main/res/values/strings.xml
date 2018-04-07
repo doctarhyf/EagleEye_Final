@@ -628,4 +628,13 @@ Directeur de Cabinet
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="strElecLegNat">Elections Legislatives Nationales</string>
+    <string name="strElecLegProv">Election Legislatives Provinciales</string>
+    <string name="title_print_vote_results">Resultats des votes</string>
+    <string name="sub_menu_vote_sim">Comment utiliser la machine a voter?</string>
+    <string name="sub_menu_list_elec">Suis-je inscrit sur la liste electorale?</string>
+    <string name="sub_menu_buro_vote">Ou se trouve mon bureau de vote?</string>
+    <string name="sub_menu_cands">Candidats inscrits aux scrutins</string>
+    <string name="sub_menu_results">Resultats officiel des scrutins</string>
+    <string name="sub_menu_faq">Questions frequentes sur les elections</string>
 </resources>

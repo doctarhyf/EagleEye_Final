@@ -37,10 +37,11 @@
         </activity>
         <activity android:name=".ActivityBureauVote" />
         <activity android:name=".ActivityNews" />
-        <activity android:name=".ActivityMain2" />
+        <activity android:name=".ActivityMainMenu" />
         <activity android:name=".ActivityVotes" />
         <activity android:name=".ActivityFAQ" />
-        <activity android:name=".ActivityFAQQA"></activity>
+        <activity android:name=".ActivityFAQQA" />
+        <activity android:name=".ActivityPrintVoteResult"></activity>
     </application>
 
 </manifest>

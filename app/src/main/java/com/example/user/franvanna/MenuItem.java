@@ -32,10 +32,20 @@ public class MenuItem {
     public int getId() { return id;}
     public void setId() {this.id = id;}
 
-    public MenuItem(int menuIco, String menuText, int id){
+    private String menuSubtitle;
+
+    public MenuItem(int menuIco, String menuText, int id, String menuSubtitle){
         this.menuIco = menuIco;
         this.menuText = menuText;
         this.id = id;
+        this.setMenuSubtitle(menuSubtitle);
     }
 
+    public String getMenuSubtitle() {
+        return menuSubtitle;
+    }
+
+    public void setMenuSubtitle(String menuSubtitle) {
+        this.menuSubtitle = menuSubtitle;
+    }
 }

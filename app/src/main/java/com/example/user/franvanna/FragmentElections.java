@@ -6,43 +6,52 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.List;
 
 
-public class FragmentElecPrez extends Fragment
+public class FragmentElections extends Fragment
 
 {
 
 
-
-
+    private static final String TAG = "CENI";
     private ListenerFragElecPrez mListener;
 
-    public FragmentElecPrez() {
+    public FragmentElections() {
         // Required empty public constructor
     }
 
-    public static FragmentElecPrez newInstance() {
-        FragmentElecPrez fragment = new FragmentElecPrez();
-
+    public static FragmentElections newInstance(int candsType) {
+        FragmentElections fragment = new FragmentElections();
+        Bundle data = new Bundle();
+        data.putInt(Candidate.KEY_CAND_TYPE, candsType);
+        fragment.setArguments(data);
         return fragment;
     }
 
-
+    private int candType;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Bundle data = getArguments();
 
+        if(null != data){
+            candType = data.getInt(Candidate.KEY_CAND_TYPE);
+        }else{
+            Log.e(TAG, "Candtype not set." );
+        }
 
     }
 
-    private AdapterCandsPrez adapter;
+    private AdapterCandidates adapter;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private List<Candidate> candidates;
@@ -50,11 +59,17 @@ public class FragmentElecPrez extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_fragment_elec_prez, container, false);
 
-        candidates = CandidatesData.getCandidates(CandidatesData.CAND_TYPE_PREZ);
 
-        adapter = new AdapterCandsPrez(getContext(), candidates, new AdapterCandsPrez.CallbacksAdapterCandidates() {
+
+        View view = inflater.inflate(R.layout.fragment_fragment_elections, container, false);
+
+
+        //Log.e(TAG, "FK CAND TYPE : " + candType  );
+
+        candidates = CandidatesData.getCandidates(getContext(), candType);
+
+        adapter = new AdapterCandidates(getContext(), candidates, new AdapterCandidates.CallbacksAdapterCandidates() {
             @Override
             public void onCandidateClicked(Candidate candidate) {
                 mListener.onCandidateClicked(candidate);
@@ -67,8 +82,26 @@ public class FragmentElecPrez extends Fragment
 
         recyclerView.setAdapter(adapter);
 
+        updateViews(candType, view);
+
 
         return view;
+    }
+
+    private void updateViews(int candType, View layout) {
+
+        TextView tvElectionsTitle = layout.findViewById(R.id.tvElectionsTitle);
+
+        switch (candType){
+            case Candidate.CAND_TYPE_LEG_NAT:
+                tvElectionsTitle.setText(getActivity().getResources().getString(R.string.strElecLegNat));
+                break;
+
+            case Candidate.CAND_TYPE_LEG_PROV:
+                tvElectionsTitle.setText(getActivity().getResources().getString(R.string.strElecLegProv));
+                break;
+        }
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

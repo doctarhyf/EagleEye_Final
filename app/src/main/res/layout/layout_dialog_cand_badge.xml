@@ -24,51 +24,53 @@
         android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="0dp"
         android:layout_weight="3"
-        android:orientation="horizontal"
-        android:layout_height="0dp">
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/cbIvPic"
             android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_height="80dp"
             android:layout_weight="1"
-            android:src="@mipmap/ic_launcher"
-            android:layout_height="match_parent" />
+            android:src="@mipmap/ic_launcher" />
 
         <LinearLayout
             android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_height="match_parent">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/cbTvNum"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@color/cdRed"
-                android:textColor="@color/white"
-                android:text="1"
                 android:gravity="center"
                 android:padding="10dp"
-                android:textSize="16sp"
-                android:layout_height="wrap_content" />
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
             <ImageView
                 android:id="@+id/cbIvPartiLogo"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:src="@mipmap/ic_launcher"
-                android:layout_height="match_parent" />
+                android:src="@mipmap/ic_launcher" />
 
             <TextView
                 android:id="@+id/cbTvPartiName"
                 android:layout_width="match_parent"
-                android:text="Parti"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="10dp"
-                android:textStyle="bold"
+                android:text="Parti"
                 android:textColor="@color/black"
-                android:layout_height="wrap_content" />
+                android:textStyle="bold" />
 
 
         </LinearLayout>

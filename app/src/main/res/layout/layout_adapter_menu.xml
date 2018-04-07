@@ -28,7 +28,7 @@
         <TextView
             android:textColor="@color/black"
             android:padding="8dp"
-            android:id="@+id/ivMenuText"
+            android:id="@+id/tvMainMenuTitle"
             android:layout_gravity="center"
             android:gravity="center"
             android:text="TEXT HERE"

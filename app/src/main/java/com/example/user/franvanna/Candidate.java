@@ -2,12 +2,14 @@ package com.example.user.franvanna;
 
 public class Candidate {
 
+    public static final String KEY_CAND_TYPE = "candType";
     private int id;
     private String nomPostnom;
     private String prenom;
     private int picId;
     private int partiLogo;
     private int candType;
+    private String partiName = "NO_PARTY_SET";
 
     public static final int CAND_TYPE_PREZ = 0;
     public static final int CAND_TYPE_LEG_NAT = 1;
@@ -73,5 +75,13 @@ public class Candidate {
 
     public void setCandType(int candType) {
         this.candType = candType;
+    }
+
+    public String getPartiName() {
+        return partiName;
+    }
+
+    public void setPartiName(String partiName) {
+        this.partiName = partiName;
     }
 }
