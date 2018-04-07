@@ -46,6 +46,8 @@ public class AdapterFAQQuestion extends ArrayAdapter<ModelFAQQuestion> {
 
     private Listener listener;
 
+
+
     public interface Listener{
         void onQuestionClicked(ModelFAQQuestion question);
     }

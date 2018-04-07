@@ -6,6 +6,7 @@ package com.example.user.franvanna;
 
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -38,7 +39,7 @@ public class AdapterCandidates extends RecyclerView.Adapter<AdapterCandidates.Vi
         public ViewHolder(View view) {
             super(view);
             layout = view;
-            ivCandPic = (ImageView) layout.findViewById(R.id.cbIvPic);
+            ivCandPic = (ImageView) layout.findViewById(R.id.cbIvCandPic);
             ivPartiLogo = (ImageView) layout.findViewById(R.id.cbIvPartiLogo);
             tvCandNum = (TextView) layout.findViewById(R.id.cbTvNum);
             tvPartiName = (TextView) layout.findViewById(R.id.cbTvPartiName);
@@ -89,7 +90,12 @@ public class AdapterCandidates extends RecyclerView.Adapter<AdapterCandidates.Vi
         //holder.ivMenuIco.setImageDrawable(context.getResources().getDrawable(menuItem.getMenuIco()));
 
 
+
+        /*int resId = Utils.getResIdByName("pt_kozi", R.drawable.class);
+        Log.e(TAG, "DA RES ID : " + resId );*/
+
         holder.ivPartiLogo.setImageResource(candidate.getPartiLogo());
+        holder.ivCandPic.setImageResource(candidate.getPicId());
 
         holder.tvPartiName.setText(candidate.getPartiName());
 

@@ -12,6 +12,7 @@ import java.util.Scanner;
 class CandidatesData {
     public static final int CAND_TYPE_PREZ = 0;
     private static final String TAG = "CENI";
+    private static final int MAX_CAND_PIX_NUM = 15;
 
 
     public static  int getPartiLogoByName(String partiName){
@@ -65,8 +66,12 @@ class CandidatesData {
 
                     if(!line.isEmpty()){
                         String[] candData = line.split(",");
-                        Candidate candidate = new Candidate(j,candData[0], candData[1],-1,getPartiLogoByName(candData[2]), candType);
-                        candidate.setPartiName(candData[2]);
+                        String fullName = candData[0];
+                        String prenom = candData[1];
+                        String partiName = candData[2];
+                        int picId = Utils.GRIDBN("cd" + (j+1), R.drawable.class);
+                        Candidate candidate = new Candidate(j,fullName, prenom,picId,getPartiLogoByName(candData[2]), candType);
+                        candidate.setPartiName(partiName);
                         candidates.add(candidate);
 
                     }
@@ -101,29 +106,49 @@ class CandidatesData {
 
                 scanner = new Scanner(context.getResources().openRawResource(R.raw.candz_dep_nat));
                 j = 0;
+                int picIdx = 1;
                 while (scanner.hasNextLine()){
                     // Log.e(TAG, "line -> " + scanner.nextLine() );
+                    if(picIdx > MAX_CAND_PIX_NUM ) picIdx = 1;
                     String line = scanner.nextLine();
 
 
                     if(!line.isEmpty()){
                         String[] candData = line.split(",");
-                        Candidate candidate = new Candidate(j,candData[0], candData[1],-1,getPartiLogoByName(candData[2]), candType);
+                        int picId = Utils.GRIDBN("cd" + picIdx, R.drawable.class);
+                        Candidate candidate = new Candidate(j,candData[0], candData[1],picId,getPartiLogoByName(candData[2]), candType);
                         candidate.setPartiName(candData[2]);
                         candidates.add(candidate);
 
                     }
                     j++;
+                    picIdx++;
                 }
 
                 break;
 
             case Candidate.CAND_TYPE_LEG_PROV:
 
-                for(int i = 0; i < 30; i++) {
+                scanner = new Scanner(context.getResources().openRawResource(R.raw.candz_dep_prov));
+                j = 0;
+                picIdx = 1;
+                while (scanner.hasNextLine()){
+                    // Log.e(TAG, "line -> " + scanner.nextLine() );
 
-                    candidates.add(new Candidate(i, "NOM POSTON " + i, "Prenom " + i, -1, -1, candType));
+                    if(picIdx > MAX_CAND_PIX_NUM ) picIdx = 1;
+                    String line = scanner.nextLine();
 
+
+                    if(!line.isEmpty()){
+                        String[] candData = line.split(",");
+                        int picId = Utils.GRIDBN("cd" + picIdx, R.drawable.class);
+                        Candidate candidate = new Candidate(j,candData[0], candData[1],picId,getPartiLogoByName(candData[2]), candType);
+                        candidate.setPartiName(candData[2]);
+                        candidates.add(candidate);
+
+                    }
+                    j++;
+                    picIdx++;
                 }
 
 

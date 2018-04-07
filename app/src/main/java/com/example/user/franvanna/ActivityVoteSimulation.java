@@ -16,7 +16,7 @@ public class ActivityVoteSimulation extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
-        getSupportActionBar().setTitle("Simuler un vote");
+        getSupportActionBar().setTitle(getResources().getString(R.string.titleVoteSimulation));
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

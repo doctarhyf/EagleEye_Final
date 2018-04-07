@@ -1,6 +1,7 @@
 package com.example.user.franvanna;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,8 @@ public class ActivityIntroVid extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vid_intro);
 
+        getSupportActionBar().hide();
+
         videoIntro = findViewById(R.id.vidIntro);
         uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.ceni);
         playVid();
@@ -29,6 +32,14 @@ public class ActivityIntroVid extends AppCompatActivity {
             }
         });
 
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        playVid();
     }
 
     public void skipVid(){

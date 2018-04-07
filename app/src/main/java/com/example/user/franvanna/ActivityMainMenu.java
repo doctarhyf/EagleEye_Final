@@ -7,13 +7,15 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Menu;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMenu.CallbacksAdapterMenuItems {
 
-
+    private List<MenuItem> menuItemList;
     private static final String TAG = "EE2";
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -28,8 +30,8 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
         menuItemsList = MainMenuItems.getMainMenuItems(getResources());
 
         getSupportActionBar().setTitle(R.string.title_menu);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setDisplayShowHomeEnabled(true);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         adapter = new AdapterMainMenu(this, menuItemsList, this);
 
@@ -42,7 +44,28 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
 
     }
 
-    private List<MenuItem> menuItemList;
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        getMenuInflater().inflate(R.menu.menu_main_menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(android.view.MenuItem item) {
+
+        if(item.getItemId() == R.id.actionPlayIntroVid){
+            Intent intent = new Intent(this, ActivityIntroVid.class);
+            startActivity(intent);
+        }
+
+        if(item.getItemId() == R.id.actionAbout){
+            Toast.makeText(this, "CENI 2018 All rights reserved", Toast.LENGTH_LONG).show();
+        }
+
+        return true;
+    }
 
     @Override
     public void onItemClicked(MenuItem menuItem) {

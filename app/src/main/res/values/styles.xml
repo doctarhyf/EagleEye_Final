@@ -94,6 +94,7 @@
     </style>
 
     <style name="style_btn_select_cand">
+        <item name="android:tag">@string/tagBtnNumCand</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
@@ -103,4 +104,5 @@
     </style>
 
     <color name="white">#fff</color>
+    <string name="tagBtnNumCand">numCand</string>
 </resources>

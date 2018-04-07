@@ -28,18 +28,19 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_weight="4"
-        android:paddingTop="8dp"
-        android:paddingRight="8dp"
+
         android:layout_height="match_parent">
 
     <LinearLayout
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content">
 
        <TextView
 
-           android:layout_marginTop="12dp"
+           android:layout_marginTop="0dp"
            android:text="@string/menuSimInstallation"
            style="@style/MenuSim" />
 

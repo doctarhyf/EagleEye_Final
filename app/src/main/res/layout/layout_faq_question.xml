@@ -2,6 +2,7 @@
 
     <TextView
     android:clickable="true"
+    android:textStyle="bold"
     android:background="@drawable/color_state_row_menu"
     xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/tvListFAQQuestions"

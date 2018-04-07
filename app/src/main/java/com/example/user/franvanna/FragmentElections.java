@@ -10,8 +10,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -55,6 +58,7 @@ public class FragmentElections extends Fragment
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private List<Candidate> candidates;
+    private Button btnVoteBlanc;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -64,8 +68,7 @@ public class FragmentElections extends Fragment
 
         View view = inflater.inflate(R.layout.fragment_fragment_elections, container, false);
 
-
-        //Log.e(TAG, "FK CAND TYPE : " + candType  );
+        btnVoteBlanc = view.findViewById(R.id.btnVoteBlanc);
 
         candidates = CandidatesData.getCandidates(getContext(), candType);
 
@@ -82,10 +85,47 @@ public class FragmentElections extends Fragment
 
         recyclerView.setAdapter(adapter);
 
+        btnVoteBlanc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mListener.onVoteBlanckClicked(candType);
+            }
+        });
+
+        LinearLayout llBtnNumCandCont = view.findViewById(R.id.llBtnNumCandCont);
+
+        ArrayList<View> btns = Utils.getViewsByTag(llBtnNumCandCont,getResources().getString(R.string.tagBtnNumCand));
+
+        for(int i = 0; i < btns.size(); i++){
+            final Button btn = (Button) btns.get(i);
+
+            btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.e(TAG, "BTN TEXT : " + btn.getText().toString() );
+                    onBtnCandNumClicked(btn.getText().toString());
+
+                }
+            });
+        }
+
         updateViews(candType, view);
 
 
         return view;
+    }
+
+    private void onBtnCandNumClicked(String btnText) {
+
+        // TODO: 07/04/2018 TO FINISH DELAY CHOOSE CAND
+
+        int candNum = Integer.parseInt(btnText);
+
+        if(candNum < candidates.size() && candNum > 0) {
+
+            mListener.onCandidateClicked(candidates.get(candNum-1));
+
+        }
     }
 
     private void updateViews(int candType, View layout) {
@@ -132,5 +172,6 @@ public class FragmentElections extends Fragment
 
     public interface ListenerFragElecPrez {
         void onCandidateClicked(Candidate candidate);
+        void onVoteBlanckClicked(int candType);
     }
 }

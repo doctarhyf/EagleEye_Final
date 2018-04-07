@@ -12,6 +12,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class ActivityVotes extends AppCompatActivity
     implements FragmentCardAnim.FragListenerFragCardAnim,
@@ -43,7 +45,6 @@ public class ActivityVotes extends AppCompatActivity
         getSupportActionBar().hide();
     }
 
-
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
@@ -52,7 +53,6 @@ public class ActivityVotes extends AppCompatActivity
 
         finish();
     }
-
 
     @Override
     public void onInsertCard() {
@@ -103,6 +103,21 @@ public class ActivityVotes extends AppCompatActivity
 
         View view = getLayoutInflater().inflate(R.layout.layout_dialog_cand_badge, null);
 
+        ImageView ivPartiLogo = view.findViewById(R.id.cbIvPartiLogo);
+        ImageView ivCandPic = view.findViewById(R.id.cbIvCandPic);
+        TextView tvFullName = view.findViewById(R.id.cbTvFullName);
+        TextView tvPrenom = view.findViewById(R.id.cbTvPrenom);
+        TextView tvPartiName = view.findViewById(R.id.cbTvPartiName);
+        TextView tvCandNum = view.findViewById(R.id.cbTvNum);
+
+        ivPartiLogo.setImageResource(candidate.getPartiLogo());
+        ivCandPic.setImageResource(candidate.getPicId());
+        tvFullName.setText(candidate.getNomPostnom());
+        tvPrenom.setText(Utils.UCFirst(candidate.getPrenom()));
+        tvPartiName.setText(candidate.getPartiName());
+        tvCandNum.setText((candidate.getId() + 1) + "");//candidate.getId());
+
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setView(view);
 
@@ -138,10 +153,76 @@ public class ActivityVotes extends AppCompatActivity
 
     }
 
+    @Override
+    public void onVoteBlanckClicked(final int candType) {
 
+        View view = getLayoutInflater().inflate(R.layout.layout_dialog_cand_vote_blanc, null);
+
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(view);
+
+        builder.setCancelable(false);
+
+        alertDialog = builder.create();
+
+        Button btnConfirm = view.findViewById(R.id.btnCandBadgeConfirm);
+        Button btnCancel = view.findViewById(R.id.btnCandBadgeCanc);
+
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.hide();
+                selectCandidateBlanc(candType);
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                alertDialog.cancel();
+            }
+        });
+
+
+
+        alertDialog.show();
+
+        //Toast.makeText(this, "CAND CLICKED", Toast.LENGTH_LONG).show();
+    }
+
+    private void selectCandidateBlanc(int candType) {
+
+        switch (candType){
+            case Candidate.CAND_TYPE_PREZ:
+
+                fragmentElections = FragmentElections.newInstance(Candidate.CAND_TYPE_LEG_NAT);
+                showVotePane("Elections Legislatives Nationales", fragmentElections);
+
+                break;
+
+            case Candidate.CAND_TYPE_LEG_NAT:
+
+                fragmentElections = FragmentElections.newInstance(Candidate.CAND_TYPE_LEG_PROV);
+                showVotePane("Election Legislatives Provinciales", fragmentElections);
+
+                break;
+
+            case Candidate.CAND_TYPE_LEG_PROV:
+
+                Intent intent = new Intent(this, ActivityPrintVoteResult.class);
+                startActivity(intent);
+
+                break;
+        }
+
+    }
 
     private void selectCandidate(Candidate candidate) {
         Log.e(TAG, "CANDIDATE SELECTED" );
+
+        // TODO: 07/04/2018 WILL SAVE CANDS DATA IN PREFS
 
         if(candidate.getCandType() == Candidate.CAND_TYPE_PREZ){
 
@@ -150,8 +231,10 @@ public class ActivityVotes extends AppCompatActivity
 
 
         }else if (candidate.getCandType() == Candidate.CAND_TYPE_LEG_NAT){
+
             fragmentElections = FragmentElections.newInstance(Candidate.CAND_TYPE_LEG_PROV);
             showVotePane("Election Legislatives Provinciales", fragmentElections);
+
         } else {
 
             Intent intent = new Intent(this, ActivityPrintVoteResult.class);

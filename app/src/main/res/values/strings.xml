@@ -637,4 +637,9 @@ Directeur de Cabinet
     <string name="sub_menu_cands">Candidats inscrits aux scrutins</string>
     <string name="sub_menu_results">Resultats officiel des scrutins</string>
     <string name="sub_menu_faq">Questions frequentes sur les elections</string>
+    <string name="btnTxtSkip">SAUTER</string>
+    <string name="strActionPlayIntroVid">Play</string>
+    <string name="strActionAbout">Apropos</string>
+    <string name="titleVoteSimulation">Simuler un vote</string>
+    <string name="strActionRestartVote">Refaire</string>
 </resources>
