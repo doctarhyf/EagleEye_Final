@@ -3,6 +3,7 @@ package com.example.user.franvanna;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -24,6 +25,7 @@ public class FragmentElections extends Fragment
 
 
     private static final String TAG = "CENI";
+    private static final long DELAY_SELECT_CAND_MILLIS = 2000;
     private ListenerFragElecPrez mListener;
 
     public FragmentElections() {
@@ -119,11 +121,19 @@ public class FragmentElections extends Fragment
 
         // TODO: 07/04/2018 TO FINISH DELAY CHOOSE CAND
 
-        int candNum = Integer.parseInt(btnText);
+        final int candNum = Integer.parseInt(btnText);
+
 
         if(candNum < candidates.size() && candNum > 0) {
 
-            mListener.onCandidateClicked(candidates.get(candNum-1));
+            final Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    mListener.onCandidateClicked(candidates.get(candNum-1));
+                }
+            }, DELAY_SELECT_CAND_MILLIS);
+
 
         }
     }
