@@ -14,7 +14,7 @@ public class ActivityOfficialResults extends AppCompatActivity implements Adapte
     private static final String TAG = "CENI";
     ListView lvVotesTypes;
     AdapterListVotesTypes adapterListVotesTypes;
-    private ArrayList<VoteType> voteTypes;
+    private ArrayList<VoteType> voteTypes = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,8 @@ public class ActivityOfficialResults extends AppCompatActivity implements Adapte
         getSupportActionBar().setTitle(getResources().getString(R.string.title_officiel_result));
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
         voteTypes.add(new VoteType(0, getResources().getString(R.string.txt_vote_choice_prez)));
         voteTypes.add(new VoteType(1, getResources().getString(R.string.txt_vote_choice_leg_nat)));
