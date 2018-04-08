@@ -1,104 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.user.franvanna.ActivityListElectorral">
+    android:orientation="vertical"
+    tools:context="com.example.user.franvanna.ActivityCandidates">
 
 
-    <TextView
-        android:text="@string/txt_zone_cands"
-        android:textColor="#000"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:padding="10dp"
-        android:inputType="text"
+
+    <ListView
+        android:id="@+id/lvVotesTypes"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:text="@string/txt_remplir"
-        android:gravity="center"
-        android:padding="10dp"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:hint="@string/txt_hint_name"
-        android:padding="10dp"
-        android:inputType="text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:hint="@string/txt_hint_surname"
-        android:padding="10dp"
-        android:inputType="text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:hint="@string/txt_hint_birthplace"
-        android:padding="10dp"
-        android:inputType="text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"/>
 
 
-    <LinearLayout
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <!--
 
-        <TextView
+        <android.support.constraint.ConstraintLayout
+            android:background="@drawable/color_state_row_menu"
+            android:clickable="true"
 
-            android:text="Date de naissance "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:onClick="onVoteTypeClicked"
+            android:id="@+id/vote_type_prez"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="20dp"
+                android:textColor="@color/colorPrimary"
+                android:textAllCaps="true"
+                android:text="@string/txt_vote_choice_prez"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxLength="2"
-            android:hint="@string/txt_hint_jour"
-            android:inputType="number"
-            android:padding="10dp" />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ra"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginTop="20dp" />
 
+        </android.support.constraint.ConstraintLayout>
 
-        <EditText
-            android:hint="@string/txt_hint_mois"
-            android:padding="10dp"
-            android:maxLength="2"
-            android:inputType="number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <android.support.constraint.ConstraintLayout
+            android:background="@drawable/color_state_row_menu"
+            android:clickable="true"
+            android:id="@+id/vot_type_legs"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:padding="20dp"
+                android:textColor="@color/colorPrimary"
+                android:textAllCaps="true"
+                android:text="@string/txt_vote_choice_legs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ra"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginTop="20dp" />
 
-        <EditText
-            android:hint="@string/txt_hint_annee"
-            android:padding="10dp"
-            android:inputType="number"
-            android:maxLength="4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        </android.support.constraint.ConstraintLayout>
 
-    </LinearLayout>
+        <android.support.constraint.ConstraintLayout
+            android:clickable="true"
+            android:background="@drawable/color_state_row_menu"
+            android:id="@+id/vote_type_prov"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:padding="20dp"
+                android:textColor="@color/colorPrimary"
+                android:textAllCaps="true"
+                android:text="@string/txt_vote_choice_prov"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-    <Button
-        android:textColor="@color/white"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:padding="10dp"
-        android:background="@color/cdBlue"
-        android:text="@string/txt_btn_insc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
 
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ra"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginTop="20dp" />
 
+        </android.support.constraint.ConstraintLayout>
 
+        <android.support.constraint.ConstraintLayout
+            android:clickable="true"
+            android:background="@drawable/color_state_row_menu"
+            android:id="@+id/vot_type_urb"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:padding="20dp"
+                android:textColor="@color/colorPrimary"
+                android:textAllCaps="true"
+                android:text="@string/txt_vote_choice_urbs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ra"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginTop="20dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:clickable="true"
+            android:background="@drawable/color_state_row_menu"
+            android:id="@+id/vote_type_local"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:padding="20dp"
+                android:textColor="@color/colorPrimary"
+                android:textAllCaps="true"
+                android:text="@string/txt_vote_choice_loc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ra"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_goneMarginTop="20dp" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    -->
 
 
 </LinearLayout>
