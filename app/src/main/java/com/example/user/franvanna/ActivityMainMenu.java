@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMenu.CallbacksAdapterMenuItems {
@@ -92,7 +90,7 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
                 break;
 
             case R.id.mainMenuResults:
-                intent = new Intent(this, ActivityResults.class);
+                intent = new Intent(this, ActivityOfficialResults.class);
                 break;
 
             case R.id.mainMenuBuroVote:

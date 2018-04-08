@@ -24,7 +24,7 @@
             android:label="@string/title_activity_lois_elec"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ActivityListElectorral" />
-        <activity android:name=".ActivityResults" />
+        <activity android:name=".ActivityOfficialResults" />
         <activity android:name=".ActivityIntroVid" />
         <activity
             android:name=".ActivityLogo"

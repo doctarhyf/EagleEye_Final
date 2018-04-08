@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.mainMenuResults:
-                intent = new Intent(this, ActivityResults.class);
+                intent = new Intent(this, ActivityOfficialResults.class);
                 break;
 
             case R.id.mainMenuBuroVote:

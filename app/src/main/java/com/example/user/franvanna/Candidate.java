@@ -3,6 +3,7 @@ package com.example.user.franvanna;
 public class Candidate {
 
     public static final String KEY_CAND_TYPE = "candType";
+    public static final int CANDIDATE_BLANC = -1;
     private int id;
     private String nomPostnom;
     private String prenom;

@@ -12,11 +12,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class AdapterFAQQuestion extends ArrayAdapter<ModelFAQQuestion> {
+public class AdapterListVotesTypes extends ArrayAdapter<VoteType> {
 
 
 
-    public AdapterFAQQuestion(@NonNull Context context, ArrayList<ModelFAQQuestion> questions, Listener listener) {
+    public AdapterListVotesTypes(@NonNull Context context, ArrayList<VoteType> questions, Listener listener) {
         super(context, 0, questions);
         this.listener = listener;
     }
@@ -24,20 +24,20 @@ public class AdapterFAQQuestion extends ArrayAdapter<ModelFAQQuestion> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        final ModelFAQQuestion question = getItem(position);
+        final VoteType voteType = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.layout_list_item_faq_question, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.layout_list_item_vote_type, parent, false);
         }
         // Lookup view for data population
-        TextView tvQuestion = (TextView) convertView.findViewById(R.id.tvListFAQQuestions);
-        tvQuestion.setText(question.getQuestion());
+        TextView tvVoteType = (TextView) convertView.findViewById(R.id.tvListVoteType);
+        tvVoteType.setText(voteType.getName());
 
-        tvQuestion.setOnClickListener(new View.OnClickListener() {
+        tvVoteType.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("CENI", "onClick: Question : " + question.getQuestion() );
-                listener.onQuestionClicked(question);
+                //Log.e("CENI", "onClick: Question : " + question.getQuestion() );
+                listener.onVoteTypeClicked(voteType);
             }
         });
 
@@ -49,6 +49,6 @@ public class AdapterFAQQuestion extends ArrayAdapter<ModelFAQQuestion> {
 
 
     public interface Listener{
-        void onQuestionClicked(ModelFAQQuestion question);
+        void onVoteTypeClicked(VoteType voteType);
     }
 }

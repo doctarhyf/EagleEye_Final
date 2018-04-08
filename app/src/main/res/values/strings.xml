@@ -28,6 +28,8 @@
     <string name="menu_cands_prez">Presidentielle</string>
     <string name="txt_vote_choice_prez">PRESIDENTIELLE</string>
     <string name="txt_vote_choice_legs">LEGISTLATIVES</string>
+    <string name="txt_vote_choice_leg_nat">LEGISTLATIVES NATIONALES</string>
+    <string name="txt_vote_choice_leg_prov">LEGISTLATIVES PROVINCIALES</string>
     <string name="txt_vote_choice_prov">PROVINCIALES</string>
     <string name="txt_vote_choice_urbs">URBAINES</string>
     <string name="txt_vote_choice_loc">LOCALES</string>

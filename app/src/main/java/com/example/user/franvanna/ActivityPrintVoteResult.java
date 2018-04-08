@@ -1,9 +1,11 @@
 package com.example.user.franvanna;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
@@ -11,6 +13,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 public class ActivityPrintVoteResult extends AppCompatActivity {
+
+    private static final String TAG = "CENI";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,19 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
         Animation testAnim = AnimationUtils.loadAnimation(this, R.anim.anim_test);
         iv.startAnimation(testAnim);
 
+        Log.e(TAG, "VOTE_REZ PREZ : " + Utils.getCandFromPref(this, Utils.VOTE_KEY_CAND_PREZ) );
+        Log.e(TAG, "VOTE_REZ NAT : " + Utils.getCandFromPref(this, Utils.VOTE_KEY_CAND_DEP_NAT) );
+        Log.e(TAG, "VOTE_REZ PROV : " + Utils.getCandFromPref(this, Utils.VOTE_KEY_CAND_DEP_PROV) );
+
+        Utils.clearCandidatesData(this);
+
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Intent intent = new Intent(this, ActivityVotes.class);
+        startActivity(intent);
 
     }
 

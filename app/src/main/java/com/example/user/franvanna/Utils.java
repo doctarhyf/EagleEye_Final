@@ -1,6 +1,8 @@
 package com.example.user.franvanna;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.Preference;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -9,6 +11,13 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Utils {
+
+    private static final String NO_VALUE = "NO_VALUE";
+    public static final String CENI_PREF_NAME = "CENI_PREF";
+    public static final String VOTE_KEY_CAND_PREZ = "candPrez";
+    private static final int NO_CANDIDATE = 0xbeef;
+    public static final String VOTE_KEY_CAND_DEP_NAT = "candDepNat";
+    public static final String VOTE_KEY_CAND_DEP_PROV = "candDepProv";
 
     public static String UCFirst(String string){
 
@@ -58,5 +67,33 @@ public class Utils {
         return views;
     }
 
+    public static void saveCandToPref(Context context, String key, int val){
 
+        SharedPreferences preference = context.getSharedPreferences(CENI_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preference.edit();
+
+        editor.putInt(key, val);
+        editor.commit();
+
+    }
+
+    public static int getCandFromPref(Context context, String key ){
+
+        SharedPreferences preference = context.getSharedPreferences(CENI_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preference.edit();
+
+        return preference.getInt(key, NO_CANDIDATE);
+
+    }
+
+    public static boolean clearCandidatesData(Context context){
+
+
+        SharedPreferences preference = context.getSharedPreferences(CENI_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preference.edit();
+
+        editor.clear();
+
+        return  preference.getAll().size() == 0;
+    }
 }

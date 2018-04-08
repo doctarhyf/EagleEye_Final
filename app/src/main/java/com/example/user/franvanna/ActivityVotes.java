@@ -47,13 +47,35 @@ public class ActivityVotes extends AppCompatActivity
 
 
 
+    /*
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
 
-        alertDialog.cancel();
 
-        finish();
+
+        if(alertDialog!= null){
+            if(
+                    alertDialog.isShowing()){
+                Log.e(TAG, "onBackPressed: showing" );
+                alertDialog.hide();
+            }else{
+                Log.e(TAG, "onBackPressed: not showing" );
+                super.onBackPressed();
+            }
+        }else{
+            Log.e(TAG, "onBackPressed: is null" );
+            super.onBackPressed();
+        }
+
+    }*/
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.e(TAG, "ONRIZZZ" );
+        //getSupportFragmentManager().beginTransaction().remove( fragmentCardAnim).commit();
+        //getSupportFragmentManager().beginTransaction().add(R.id.fragContVotes, fragmentCardAnim).commit();
     }
 
     @Override
@@ -199,6 +221,7 @@ public class ActivityVotes extends AppCompatActivity
         switch (candType){
             case Candidate.CAND_TYPE_PREZ:
 
+                Utils.saveCandToPref(this, Utils.VOTE_KEY_CAND_PREZ, Candidate.CANDIDATE_BLANC);
                 fragmentElections = FragmentElections.newInstance(Candidate.CAND_TYPE_LEG_NAT);
                 showVotePane("Elections Legislatives Nationales", fragmentElections);
 
@@ -206,6 +229,7 @@ public class ActivityVotes extends AppCompatActivity
 
             case Candidate.CAND_TYPE_LEG_NAT:
 
+                Utils.saveCandToPref(this, Utils.VOTE_KEY_CAND_DEP_NAT, Candidate.CANDIDATE_BLANC);
                 fragmentElections = FragmentElections.newInstance(Candidate.CAND_TYPE_LEG_PROV);
                 showVotePane("Election Legislatives Provinciales", fragmentElections);
 
@@ -213,6 +237,7 @@ public class ActivityVotes extends AppCompatActivity
 
             case Candidate.CAND_TYPE_LEG_PROV:
 
+                Utils.saveCandToPref(this, Utils.VOTE_KEY_CAND_DEP_PROV, Candidate.CANDIDATE_BLANC);
                 Intent intent = new Intent(this, ActivityPrintVoteResult.class);
                 startActivity(intent);
 
@@ -228,17 +253,20 @@ public class ActivityVotes extends AppCompatActivity
 
         if(candidate.getCandType() == Candidate.CAND_TYPE_PREZ){
 
+            Utils.saveCandToPref(this,  Utils.VOTE_KEY_CAND_PREZ, candidate.getId());
             fragmentElections = FragmentElections.newInstance(Candidate.CAND_TYPE_LEG_NAT);
             showVotePane("Elections Legislatives Nationales", fragmentElections);
 
 
         }else if (candidate.getCandType() == Candidate.CAND_TYPE_LEG_NAT){
 
+            Utils.saveCandToPref(this,  Utils.VOTE_KEY_CAND_DEP_NAT, candidate.getId());
             fragmentElections = FragmentElections.newInstance(Candidate.CAND_TYPE_LEG_PROV);
             showVotePane("Election Legislatives Provinciales", fragmentElections);
 
         } else {
 
+            Utils.saveCandToPref(this, Utils.VOTE_KEY_CAND_DEP_PROV, candidate.getId());
             Intent intent = new Intent(this, ActivityPrintVoteResult.class);
             startActivity(intent);
 

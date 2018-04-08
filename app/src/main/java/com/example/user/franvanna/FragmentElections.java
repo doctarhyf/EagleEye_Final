@@ -3,6 +3,7 @@ package com.example.user.franvanna;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
@@ -25,7 +26,7 @@ public class FragmentElections extends Fragment
 
 
     private static final String TAG = "CENI";
-    private static final long DELAY_SELECT_CAND_MILLIS = 2000;
+    private static final long DELAY_SELECT_CAND_MILLIS = 1800;
     private ListenerFragElecPrez mListener;
 
     public FragmentElections() {
@@ -126,26 +127,65 @@ public class FragmentElections extends Fragment
 
         final int candNum = Integer.parseInt(btnText);
 
+        if(strCandNum.length() == 0){
+            strCandNum = "" + candNum;
+        }else if (strCandNum.length() == 1 ) {
+            strCandNum = strCandNum.concat("" + candNum);
+        }
+
+
+
+
+
+
+
+        new CountDownTimer(DELAY_SELECT_CAND_MILLIS, 1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+
+
+
+                if(strCandNum.length() != 0){
+                    Log.e(TAG, "onBtnCandNumClicked: NUM -> " + strCandNum );
+
+                    Integer candId = Integer.parseInt(strCandNum) - 1;
+
+                    if(candidates.size() > candId && candId >= 0 ){
+                        mListener.onCandidateClicked(candidates.get( candId  ));
+                    }
+                }
+                strCandNum = "";
+            }
+        }.start();
+
+        /*
         if(strCandNum.length() == 2 || strCandNum.equals("") ){
             strCandNum = "" + candNum;
         }else{
             strCandNum = strCandNum.concat("" + candNum);
         }
 
-        if(candNum < candidates.size() && candNum > 0) {
+        if(candNum < candidates.size() && candNum > 0) {*/
 
-            final Handler handler = new Handler();
+            /*
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    mListener.onCandidateClicked(candidates.get(candNum-1));
-                    strCandNum = "";
+                   // mListener.onCandidateClicked(candidates.get(candNum-1));
+
                 }
             }, DELAY_SELECT_CAND_MILLIS);
 
+        */
 
-        }
     }
+
+    final Handler handler = new Handler();
 
     private void updateViews(int candType, View layout) {
 

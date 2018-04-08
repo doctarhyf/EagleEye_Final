@@ -9,7 +9,13 @@
 
 
 
+    <ListView
+        android:id="@+id/lvVotesTypes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
+
+<!--
 
     <android.support.constraint.ConstraintLayout
         android:background="@drawable/color_state_row_menu"
@@ -162,6 +168,7 @@
 
     </android.support.constraint.ConstraintLayout>
 
+-->
 
 
 </LinearLayout>
