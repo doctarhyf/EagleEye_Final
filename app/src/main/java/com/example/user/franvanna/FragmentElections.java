@@ -117,12 +117,20 @@ public class FragmentElections extends Fragment
         return view;
     }
 
+    private String strCandNum = "";
+
     private void onBtnCandNumClicked(String btnText) {
 
         // TODO: 07/04/2018 TO FINISH DELAY CHOOSE CAND
 
+
         final int candNum = Integer.parseInt(btnText);
 
+        if(strCandNum.length() == 2 || strCandNum.equals("") ){
+            strCandNum = "" + candNum;
+        }else{
+            strCandNum = strCandNum.concat("" + candNum);
+        }
 
         if(candNum < candidates.size() && candNum > 0) {
 
@@ -131,6 +139,7 @@ public class FragmentElections extends Fragment
                 @Override
                 public void run() {
                     mListener.onCandidateClicked(candidates.get(candNum-1));
+                    strCandNum = "";
                 }
             }, DELAY_SELECT_CAND_MILLIS);
 

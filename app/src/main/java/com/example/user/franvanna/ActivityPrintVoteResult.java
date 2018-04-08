@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 public class ActivityPrintVoteResult extends AppCompatActivity {
 
@@ -19,6 +22,11 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+        ImageView iv = findViewById(R.id.iv);
+        Animation testAnim = AnimationUtils.loadAnimation(this, R.anim.anim_test);
+        iv.startAnimation(testAnim);
+
 
     }
 

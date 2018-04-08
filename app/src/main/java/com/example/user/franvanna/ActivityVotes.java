@@ -45,6 +45,8 @@ public class ActivityVotes extends AppCompatActivity
         getSupportActionBar().hide();
     }
 
+
+
     @Override
     public void onBackPressed() {
         //super.onBackPressed();
