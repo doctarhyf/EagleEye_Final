@@ -1,4 +1,4 @@
-package com.example.user.franvanna;
+package com.example.user.franvanna.Adapters;
 
 /**
  * Created by Franvanna on 3/8/2018.
@@ -12,6 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.user.franvanna.MenuItem;
+import com.example.user.franvanna.R;
 
 import java.util.List;
 

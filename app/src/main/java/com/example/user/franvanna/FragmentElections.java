@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.user.franvanna.Adapters.AdapterCandidates;
+
 import java.util.ArrayList;
 import java.util.List;
 

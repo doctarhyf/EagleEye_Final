@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.widget.Toast;
 
+import com.example.user.franvanna.Adapters.AdapterMainMenu;
+
 import java.util.List;
 
 public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMenu.CallbacksAdapterMenuItems {
