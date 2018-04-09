@@ -18,50 +18,6 @@ public class MainMenuItemsData {
 
     {
 
-        /*
-
-        Intent intent = null;
-
-        int id = view.getId();
-        switch (id){
-
-            case R.id.mainMenuCands:
-                intent = new Intent(this, ActivityCandidates.class);
-                break;
-
-            case R.id.mainMenuVoteSimulation:
-                intent = new Intent(this, ActivityVoteSimulation.class);
-                break;
-
-
-
-            case R.id.mainMenuListElec:
-                intent = new Intent(this, ActivityListElectorral.class);
-                break;
-
-            case R.id.mainMenuResults:
-                intent = new Intent(this, ActivityResults.class);
-                break;
-
-            case R.id.mainMenuBuroVote:
-                intent = new Intent(this, ActivityBureauVote.class);
-                break;
-
-
-
-        }
-
-
-
-
-        if(null != intent) {
-
-            startActivity(intent);
-
-        }
-
-         */
-
 
         List<MenuItem> menuItems = new ArrayList<>();
         menuItems.add(new MenuItem(R.drawable.sim, res.getString(R.string.menu_vote_sim),R.id.mainMenuVoteSimulation, res.getString(R.string.sub_menu_vote_sim) ));

@@ -644,4 +644,10 @@ Directeur de Cabinet
     <string name="strActionAbout">Apropos</string>
     <string name="titleVoteSimulation">Simuler un vote</string>
     <string name="strActionRestartVote">Refaire</string>
+    <string name="strActionSimulationHome">Simuler un vote</string>
+    <string name="strActionMainMenu">Menu Principal</string>
+    <string name="strVoteSimDisclaimer">Ceci n\'est qu\'une simulation de vote, tous les candidats representes ici ne sont que des acteurs. Cet option ete creee uniquement dans le but d\'habituer l\'electeur a l\'interface graphique de la machine a vote.</string>
+    <string name="strWarning">ATTENTION!</string>
+    <string name="btnSimulerVote">SIMULER UN VOTE</string>
+    <string name="strSuffrage">SUFFRAGE(S) EXPRIME(S)</string>
 </resources>

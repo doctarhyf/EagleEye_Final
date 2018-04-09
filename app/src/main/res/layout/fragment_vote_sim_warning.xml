@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cdRed"
+    android:layout_gravity="center"
+    tools:context="com.example.user.franvanna.Fragments.FragmentElectionsPane">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/border_warning_pane"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:paddingRight="16dp"
+        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="@string/strWarning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+
+
+        android:padding="20dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:id="@+id/tvElectionsPaneTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/strVoteSimDisclaimer" />
+
+        <Button
+            android:id="@+id/btnStartSimulation"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:text="@string/btnSimulerVote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -18,13 +18,15 @@ import android.widget.TextView;
 import com.example.user.franvanna.Fragments.FragmentCardAnim;
 import com.example.user.franvanna.Fragments.FragmentElections;
 import com.example.user.franvanna.Fragments.FragmentElectionsPane;
+import com.example.user.franvanna.Fragments.FragmentVoteSimWarning;
 import com.example.user.franvanna.Objects.Candidate;
 import com.example.user.franvanna.Utils.Utils;
 
 public class ActivityVotes extends AppCompatActivity
     implements FragmentCardAnim.FragListenerFragCardAnim,
         FragmentElectionsPane.OnFragmentInteractionListener,
-        FragmentElections.ListenerFragElecPrez
+        FragmentElections.ListenerFragElecPrez,
+        FragmentVoteSimWarning.OnFragmentInteractionListener
 {
 
     private static final String TAG = "CENI";
@@ -32,6 +34,7 @@ public class ActivityVotes extends AppCompatActivity
     FrameLayout fragCont;
     FragmentCardAnim fragmentCardAnim;
     FragmentElections fragmentElections;
+    FragmentVoteSimWarning fragmentVoteSimWarning;
     private AlertDialog alertDialog = null;
 
     @Override
@@ -41,10 +44,11 @@ public class ActivityVotes extends AppCompatActivity
 
         fragCont = findViewById(R.id.fragContVotes);
 
+        fragmentVoteSimWarning = FragmentVoteSimWarning.newInstance();
         fragmentCardAnim = FragmentCardAnim.newInstance("a", "b");
         fragmentElections = FragmentElections.newInstance(Candidate.CAND_TYPE_PREZ);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.fragContVotes, fragmentCardAnim).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragContVotes, fragmentVoteSimWarning).commit();
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
@@ -277,5 +281,10 @@ public class ActivityVotes extends AppCompatActivity
             startActivity(intent);
 
         }
+    }
+
+    @Override
+    public void onStartSimulationClicked() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragContVotes, fragmentCardAnim).commit();
     }
 }
