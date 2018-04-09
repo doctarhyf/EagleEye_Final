@@ -1,4 +1,4 @@
-package com.example.user.franvanna;
+package com.example.user.franvanna.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,13 +10,16 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import com.example.user.franvanna.Objects.FAQQuestion;
+import com.example.user.franvanna.R;
+
 import java.util.ArrayList;
 
-public class AdapterFAQQuestion extends ArrayAdapter<ModelFAQQuestion> {
+public class AdapterFAQQuestion extends ArrayAdapter<FAQQuestion> {
 
 
 
-    public AdapterFAQQuestion(@NonNull Context context, ArrayList<ModelFAQQuestion> questions, Listener listener) {
+    public AdapterFAQQuestion(@NonNull Context context, ArrayList<FAQQuestion> questions, Listener listener) {
         super(context, 0, questions);
         this.listener = listener;
     }
@@ -24,7 +27,7 @@ public class AdapterFAQQuestion extends ArrayAdapter<ModelFAQQuestion> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        final ModelFAQQuestion question = getItem(position);
+        final FAQQuestion question = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.layout_list_item_faq_question, parent, false);
@@ -49,6 +52,6 @@ public class AdapterFAQQuestion extends ArrayAdapter<ModelFAQQuestion> {
 
 
     public interface Listener{
-        void onQuestionClicked(ModelFAQQuestion question);
+        void onQuestionClicked(FAQQuestion question);
     }
 }

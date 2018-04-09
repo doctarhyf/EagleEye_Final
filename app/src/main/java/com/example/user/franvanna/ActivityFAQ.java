@@ -7,6 +7,9 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.example.user.franvanna.Adapters.AdapterFAQQuestion;
+import com.example.user.franvanna.Objects.FAQQuestion;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -31,7 +34,7 @@ public class ActivityFAQ extends AppCompatActivity implements AdapterFAQQuestion
 
         lvFAQQuestions = findViewById(R.id.lvFAQQuestions);
 
-        ArrayList<ModelFAQQuestion> questions = getFAQData();
+        ArrayList<FAQQuestion> questions = getFAQData();
 
 
 
@@ -41,9 +44,9 @@ public class ActivityFAQ extends AppCompatActivity implements AdapterFAQQuestion
 
     }
 
-    private ArrayList<ModelFAQQuestion> getFAQData() {
+    private ArrayList<FAQQuestion> getFAQData() {
 
-        ArrayList<ModelFAQQuestion> questions = new ArrayList<>();
+        ArrayList<FAQQuestion> questions = new ArrayList<>();
 
         Scanner scanner = new Scanner(getResources().openRawResource(R.raw.faq));
         //int k = 0;
@@ -63,7 +66,7 @@ public class ActivityFAQ extends AppCompatActivity implements AdapterFAQQuestion
         for(int k = 0; k < splits.length; k+= 2){
 
             if(k < splits.length - 2) {
-                questions.add(new ModelFAQQuestion(k/2, (String) splits[k].replace("<",""), splits[k + 1]));
+                questions.add(new FAQQuestion(k/2, (String) splits[k].replace("<",""), splits[k + 1]));
             }
         }
 
@@ -75,7 +78,7 @@ public class ActivityFAQ extends AppCompatActivity implements AdapterFAQQuestion
                 String q = splits[0];
                 String r = splits[1];
 
-                //questions.add(new ModelFAQQuestion(i, q, r));
+                //questions.add(new FAQQuestion(i, q, r));
                 Log.e(TAG, "q -> " + q + "\nr -> " + r );
                 k++;
             }*/
@@ -95,7 +98,7 @@ public class ActivityFAQ extends AppCompatActivity implements AdapterFAQQuestion
     }
 
     @Override
-    public void onQuestionClicked(ModelFAQQuestion question) {
+    public void onQuestionClicked(FAQQuestion question) {
         Log.e(TAG, "onQuestionClicked: listener");
         Intent intent = new Intent(this, ActivityFAQQA.class);
         Bundle data = new Bundle();

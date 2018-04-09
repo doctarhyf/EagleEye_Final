@@ -1,6 +1,5 @@
 package com.example.user.franvanna;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +10,8 @@ import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import com.example.user.franvanna.Utils.Utils;
 
 public class ActivityPrintVoteResult extends AppCompatActivity {
 

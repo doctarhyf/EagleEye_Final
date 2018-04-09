@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.widget.Toast;
 
 import com.example.user.franvanna.Adapters.AdapterMainMenu;
+import com.example.user.franvanna.Data.MainMenuItemsData;
+import com.example.user.franvanna.Objects.MenuItem;
 
 import java.util.List;
 
@@ -27,7 +29,7 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        menuItemsList = MainMenuItems.getMainMenuItems(getResources());
+        menuItemsList = MainMenuItemsData.getMainMenuItems(getResources());
 
         getSupportActionBar().setTitle(R.string.title_menu);
         //getSupportActionBar().setDisplayShowHomeEnabled(true);

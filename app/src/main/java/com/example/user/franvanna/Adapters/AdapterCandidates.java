@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.user.franvanna.Candidate;
+import com.example.user.franvanna.Objects.Candidate;
 import com.example.user.franvanna.R;
 
 import java.util.List;

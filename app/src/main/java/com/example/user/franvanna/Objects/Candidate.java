@@ -1,4 +1,4 @@
-package com.example.user.franvanna;
+package com.example.user.franvanna.Objects;
 
 public class Candidate {
 

@@ -1,18 +1,18 @@
-package com.example.user.franvanna;
+package com.example.user.franvanna.Objects;
 
 
-class ModelFAQQuestion {
+public class FAQQuestion {
 
 
     private int id;
     private String question;
     private String reponse;
 
-    public ModelFAQQuestion(){
+    public FAQQuestion(){
 
     }
 
-    public ModelFAQQuestion(int id, String question, String reponse){
+    public FAQQuestion(int id, String question, String reponse){
         this.id = id;
         this.question = question;
         this.reponse = reponse;

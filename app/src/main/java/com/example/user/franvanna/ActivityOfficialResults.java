@@ -1,11 +1,13 @@
 package com.example.user.franvanna;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ListView;
+
+import com.example.user.franvanna.Adapters.AdapterListVotesTypes;
+import com.example.user.franvanna.Objects.VoteType;
 
 import java.util.ArrayList;
 

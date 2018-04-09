@@ -1,4 +1,4 @@
-package com.example.user.franvanna;
+package com.example.user.franvanna.Fragments;
 
 import android.content.Context;
 import android.net.Uri;
@@ -17,6 +17,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.user.franvanna.Adapters.AdapterCandidates;
+import com.example.user.franvanna.Objects.Candidate;
+import com.example.user.franvanna.Data.CandidatesData;
+import com.example.user.franvanna.R;
+import com.example.user.franvanna.Utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;

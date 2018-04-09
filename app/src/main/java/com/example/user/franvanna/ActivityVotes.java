@@ -15,6 +15,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.user.franvanna.Fragments.FragmentCardAnim;
+import com.example.user.franvanna.Fragments.FragmentElections;
+import com.example.user.franvanna.Fragments.FragmentElectionsPane;
+import com.example.user.franvanna.Objects.Candidate;
+import com.example.user.franvanna.Utils.Utils;
+
 public class ActivityVotes extends AppCompatActivity
     implements FragmentCardAnim.FragListenerFragCardAnim,
         FragmentElectionsPane.OnFragmentInteractionListener,

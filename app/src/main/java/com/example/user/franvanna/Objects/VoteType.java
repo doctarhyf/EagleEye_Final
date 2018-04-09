@@ -1,6 +1,6 @@
-package com.example.user.franvanna;
+package com.example.user.franvanna.Objects;
 
-class VoteType {
+public class VoteType {
 
     private String name;
     private int id;

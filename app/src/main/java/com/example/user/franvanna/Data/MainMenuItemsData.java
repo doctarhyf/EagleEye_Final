@@ -1,7 +1,9 @@
-package com.example.user.franvanna;
+package com.example.user.franvanna.Data;
 
-import android.content.Context;
 import android.content.res.Resources;
+
+import com.example.user.franvanna.Objects.MenuItem;
+import com.example.user.franvanna.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +12,7 @@ import java.util.List;
  * Created by Franvanna on 3/8/2018.
  */
 
-public class MainMenuItems {
+public class MainMenuItemsData {
 
     public static List<MenuItem> getMainMenuItems(Resources res)
 
