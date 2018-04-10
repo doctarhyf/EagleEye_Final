@@ -650,4 +650,8 @@ Directeur de Cabinet
     <string name="strWarning">ATTENTION!</string>
     <string name="btnSimulerVote">SIMULER UN VOTE</string>
     <string name="strSuffrage">SUFFRAGE(S) EXPRIME(S)</string>
+    <string name="strNeedWritePerms">Nous avons besoin de votre permission pour que vous soyez capables de partager les resultats de votre simulation.</string>
+    <string name="strWaterMark">Resultats simulation de vote. CENI 2018 (c). Tous droits reserves.</string>
+    <string name="strVotesSimResultsShare">Voici les resultations de ma simulation de vote. Toi aussi tu peu peux telechrger l\'appli a cet address : %1$s.</string>
+    <string name="strShareResultSim">Partager les resultats de la simulation</string>
 </resources>

@@ -1,30 +1,39 @@
 package com.example.user.franvanna;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
+import android.view.animation.TranslateAnimation;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.user.franvanna.Adapters.AdapterVotesResults;
 import com.example.user.franvanna.Data.CandidatesData;
 import com.example.user.franvanna.Objects.Candidate;
 import com.example.user.franvanna.Utils.Utils;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ActivityPrintVoteResult extends AppCompatActivity {
 
     private static final String TAG = "CENI";
+    private static final long RES_ANIM_DURATION = 500;
+    private static final float INIT_TRANSLATION = 1000;
     RecyclerView recyclerView;
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
@@ -42,9 +51,8 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
         /*
-        ImageView iv = findViewById(R.id.iv);
-        Animation testAnim = AnimationUtils.loadAnimation(this, R.anim.anim_test);
-        iv.startAnimation(testAnim);*/
+        ImageView iv = findViewById(R.id.iv);*/
+
 
         candidates = getWinningCandidates();
 
@@ -55,9 +63,48 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
 
         recyclerView.setAdapter(adapter);
 
+        /*
+        Animation testAnim = AnimationUtils.loadAnimation(this, R.anim.anim_test);
+        recyclerView.startAnimation(testAnim);*/
+
+        //recyclerView.animate().alpha()
+        animateResult();
+
+
+        //recyclerView.setVisibility(0);
 
 
 
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        if(requestCode == Utils.REQ_CODE){
+
+            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                Log.e(TAG, "onRequestPermissionsResult: PERMS GRANT" );
+            }else{
+                Toast.makeText(this, getResources().getString(R.string.strNeedWritePerms), Toast.LENGTH_SHORT).show();
+            }
+
+        }
+
+    }
+
+    private void animateResult() {
+        recyclerView.setTranslationY(INIT_TRANSLATION);
+
+        Animation animTrans = new TranslateAnimation(0, 0,0, -INIT_TRANSLATION);
+        animTrans.setDuration(RES_ANIM_DURATION);
+        animTrans.setFillAfter(true);
+        recyclerView.startAnimation(animTrans);
+
+        /*
+        Animation animAlpha = new AlphaAnimation(0f,100f);
+        animTrans.setDuration(RES_ANIM_DURATION);
+        animTrans.setFillAfter(true);
+        recyclerView.startAnimation(animAlpha);*/
     }
 
     private List<Candidate> getWinningCandidates() {
@@ -72,16 +119,31 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
         int depNat = Utils.getCandFromPref(this, Utils.VOTE_KEY_CAND_DEP_NAT) ;
         int depProv = Utils.getCandFromPref(this, Utils.VOTE_KEY_CAND_DEP_PROV) ;
 
-        candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_PREZ, prez));
-        candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_LEG_NAT, depNat));
-        candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_LEG_PROV, depProv));
+
+        if(prez != -1) {
+            candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_PREZ, prez));
+        }else{
+            // TODO: 10/04/2018 PREZ VOTE BLANC
+            candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_PREZ, 0));
+        }
+
+        if(depNat != -1) {
+            candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_LEG_NAT, depNat));
+        }else{
+            // TODO: 10/04/2018 NAT VOTE BLANC
+            candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_PREZ, 0));
+
+        }
+
+        if(depProv != -1) {
+            candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_LEG_PROV, depProv));
+        }else{
+            // TODO: 10/04/2018 PROV VOTE BLANC
+            candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_PREZ, 0));
+
+        }
 
         Utils.clearCandidatesData(this);
-
-
-
-
-
 
         return candidates;
     }
@@ -123,4 +185,42 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void shareResults(View view) {
+
+        switch (view.getId()){
+            case R.id.btnShareResultsTwitter:
+
+                String tweetUrl = "https://twitter.com/intent/tweet?text=WRITE YOUR MESSAGE HERE &url="
+                        + "https://www.google.com";
+                Uri uri = Uri.parse(tweetUrl);
+                startActivity(new Intent(Intent.ACTION_VIEW, uri));
+
+                break;
+
+            case R.id.btnShareResultsImage:
+
+                if(checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+                    String[] perms = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                    requestPermissions(perms, Utils.REQ_CODE);
+
+                    Toast.makeText(this, getResources().getString(R.string.strNeedWritePerms), Toast.LENGTH_SHORT).show();
+
+                }else {
+
+                    LinearLayout linearLayout = findViewById(R.id.llResultsTicket);
+
+                    Bitmap bitmap = Utils.getBitmapFromView(linearLayout);
+
+                    String msg = String.format(getResources().getString(R.string.strVotesSimResultsShare), Utils.PLAYSTORE_URL);
+
+
+                    Utils.shareImage(this, bitmap, msg);
+                }
+
+                break;
+        }
+    }
+
+
 }

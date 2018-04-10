@@ -2,6 +2,7 @@ package com.example.user.franvanna;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
@@ -36,11 +37,14 @@ public class ActivityVotes extends AppCompatActivity
     FragmentElections fragmentElections;
     FragmentVoteSimWarning fragmentVoteSimWarning;
     private AlertDialog alertDialog = null;
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_votes);
+
+        mp = MediaPlayer.create(this, R.raw.beep);
 
         fragCont = findViewById(R.id.fragContVotes);
 
@@ -280,7 +284,21 @@ public class ActivityVotes extends AppCompatActivity
             Intent intent = new Intent(this, ActivityPrintVoteResult.class);
             startActivity(intent);
 
+            playSFX();
+
         }
+    }
+
+    private void playSFX() {
+
+        try {
+            if (mp.isPlaying()) {
+                mp.stop();
+                mp.release();
+                mp = MediaPlayer.create(this, R.raw.beep);
+            } mp.start();
+        } catch(Exception e) { e.printStackTrace(); }
+
     }
 
     @Override

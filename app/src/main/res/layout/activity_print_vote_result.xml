@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -30,18 +31,56 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+
+    <ScrollView
+
+        android:layout_weight="5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/llResultsTicket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
     <android.support.v7.widget.RecyclerView
 
 
-        android:layout_weight="5"
+
         android:id="@+id/rvVoteResults"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="match_parent">
 
 
 
     </android.support.v7.widget.RecyclerView>
+
+            <LinearLayout
+                android:padding="@dimen/padding_badge"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_gravity="center"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="@dimen/padding_badge"
+                    android:src="@drawable/ceni" />
+
+                <TextView
+                    android:gravity="center_vertical"
+
+                    android:textColor="@color/black"
+                    android:text="@string/strWaterMark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <LinearLayout
         android:gravity="center"
@@ -49,19 +88,20 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/btnShareResultsTwitter"
+            android:onClick="shareResults"
             android:text="Twitter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <Button
-            android:text="Twitter"
+            android:onClick="shareResults"
+            android:id="@+id/btnShareResultsImage"
+            android:text="Share Image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <Button
-            android:text="Twitter"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+
 
     </LinearLayout>
 

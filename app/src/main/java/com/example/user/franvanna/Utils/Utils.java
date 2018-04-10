@@ -1,11 +1,22 @@
 package com.example.user.franvanna.Utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.preference.Preference;
+import android.provider.MediaStore;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.user.franvanna.R;
+
+import java.io.ByteArrayOutputStream;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Random;
@@ -18,6 +29,8 @@ public class Utils {
     private static final int NO_CANDIDATE = 0xbeef;
     public static final String VOTE_KEY_CAND_DEP_NAT = "candDepNat";
     public static final String VOTE_KEY_CAND_DEP_PROV = "candDepProv";
+    public static final int REQ_CODE = 1001;
+    public static final String PLAYSTORE_URL = "http://jtminvestment.com/ceni_beta.apk";
 
     public static String UCFirst(String string){
 
@@ -95,5 +108,50 @@ public class Utils {
         editor.clear();
 
         return  preference.getAll().size() == 0;
+    }
+
+    public static Uri getImageUri(Context inContext, Bitmap inImage) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+
+        String path = MediaStore.Images.Media.insertImage(inContext.getContentResolver(), inImage, "Title", null);
+        return Uri.parse(path);
+    }
+
+    public static  void shareImage(Context context, Bitmap bitmap,String text) {
+        //bitmap is ur image and text is which is written in edtitext
+        //you will get the image from the path
+        String pathofBmp =
+                MediaStore.Images.Media.insertImage(context.getContentResolver(),
+                        bitmap, "title", null);
+        Uri uri = Uri.parse(pathofBmp);
+        Intent shareIntent = new Intent(Intent.ACTION_SEND);
+        shareIntent.setType("image/*");
+        shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Star App");
+        shareIntent.putExtra(Intent.EXTRA_TEXT, text);
+        shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        context.startActivity(Intent.createChooser(shareIntent, context.getResources().getString(R.string.strShareResultSim)));
+
+    }
+
+    public static Bitmap getBitmapFromView(View view) {
+
+        //Define a bitmap with the same size as the view
+        Bitmap returnedBitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(),Bitmap.Config.ARGB_8888);
+//Bind a canvas to it
+        Canvas canvas = new Canvas(returnedBitmap);
+//Get the view's background
+        Drawable bgDrawable =view.getBackground();
+        if (bgDrawable!=null) {
+//has background drawable, then draw it on the canvas
+            bgDrawable.draw(canvas);
+        }   else{
+//does not have background drawable, then draw white background on the canvas
+            canvas.drawColor(Color.WHITE);
+        }
+// draw the view on the canvas
+        view.draw(canvas);
+//return the bitmap
+        return returnedBitmap;
     }
 }
