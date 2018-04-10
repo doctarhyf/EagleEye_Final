@@ -44,7 +44,7 @@ public class ActivityVotes extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_votes);
 
-        mp = MediaPlayer.create(this, R.raw.beep);
+        mp = MediaPlayer.create(this, R.raw.avote);
 
         fragCont = findViewById(R.id.fragContVotes);
 
@@ -52,7 +52,11 @@ public class ActivityVotes extends AppCompatActivity
         fragmentCardAnim = FragmentCardAnim.newInstance("a", "b");
         fragmentElections = FragmentElections.newInstance(Candidate.CAND_TYPE_PREZ);
 
-        getSupportFragmentManager().beginTransaction().add(R.id.fragContVotes, fragmentVoteSimWarning).commit();
+
+
+        //getSupportFragmentManager().beginTransaction().add(R.id.fragContVotes, fragmentVoteSimWarning).commit();
+
+        Utils.replaceFragmentWithAnimation(this, R.id.fragContVotes, fragmentVoteSimWarning,"CENI");
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
@@ -255,6 +259,8 @@ public class ActivityVotes extends AppCompatActivity
                 Intent intent = new Intent(this, ActivityPrintVoteResult.class);
                 startActivity(intent);
 
+                playSFX();
+
                 break;
         }
 
@@ -295,7 +301,7 @@ public class ActivityVotes extends AppCompatActivity
             if (mp.isPlaying()) {
                 mp.stop();
                 mp.release();
-                mp = MediaPlayer.create(this, R.raw.beep);
+                mp = MediaPlayer.create(this, R.raw.avote);
             } mp.start();
         } catch(Exception e) { e.printStackTrace(); }
 
@@ -304,5 +310,6 @@ public class ActivityVotes extends AppCompatActivity
     @Override
     public void onStartSimulationClicked() {
         getSupportFragmentManager().beginTransaction().replace(R.id.fragContVotes, fragmentCardAnim).commit();
+        //Utils.replaceFragmentWithAnimation(this, R.id.fragContVotes, fragmentCardAnim,"CENI");
     }
 }

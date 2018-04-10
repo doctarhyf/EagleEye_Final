@@ -22,7 +22,7 @@
 
     <ImageView
         android:paddingRight="8dp"
-        android:src="@android:drawable/ic_dialog_info"
+        android:src="@drawable/arrow_right"
         android:tint="@color/black"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

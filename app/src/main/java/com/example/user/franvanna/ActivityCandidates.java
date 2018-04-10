@@ -1,17 +1,25 @@
 package com.example.user.franvanna;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 
-public class ActivityCandidates extends AppCompatActivity {
+import com.example.user.franvanna.Adapters.AdapterListVotesTypes;
+import com.example.user.franvanna.Objects.VoteType;
+
+import java.util.ArrayList;
+
+public class ActivityCandidates extends AppCompatActivity implements AdapterListVotesTypes.Listener  {
 
 
-    private static final String TAG = "EE";
+    private static final String TAG = "CENI";
+    ListView lvVotesTypes;
+    AdapterListVotesTypes adapterListVotesTypes;
+    private ArrayList<VoteType> voteTypes = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +29,15 @@ public class ActivityCandidates extends AppCompatActivity {
         getSupportActionBar().setTitle(getResources().getString(R.string.title_activity_cands));
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        voteTypes.add(new VoteType(0, getResources().getString(R.string.txt_vote_choice_prez)));
+        voteTypes.add(new VoteType(1, getResources().getString(R.string.txt_vote_choice_leg_nat)));
+        voteTypes.add(new VoteType(2, getResources().getString(R.string.txt_vote_choice_leg_prov)));
+
+        lvVotesTypes = findViewById(R.id.lvVotesTypes);
+        adapterListVotesTypes = new AdapterListVotesTypes(this, voteTypes, this);
+
+        lvVotesTypes.setAdapter(adapterListVotesTypes);
     }
 
     public void onVoteTypeClicked(View view) {
@@ -57,4 +74,8 @@ public class ActivityCandidates extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onVoteTypeClicked(VoteType voteType) {
+
+    }
 }

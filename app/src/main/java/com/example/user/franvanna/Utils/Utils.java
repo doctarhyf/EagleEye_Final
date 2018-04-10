@@ -8,9 +8,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.preference.Preference;
 import android.provider.MediaStore;
-import android.support.v7.widget.RecyclerView;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -153,5 +153,13 @@ public class Utils {
         view.draw(canvas);
 //return the bitmap
         return returnedBitmap;
+    }
+
+    public static void replaceFragmentWithAnimation(AppCompatActivity activity,int idFragCont, android.support.v4.app.Fragment fragment, String tag){
+        FragmentTransaction transaction = activity.getSupportFragmentManager().beginTransaction();
+        transaction.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.exit_to_right, R.anim.exit_to_left);
+        transaction.replace(idFragCont, fragment);
+        transaction.addToBackStack(tag);
+        transaction.commit();
     }
 }
