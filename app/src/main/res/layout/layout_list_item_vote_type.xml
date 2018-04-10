@@ -7,9 +7,9 @@
 
     <TextView
         android:gravity="center|left"
-    android:clickable="true"
+
     android:textStyle="bold"
-    android:background="@drawable/color_state_row_menu"
+
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

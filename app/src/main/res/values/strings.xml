@@ -654,4 +654,6 @@ Directeur de Cabinet
     <string name="strWaterMark">Resultats simulation de vote. CENI 2018 (c). Tous droits reserves.</string>
     <string name="strVotesSimResultsShare">Voici les resultations de ma simulation de vote. Toi aussi tu peu peux telechrger l\'appli a cet address : %1$s.</string>
     <string name="strShareResultSim">Partager les resultats de la simulation</string>
+    <string name="menu_news">News</string>
+    <string name="sub_menu_news">Informations officielles CENI</string>
 </resources>
