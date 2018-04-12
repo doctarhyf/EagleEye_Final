@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,7 +24,6 @@ import com.example.user.franvanna.Data.CandidatesData;
 import com.example.user.franvanna.Objects.Candidate;
 import com.example.user.franvanna.Utils.Utils;
 
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +36,7 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
     RecyclerView.Adapter adapter;
     RecyclerView.LayoutManager layoutManager;
     private List<Candidate> candidates;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +53,11 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
         ImageView iv = findViewById(R.id.iv);*/
 
 
+
         candidates = getWinningCandidates();
 
         recyclerView = findViewById(R.id.rvVoteResults);
-        adapter = new AdapterVotesResults(this, candidates);
+        adapter = new AdapterVotesResults(this, this, candidates);
         layoutManager = new GridLayoutManager(this, 3);
         recyclerView.setLayoutManager(layoutManager);
 
@@ -110,6 +110,8 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
     private List<Candidate> getWinningCandidates() {
         List<Candidate> candidates = new ArrayList<>();
 
+        Candidate candidateBlanc = new Candidate();
+        candidateBlanc.setId(-1);
 
         Log.e(TAG, "VOTE_REZ PREZ : " + Utils.getCandFromPref(this, Utils.VOTE_KEY_CAND_PREZ) );
         Log.e(TAG, "VOTE_REZ NAT : " + Utils.getCandFromPref(this, Utils.VOTE_KEY_CAND_DEP_NAT) );
@@ -124,14 +126,16 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
             candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_PREZ, prez));
         }else{
             // TODO: 10/04/2018 PREZ VOTE BLANC
-            candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_PREZ, 0));
+            candidates.add(candidateBlanc);
+
         }
 
         if(depNat != -1) {
             candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_LEG_NAT, depNat));
         }else{
             // TODO: 10/04/2018 NAT VOTE BLANC
-            candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_PREZ, 0));
+            candidates.add(candidateBlanc);
+
 
         }
 
@@ -139,7 +143,9 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
             candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_LEG_PROV, depProv));
         }else{
             // TODO: 10/04/2018 PROV VOTE BLANC
-            candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_PREZ, 0));
+
+            candidates.add(candidateBlanc);
+
 
         }
 
@@ -147,6 +153,8 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
 
         return candidates;
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -163,8 +171,6 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
 
         return true;
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

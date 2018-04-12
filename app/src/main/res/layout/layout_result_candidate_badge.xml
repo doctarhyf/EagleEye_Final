@@ -43,6 +43,13 @@
 
         </LinearLayout>
 
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/llBadgeResultCand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
         <LinearLayout
             android:padding="@dimen/padding_badge"
             android:background="@drawable/border_dashed_black"
@@ -51,6 +58,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/resBadgeCandPic"
                 android:layout_gravity="center"
                 android:src="@drawable/cd3"
                 android:layout_weight="1"
@@ -65,6 +73,7 @@
 
                 <TextView
 
+                    android:id="@+id/resBadgeTvCandNum"
                     android:text="No 4"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -75,11 +84,13 @@
                     android:layout_height="wrap_content" />
 
                 <ImageView
+                    android:id="@+id/resBadgeIvPartiLogo"
                     android:src="@drawable/pt_kozi"
                     android:layout_width="match_parent"
                     android:layout_height="80dp" />
 
                 <TextView
+                    android:id="@+id/resBadgeTvPartiName"
                     android:textColor="@color/black"
                     android:padding="8dp"
                     android:gravity="center"
@@ -100,6 +111,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/resBadgeTvCandFullName"
                 android:textColor="@color/black"
                 android:text="FULL NAME"
                 android:textStyle="bold"
@@ -111,13 +123,14 @@
             <TextView
                 android:textColor="@color/black"
                 android:text="Other Text"
-
+                android:id="@+id/resBadgeTvCandPrenom"
                 android:padding="8dp"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
             <ImageView
+                android:id="@+id/resBadgeIvCandQRCode"
                 android:layout_gravity="center"
                 android:src="@mipmap/ic_launcher"
                 android:layout_width="60dp"
@@ -125,6 +138,25 @@
 
         </LinearLayout>
 
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llBadgeResultBlanc"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center"
+
+                android:src="@drawable/vote_blanc"
+                android:layout_width="match_parent"
+                android:layout_height="120dp" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
 

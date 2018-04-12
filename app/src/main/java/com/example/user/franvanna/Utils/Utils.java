@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
@@ -14,6 +15,7 @@ import android.provider.MediaStore;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -187,4 +189,20 @@ public class Utils {
 
 
     }
+
+    public static Point getScreenSize(AppCompatActivity activity){
+
+        Display display = activity.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        try {
+            display.getRealSize(size);
+        } catch (NoSuchMethodError err) {
+            display.getSize(size);
+        }
+        int width = size.x;
+        int height = size.y;
+
+        return size;
+    }
+
 }
