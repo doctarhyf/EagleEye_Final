@@ -22,7 +22,7 @@ public class ActivityIntroVid extends AppCompatActivity {
         getSupportActionBar().hide();
 
         videoIntro = findViewById(R.id.vidIntro);
-        uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.ceni);
+        uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.ceni_intro_vid);
         playVid();
 
         videoIntro.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {

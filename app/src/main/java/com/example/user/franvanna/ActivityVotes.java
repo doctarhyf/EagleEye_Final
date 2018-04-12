@@ -28,8 +28,6 @@ import com.example.user.franvanna.Fragments.FragmentVoteSimWarning;
 import com.example.user.franvanna.Objects.Candidate;
 import com.example.user.franvanna.Utils.Utils;
 
-import java.lang.annotation.Target;
-
 public class ActivityVotes extends AppCompatActivity
     implements FragmentCardAnim.FragListenerFragCardAnim,
         FragmentElectionsPane.OnFragmentInteractionListener,
@@ -54,7 +52,7 @@ public class ActivityVotes extends AppCompatActivity
 
         cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
 
-        mp = MediaPlayer.create(this, R.raw.avote);
+        mp = MediaPlayer.create(this, R.raw.avote_plam);
 
         fragCont = findViewById(R.id.fragContVotes);
 
@@ -311,7 +309,7 @@ public class ActivityVotes extends AppCompatActivity
             if (mp.isPlaying()) {
                 mp.stop();
                 mp.release();
-                mp = MediaPlayer.create(this, R.raw.avote);
+                mp = MediaPlayer.create(this, R.raw.avote_plam);
             } mp.start();
 
             final Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
