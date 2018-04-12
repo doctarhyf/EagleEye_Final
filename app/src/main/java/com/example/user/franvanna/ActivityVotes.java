@@ -1,10 +1,15 @@
 package com.example.user.franvanna;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.hardware.camera2.CameraManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.CountDownTimer;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -23,6 +28,8 @@ import com.example.user.franvanna.Fragments.FragmentVoteSimWarning;
 import com.example.user.franvanna.Objects.Candidate;
 import com.example.user.franvanna.Utils.Utils;
 
+import java.lang.annotation.Target;
+
 public class ActivityVotes extends AppCompatActivity
     implements FragmentCardAnim.FragListenerFragCardAnim,
         FragmentElectionsPane.OnFragmentInteractionListener,
@@ -38,11 +45,14 @@ public class ActivityVotes extends AppCompatActivity
     FragmentVoteSimWarning fragmentVoteSimWarning;
     private AlertDialog alertDialog = null;
     private MediaPlayer mp;
+    private CameraManager cameraManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_votes);
+
+        cameraManager = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
 
         mp = MediaPlayer.create(this, R.raw.avote);
 
@@ -259,7 +269,7 @@ public class ActivityVotes extends AppCompatActivity
                 Intent intent = new Intent(this, ActivityPrintVoteResult.class);
                 startActivity(intent);
 
-                playSFX();
+                playVoteFX();
 
                 break;
         }
@@ -290,12 +300,12 @@ public class ActivityVotes extends AppCompatActivity
             Intent intent = new Intent(this, ActivityPrintVoteResult.class);
             startActivity(intent);
 
-            playSFX();
+            playVoteFX();
 
         }
     }
 
-    private void playSFX() {
+    private void playVoteFX() {
 
         try {
             if (mp.isPlaying()) {
@@ -303,9 +313,48 @@ public class ActivityVotes extends AppCompatActivity
                 mp.release();
                 mp = MediaPlayer.create(this, R.raw.avote);
             } mp.start();
+
+            final Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+
+
+
+                new CountDownTimer(3000, 300){
+
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+
+                        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+
+                            vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
+
+
+
+                        }else {
+                            vibrator.vibrate(200);
+
+                        }
+
+                        Utils.toggleTorchMode(ActivityVotes.this, cameraManager, torchModeOn);
+
+                        torchModeOn = !torchModeOn;
+                    }
+
+                    @Override
+                    public void onFinish() {
+
+                        torchModeOn = false;
+                        Utils.toggleTorchMode(ActivityVotes.this, cameraManager,false);
+
+                    }
+                }.start();
+
+
+
         } catch(Exception e) { e.printStackTrace(); }
 
     }
+
+    private boolean torchModeOn = false;
 
     @Override
     public void onStartSimulationClicked() {

@@ -651,9 +651,12 @@ Directeur de Cabinet
     <string name="btnSimulerVote">SIMULER UN VOTE</string>
     <string name="strSuffrage">SUFFRAGE(S) EXPRIME(S)</string>
     <string name="strNeedWritePerms">Nous avons besoin de votre permission pour que vous soyez capables de partager les resultats de votre simulation.</string>
-    <string name="strWaterMark">Resultats simulation de vote. CENI 2018 (c). Tous droits reserves.</string>
+    <string name="strWaterMark">Resultats simulation de vote. CENI \u00a9 2018. Tous droits reserves.</string>
     <string name="strVotesSimResultsShare">Voici les resultations de ma simulation de vote. Toi aussi tu peu peux telechrger l\'appli a cet address : %1$s.</string>
     <string name="strShareResultSim">Partager les resultats de la simulation</string>
     <string name="menu_news">News</string>
-    <string name="sub_menu_news">Informations officielles CENI</string>
+    <string name="sub_menu_news">Informations officielles de la CENI</string>
+    <string name="sub_menu_contact_us">N\'h\u00e9sitez pas a nous contacter</string>
+    <string name="menu_contact_us">Contactez-nous</string>
+    <string name="strShareImage">PARTAGER MES RESULTATS</string>
 </resources>

@@ -189,6 +189,8 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
     public void shareResults(View view) {
 
         switch (view.getId()){
+
+            /*
             case R.id.btnShareResultsTwitter:
 
                 String tweetUrl = "https://twitter.com/intent/tweet?text=WRITE YOUR MESSAGE HERE &url="
@@ -196,7 +198,7 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
                 Uri uri = Uri.parse(tweetUrl);
                 startActivity(new Intent(Intent.ACTION_VIEW, uri));
 
-                break;
+                break;*/
 
             case R.id.btnShareResultsImage:
 

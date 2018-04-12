@@ -7,10 +7,13 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraManager;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -31,6 +34,7 @@ public class Utils {
     public static final String VOTE_KEY_CAND_DEP_PROV = "candDepProv";
     public static final int REQ_CODE = 1001;
     public static final String PLAYSTORE_URL = "http://jtminvestment.com/ceni_beta.apk";
+    private static final String TAG = "UTILS";
 
     public static String UCFirst(String string){
 
@@ -161,5 +165,26 @@ public class Utils {
         transaction.replace(idFragCont, fragment);
         transaction.addToBackStack(tag);
         transaction.commit();
+    }
+
+    public static void toggleTorchMode(Context context, CameraManager cameraManager, boolean torchModeOn) {
+
+
+
+
+
+
+            try {
+                String cameraId = cameraManager.getCameraIdList()[0];
+
+
+                    cameraManager.setTorchMode(cameraId,torchModeOn);
+
+            } catch (CameraAccessException e) {
+
+                Log.e(TAG, "toggleTorchMode: " );
+            }
+
+
     }
 }
