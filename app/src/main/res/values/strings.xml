@@ -659,4 +659,11 @@ Directeur de Cabinet
     <string name="sub_menu_contact_us">N\'h\u00e9sitez pas a nous contacter</string>
     <string name="menu_contact_us">Contactez-nous</string>
     <string name="strShareImage">PARTAGER MES RESULTATS</string>
+    <string name="strContactUs">CONTACTEZ la CENI</string>
+    <string name="strEmail">votre addresse email</string>
+    <string name="strName">votre nom</string>
+    <string name="strMessage">votre message</string>
+    <string name="strSend">Envoyer</string>
+    <string name="strBureauVote">Mon bureau de vote</string>
+    <string name="strMandatoryFields">Tous les champs sont obligatoires.</string>
 </resources>

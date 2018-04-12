@@ -38,9 +38,9 @@ public class AdapterMainMenu extends RecyclerView.Adapter<AdapterMainMenu.ViewHo
         public ViewHolder(View view) {
             super(view);
             layout = view;
-            ivMenuIco = (ImageView) layout.findViewById(R.id.ivMenuIco);
-            tvMenuTitle = (TextView) layout.findViewById(R.id.tvMainMenuTitle);
-            tvMenuSubtitle = (TextView) layout.findViewById(R.id.tvMainMenuSubtitle);
+            ivMenuIco =  layout.findViewById(R.id.ivMenuIco);
+            tvMenuTitle =  layout.findViewById(R.id.tvMainMenuTitle);
+            tvMenuSubtitle = layout.findViewById(R.id.tvMainMenuSubtitle);
         }
     }
 
@@ -84,7 +84,7 @@ public class AdapterMainMenu extends RecyclerView.Adapter<AdapterMainMenu.ViewHo
             @Override
             public void onClick(View view) {
 
-                callbacksAdapterMenuItems.onItemClicked(menuItem);
+                callbacksAdapterMenuItems.onMenuItemClicked(menuItem);
 
             }
         });
@@ -96,7 +96,7 @@ public class AdapterMainMenu extends RecyclerView.Adapter<AdapterMainMenu.ViewHo
     }
 
     public interface CallbacksAdapterMenuItems {
-        void onItemClicked(MenuItem menuItem);
+        void onMenuItemClicked(MenuItem menuItem);
 
     }
 

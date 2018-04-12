@@ -2,9 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.user.franvanna">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -45,7 +45,8 @@
         <activity android:name=".ActivityVotes" />
         <activity android:name=".ActivityFAQ" />
         <activity android:name=".ActivityFAQQA" />
-        <activity android:name=".ActivityPrintVoteResult"></activity>
+        <activity android:name=".ActivityPrintVoteResult" />
+        <activity android:name=".ActivityContactUs"></activity>
     </application>
 
 </manifest>

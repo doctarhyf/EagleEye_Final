@@ -20,7 +20,7 @@ public class ActivityBureauVote extends AppCompatActivity {
 
         etNumeroElec = findViewById(R.id.etNumeroElec);
 
-        getSupportActionBar().setTitle("Mon bureau de vote");
+        getSupportActionBar().setTitle(getResources().getString(R.string.strBureauVote));
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

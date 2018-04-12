@@ -59,7 +59,6 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
 
     }
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
@@ -99,41 +98,57 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
     }
 
     @Override
-    public void onItemClicked(MenuItem menuItem) {
+    public void onMenuItemClicked(MenuItem menuItem) {
 
         Intent intent = null;
 
-        Log.e(TAG, "onItemClicked: " );
+        Log.e(TAG, "onMenuItemClicked: " );
 
         int id = menuItem.getId();
         switch (id){
 
-            case R.id.mainMenuCands:
+            case MainMenuItemsData.MAIN_MENU_CANDS:
                 intent = new Intent(this, ActivityCandidates.class);
                 break;
 
-            case R.id.mainMenuVoteSimulation:
+            case MainMenuItemsData.MAIN_MENU_VOTE_SIMULATION:
                 intent = new Intent(this, ActivityVoteSimulation.class);
                 break;
 
 
 
-            case R.id.mainMenuListElec:
+            case MainMenuItemsData.MAIN_MENU_LIST_ELEC:
                 intent = new Intent(this, ActivityListElectorral.class);
                 break;
 
-            case R.id.mainMenuResults:
+            case MainMenuItemsData.MAIN_MENU_OFFICIAL_RESULTS:
                 intent = new Intent(this, ActivityOfficialResults.class);
                 break;
 
-            case R.id.mainMenuBuroVote:
+            case MainMenuItemsData.MAIN_MENU_BUREAU_VOTE:
                 intent = new Intent(this, ActivityBureauVote.class);
                 break;
 
-            case R.id.mainMenuFaq:
+            case MainMenuItemsData.MAIN_MENU_FAQ:
                 intent = new Intent(this, ActivityFAQ.class);
-                Log.e(TAG, "onItemClicked: FAQ " );
+
                 break;
+
+            case MainMenuItemsData.MAIN_MENU_CONTACT_US:
+                intent = new Intent(this, ActivityContactUs.class);
+
+                break;
+
+            case MainMenuItemsData.MAIN_MENU_NEWS:
+                intent = new Intent(this, ActivityNews.class);
+
+                break;
+
+
+
+
+
+
 
 
         }
