@@ -6,7 +6,9 @@
         <item name="colorPrimary">@color/cdBlue</item>
         <item name="colorPrimaryDark">@color/cdBlueDark</item>
         <item name="colorAccent">@color/cdRed</item>
-        <item name="editTextColor">@color/cdRed</item>
+        <item name="editTextColor">@color/cdYellow</item>
+
+
     </style>
 
     <style name="AppTheme.NoActionBar">

@@ -24,6 +24,7 @@ import com.example.user.franvanna.R;
 import java.io.ByteArrayOutputStream;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Random;
 
 public class Utils {
@@ -38,12 +39,48 @@ public class Utils {
     public static final String PLAYSTORE_URL = "http://jtminvestment.com/ceni_beta.apk";
     private static final String TAG = "UTILS";
 
+
     public static String UCFirst(String string){
 
 
         return string.substring(0,1).toUpperCase()+string.substring(1);
 
     }
+
+    public static String getDateDifference(Date startDate, Date endDate){
+
+        //milliseconds
+        long different = endDate.getTime() - startDate.getTime();
+
+        System.out.println("startDate : " + startDate);
+        System.out.println("endDate : "+ endDate);
+        System.out.println("different : " + different);
+
+        long secondsInMilli = 1000;
+        long minutesInMilli = secondsInMilli * 60;
+        long hoursInMilli = minutesInMilli * 60;
+        long daysInMilli = hoursInMilli * 24;
+
+        long elapsedDays = different / daysInMilli;
+        different = different % daysInMilli;
+
+        long elapsedHours = different / hoursInMilli;
+        different = different % hoursInMilli;
+
+        long elapsedMinutes = different / minutesInMilli;
+        different = different % minutesInMilli;
+
+        long elapsedSeconds = different / secondsInMilli;
+
+        System.out.printf(
+                "%d days, %d hours, %d minutes, %d seconds%n",
+                elapsedDays,
+                elapsedHours, elapsedMinutes, elapsedSeconds);
+
+        return elapsedDays + " J, " + elapsedHours + " H, " + elapsedMinutes + " M, " + elapsedSeconds + " S.";
+
+    }
+
 
     // TODO: 07/04/2018 Utils.getResIdByName("pt_kozi", R.drawable.class);
 

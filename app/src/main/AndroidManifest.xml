@@ -22,7 +22,10 @@
             android:label="@string/title_activity_about"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ActivityCandidates" />
-        <activity android:name=".ActivityVoteSimulation" />
+        <activity android:name=".ActivityVoteSimulation"
+            android:parentActivityName=".ActivityMainMenu"
+
+            />
         <activity
             android:name=".ActivityLoisElec"
             android:label="@string/title_activity_lois_elec"
@@ -42,11 +45,17 @@
         <activity android:name=".ActivityBureauVote" />
         <activity android:name=".ActivityNews" />
         <activity android:name=".ActivityMainMenu" />
-        <activity android:name=".ActivityVotes" />
+        <activity android:name=".ActivityVotes"
+            android:parentActivityName=".ActivityVoteSimulation"
+            />
         <activity android:name=".ActivityFAQ" />
         <activity android:name=".ActivityFAQQA" />
-        <activity android:name=".ActivityPrintVoteResult" />
-        <activity android:name=".ActivityContactUs"></activity>
+        <activity android:name=".ActivityPrintVoteResult"
+            android:parentActivityName=".ActivityVotes"
+            />
+        <activity android:name=".ActivityContactUs"
+            android:parentActivityName=".ActivityMainMenu"
+            />
     </application>
 
 </manifest>

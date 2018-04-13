@@ -666,4 +666,5 @@ Directeur de Cabinet
     <string name="strSend">Envoyer</string>
     <string name="strBureauVote">Mon bureau de vote</string>
     <string name="strMandatoryFields">Tous les champs sont obligatoires.</string>
+    <string name="strCountDownd">%1$d J %2$d H %1$d M %1$d S</string>
 </resources>
