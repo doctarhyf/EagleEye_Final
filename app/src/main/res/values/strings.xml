@@ -641,7 +641,7 @@ Directeur de Cabinet
     <string name="sub_menu_faq">Questions frequentes sur les elections</string>
     <string name="btnTxtSkip">SAUTER</string>
     <string name="strActionPlayIntroVid">Play</string>
-    <string name="strActionAbout">Apropos</string>
+    <string name="strActionAbout">\u00c0propos</string>
     <string name="titleVoteSimulation">Simuler un vote</string>
     <string name="strActionRestartVote">Refaire</string>
     <string name="strActionSimulationHome">Simuler un vote</string>
@@ -667,4 +667,7 @@ Directeur de Cabinet
     <string name="strBureauVote">Mon bureau de vote</string>
     <string name="strMandatoryFields">Tous les champs sont obligatoires.</string>
     <string name="strCountDownd">%1$d J %2$d H %1$d M %1$d S</string>
+    <string name="strActionLoisElec">Lois electorale</string>
+    <string name="strNoConn">Connexion impossible</string>
+    <string name="strNoConnMsg">Merci de vous assurer que vous \u00eates bien connect\u00e9s \u00e0 internet.</string>
 </resources>

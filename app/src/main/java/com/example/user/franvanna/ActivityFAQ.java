@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.user.franvanna.Adapters.AdapterFAQQuestion;
@@ -34,13 +36,20 @@ public class ActivityFAQ extends AppCompatActivity implements AdapterFAQQuestion
 
         lvFAQQuestions = findViewById(R.id.lvFAQQuestions);
 
-        ArrayList<FAQQuestion> questions = getFAQData();
+        final ArrayList<FAQQuestion> questions = getFAQData();
 
 
 
         adapterFAQQuestion = new AdapterFAQQuestion(this, questions, this);
 
         lvFAQQuestions.setAdapter(adapterFAQQuestion);//new ArrayAdapter<>(this,R.layout.layout_faq_question, R.id.tvListFAQQuestions,questions));
+
+        lvFAQQuestions.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                onQuestionClicked(questions.get(position));
+            }
+        });
 
     }
 

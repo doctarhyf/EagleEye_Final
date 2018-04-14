@@ -5,6 +5,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
 
     <application
         android:allowBackup="true"
@@ -21,7 +24,9 @@
             android:name=".ActivityAbout"
             android:label="@string/title_activity_about"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ActivityCandidates" />
+        <activity android:name=".ActivityCandidates"
+            android:parentActivityName=".ActivityMainMenu"
+            />
         <activity android:name=".ActivityVoteSimulation"
             android:parentActivityName=".ActivityMainMenu"
 

@@ -36,13 +36,14 @@ public class AdapterFAQQuestion extends ArrayAdapter<FAQQuestion> {
         TextView tvQuestion = (TextView) convertView.findViewById(R.id.tvListFAQQuestions);
         tvQuestion.setText(question.getQuestion());
 
+        /*
         tvQuestion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.e("CENI", "onClick: Question : " + question.getQuestion() );
                 listener.onQuestionClicked(question);
             }
-        });
+        });*/
 
         return convertView;
     }

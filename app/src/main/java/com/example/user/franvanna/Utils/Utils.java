@@ -10,9 +10,12 @@ import android.graphics.Point;
 import android.graphics.drawable.Drawable;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Display;
@@ -39,6 +42,15 @@ public class Utils {
     public static final String PLAYSTORE_URL = "http://jtminvestment.com/ceni_beta.apk";
     private static final String TAG = "UTILS";
 
+    public static  boolean isOnline(Context context){
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = cm.getActiveNetworkInfo();
+        if(networkInfo != null && networkInfo.isConnectedOrConnecting()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     public static String UCFirst(String string){
 
@@ -242,4 +254,13 @@ public class Utils {
         return size;
     }
 
+    public static AlertDialog getNoConnDialog(Context context) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle(context.getResources().getString(R.string.strNoConn))
+                .setMessage(context.getResources().getString(R.string.strNoConnMsg))
+                .setNegativeButton("OK", null);
+
+        return builder.create();
+    }
 }

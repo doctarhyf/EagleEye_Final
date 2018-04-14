@@ -9,15 +9,11 @@
     tools:context="com.example.user.franvanna.ActivityVoteSimulation">
 
 
-
-
-
-
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="0dp"
+        android:layout_height="match_parent"
         android:layout_weight="6"
-        android:layout_height="wrap_content">
+        android:orientation="vertical">
 
 
         <TextView
@@ -25,24 +21,26 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:gravity="center"
             android:ems="10"
+            android:textStyle="bold"
+
+            android:gravity="center"
             android:padding="10dp"
             android:text="200 j 8 h 80 m"
+            android:textColor="@color/cdRed"
+            android:background="@color/cdYellow"
+            android:textSize="20sp"
 
-             />
+            />
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_weight="4"
             android:layout_height="0dp"
             android:layout_marginBottom="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/ceni"
-            />
+            android:layout_weight="4"
+            android:src="@drawable/ceni" />
 
     </LinearLayout>
 

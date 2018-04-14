@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.user.franvanna.Adapters.AdapterListVotesTypes;
@@ -38,6 +39,13 @@ public class ActivityCandidates extends AppCompatActivity implements AdapterList
         adapterListVotesTypes = new AdapterListVotesTypes(this, voteTypes, this);
 
         lvVotesTypes.setAdapter(adapterListVotesTypes);
+
+        lvVotesTypes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.e(TAG, "onItemClick: " );
+            }
+        });
     }
 
     public void onVoteTypeClicked(View view) {
@@ -45,12 +53,7 @@ public class ActivityCandidates extends AppCompatActivity implements AdapterList
         Log.e(TAG, "onVoteTypeClicked: " + view.getId() );
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent intent = new Intent(this,  MainActivity.class);
-        startActivity(intent);
-    }
+
 
 
     @Override

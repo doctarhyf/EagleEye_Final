@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.user.franvanna.Adapters.AdapterListVotesTypes;
@@ -37,6 +39,13 @@ public class ActivityListElectorral extends AppCompatActivity implements Adapter
         adapterListVotesTypes = new AdapterListVotesTypes(this, voteTypes, this);
 
         lvVotesTypes.setAdapter(adapterListVotesTypes);
+
+        lvVotesTypes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Log.e(TAG, "onItemClick: ");
+            }
+        });
     }
 
 
