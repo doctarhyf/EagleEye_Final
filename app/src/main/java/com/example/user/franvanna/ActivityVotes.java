@@ -109,6 +109,21 @@ public class ActivityVotes extends AppCompatActivity
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Log.e(TAG, "onBackPressed: " );
+
+        if(alertDialog != null){
+            //alertDialog.hide();
+
+            Log.e(TAG, "NOTNULLL" );
+        }else{
+            Log.e(TAG, "NULLLA" );
+        }
+    }
+
+    @Override
     protected void onRestart() {
         super.onRestart();
         Log.e(TAG, "REZA" );
