@@ -8,167 +8,64 @@
     tools:context="com.example.user.franvanna.ActivityCandidates">
 
 
-
-    <ListView
-        android:id="@+id/lvVotesTypes"
+    <TextView
+        style="@style/styleFormHeader"
+        android:background="@color/lightGrayA"
+        android:textColor="@color/black"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:text="@string/strFormHeaderListElec" />
 
+    <EditText
+        android:id="@+id/etListElecFamilyName"
+        android:hint="@string/strHintFamilyName"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
-    <!--
+    <EditText
+        android:id="@+id/etListElecPrenom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
 
-        <android.support.constraint.ConstraintLayout
-            android:background="@drawable/color_state_row_menu"
-            android:clickable="true"
+        android:hint="@string/strHintPrenom" />
 
-            android:onClick="onVoteTypeClicked"
-            android:id="@+id/vote_type_prez"
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-            <TextView
-                android:padding="20dp"
-                android:textColor="@color/colorPrimary"
-                android:textAllCaps="true"
-                android:text="@string/txt_vote_choice_prez"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+    <EditText
+        android:hint="@string/strHintDOB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:inputType="date"
+         />
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ra"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_goneMarginTop="20dp" />
+    <EditText
+        android:id="@+id/etListElecPOB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/strHintPOB"
+        android:padding="16dp"
+         />
 
-        </android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/etListElecMotherPrenom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/strHintMotherPrenom"
+        android:padding="16dp"
+        />
 
-        <android.support.constraint.ConstraintLayout
-            android:background="@drawable/color_state_row_menu"
-            android:clickable="true"
-            android:id="@+id/vot_type_legs"
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-            <TextView
-                android:padding="20dp"
-                android:textColor="@color/colorPrimary"
-                android:textAllCaps="true"
-                android:text="@string/txt_vote_choice_legs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ra"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_goneMarginTop="20dp" />
-
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:clickable="true"
-            android:background="@drawable/color_state_row_menu"
-            android:id="@+id/vote_type_prov"
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:padding="20dp"
-                android:textColor="@color/colorPrimary"
-                android:textAllCaps="true"
-                android:text="@string/txt_vote_choice_prov"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ra"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_goneMarginTop="20dp" />
-
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:clickable="true"
-            android:background="@drawable/color_state_row_menu"
-            android:id="@+id/vot_type_urb"
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:padding="20dp"
-                android:textColor="@color/colorPrimary"
-                android:textAllCaps="true"
-                android:text="@string/txt_vote_choice_urbs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ra"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_goneMarginTop="20dp" />
-
-        </android.support.constraint.ConstraintLayout>
-
-        <android.support.constraint.ConstraintLayout
-            android:clickable="true"
-            android:background="@drawable/color_state_row_menu"
-            android:id="@+id/vote_type_local"
-            android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:padding="20dp"
-                android:textColor="@color/colorPrimary"
-                android:textAllCaps="true"
-                android:text="@string/txt_vote_choice_loc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ra"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_goneMarginTop="20dp" />
-
-        </android.support.constraint.ConstraintLayout>
-
-    -->
+    <Button
+        android:id="@+id/btnCheckListElec"
+        android:onClick="onCheckListElec"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:padding="16dp"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:background="@drawable/color_state_btn_green"
+        android:text="@string/btnCheckListElec" />
 
 
 </LinearLayout>

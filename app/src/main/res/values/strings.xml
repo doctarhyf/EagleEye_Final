@@ -672,4 +672,11 @@ Directeur de Cabinet
     <string name="strNoConnMsg">Merci de vous assurer que vous \u00eates bien connect\u00e9s \u00e0 internet.</string>
     <string name="strBtnConfirmer">CONFIRMER</string>
     <string name="strBtnAnnuler">ANNULER</string>
+    <string name="strFormHeaderListElec">Merci de saisir, ci-dessous, les informations requises.</string>
+    <string name="strHintFamilyName">votre nom de famille</string>
+    <string name="strHintPrenom">votre prenom</string>
+    <string name="strHintDOB">votre date de naissance (dd/mm/yyyy)</string>
+    <string name="strHintPOB">votre lieu de naissance</string>
+    <string name="strHintMotherPrenom">prenom de votre mere</string>
+    <string name="btnCheckListElec">Suis-je inscrit a la liste electorale ?</string>
 </resources>

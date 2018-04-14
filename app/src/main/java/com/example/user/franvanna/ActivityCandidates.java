@@ -81,4 +81,6 @@ public class ActivityCandidates extends AppCompatActivity implements AdapterList
     public void onVoteTypeClicked(VoteType voteType) {
 
     }
+
+
 }

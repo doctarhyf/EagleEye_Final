@@ -10,17 +10,12 @@
     <TextView
 
         android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/cdRed"
-        android:gravity="center"
-        android:padding="16dp"
         android:text="@string/strMandatoryFields"
-        android:textColor="@color/white"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/styleFormHeader" />
 
     <EditText
         android:id="@+id/etCUEmail"

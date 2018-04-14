@@ -1,6 +1,7 @@
 package com.example.user.franvanna;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,68 +12,63 @@ import android.widget.ListView;
 
 import com.example.user.franvanna.Adapters.AdapterListVotesTypes;
 import com.example.user.franvanna.Objects.VoteType;
+import com.example.user.franvanna.Utils.Utils;
 
 import java.util.ArrayList;
 
-public class ActivityListElectorral extends AppCompatActivity implements AdapterListVotesTypes.Listener {
+public class ActivityListElectorral extends AppCompatActivity  {
 
     private static final String TAG = "CENI";
-    private ArrayList<VoteType> voteTypes = new ArrayList<>();
-    private ListView lvVotesTypes;
-    private AdapterListVotesTypes adapterListVotesTypes;
+    private AlertDialog alertDialog = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_electorral);
 
+        alertDialog = Utils.getNoConnDialog(this);
+
         getSupportActionBar().setTitle("Liste electorale");
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        voteTypes.add(new VoteType(0, getResources().getString(R.string.txt_vote_choice_prez)));
-        voteTypes.add(new VoteType(1, getResources().getString(R.string.txt_vote_choice_leg_nat)));
-        voteTypes.add(new VoteType(2, getResources().getString(R.string.txt_vote_choice_leg_prov)));
+        if (!Utils.isOnline(this)){
 
 
-        lvVotesTypes = findViewById(R.id.lvVotesTypes);
-        adapterListVotesTypes = new AdapterListVotesTypes(this, voteTypes, this);
-
-        lvVotesTypes.setAdapter(adapterListVotesTypes);
-
-        lvVotesTypes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.e(TAG, "onItemClick: ");
+            if(alertDialog != null) {
+                alertDialog.show();
             }
-        });
+
+        }
+
     }
 
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        Intent intent;
 
         if(item.getItemId() == android.R.id.home){
             finish();
         }
 
 
-        /*
-
-        if(item.getItemId() == R.id.setRowAccSettings){
-            intent = new Intent(this, ActivityAccountSettings.class);
-            startActivity(intent);
-        }*/
 
 
         return super.onOptionsItemSelected(item);
     }
 
+    public void onCheckListElec(View view) {
 
-    @Override
-    public void onVoteTypeClicked(VoteType voteType) {
-        Log.e(TAG, "onVoteTypeClicked: " );
+        Log.e(TAG, "onCheckListElec: " );
+
+        if (!Utils.isOnline(this)){
+
+
+            if(alertDialog != null) {
+                alertDialog.show();
+            }
+
+        }
     }
 }
