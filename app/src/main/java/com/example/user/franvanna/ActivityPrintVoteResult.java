@@ -126,6 +126,7 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
             candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_PREZ, prez));
         }else{
             // TODO: 10/04/2018 PREZ VOTE BLANC
+            candidateBlanc.setCandType(Candidate.CAND_TYPE_PREZ);
             candidates.add(candidateBlanc);
 
         }
@@ -134,6 +135,7 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
             candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_LEG_NAT, depNat));
         }else{
             // TODO: 10/04/2018 NAT VOTE BLANC
+            candidateBlanc.setCandType(Candidate.CAND_TYPE_LEG_NAT);
             candidates.add(candidateBlanc);
 
 
@@ -143,7 +145,7 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
             candidates.add(CandidatesData.getWinningCandidate(this, Candidate.CAND_TYPE_LEG_PROV, depProv));
         }else{
             // TODO: 10/04/2018 PROV VOTE BLANC
-
+            candidateBlanc.setCandType(Candidate.CAND_TYPE_LEG_PROV);
             candidates.add(candidateBlanc);
 
 

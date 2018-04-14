@@ -38,7 +38,7 @@ public class AdapterVotesResults extends RecyclerView.Adapter<AdapterVotesResult
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView ivCandPic, ivPartiLogo;
-        TextView tvCandNum, tvPartiName, tvFullName, tvPrenom;
+        TextView tvCandNum, tvPartiName, tvFullName, tvPrenom, tvVotesResCandType;
         View layout;
         LinearLayout  llBadgeResultCand, llBadgeResultBlanc;
 
@@ -54,6 +54,7 @@ public class AdapterVotesResults extends RecyclerView.Adapter<AdapterVotesResult
             tvPrenom = (TextView) layout.findViewById(R.id.resBadgeTvCandPrenom);
             llBadgeResultCand = layout.findViewById(R.id.llBadgeResultCand);
             llBadgeResultBlanc = layout.findViewById(R.id.llBadgeResultBlanc);
+            tvVotesResCandType = layout.findViewById(R.id.tvVoteResultsCandType);
 
         }
     }
@@ -92,6 +93,21 @@ public class AdapterVotesResults extends RecyclerView.Adapter<AdapterVotesResult
 
 
         final Candidate candidate = candidates.get(position);
+
+        switch (candidate.getCandType()){
+            case Candidate.CAND_TYPE_PREZ:
+                holder.tvVotesResCandType.setText(context.getResources().getString(R.string.txt_vote_choice_prez));
+                break;
+
+            case Candidate.CAND_TYPE_LEG_NAT:
+                holder.tvVotesResCandType.setText(context.getResources().getString(R.string.txt_vote_choice_leg_nat));
+                break;
+
+            case Candidate.CAND_TYPE_LEG_PROV:
+                holder.tvVotesResCandType.setText(context.getResources().getString(R.string.txt_vote_choice_leg_prov));
+                break;
+        }
+
 
         if(candidate.getId() == -1){
             holder.llBadgeResultBlanc.setVisibility(View.VISIBLE);

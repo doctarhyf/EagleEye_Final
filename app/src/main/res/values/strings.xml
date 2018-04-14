@@ -670,4 +670,6 @@ Directeur de Cabinet
     <string name="strActionLoisElec">Lois electorale</string>
     <string name="strNoConn">Connexion impossible</string>
     <string name="strNoConnMsg">Merci de vous assurer que vous \u00eates bien connect\u00e9s \u00e0 internet.</string>
+    <string name="strBtnConfirmer">CONFIRMER</string>
+    <string name="strBtnAnnuler">ANNULER</string>
 </resources>

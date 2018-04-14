@@ -112,16 +112,15 @@
         android:layout_height="wrap_content">
 
         <Button
+            style="@style/btn_dialog_cand_badge_green"
+            android:text="@string/strBtnConfirmer"
             android:id="@+id/btnCandBadgeConfirm"
-            android:text="CONFIRMER"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+             />
 
         <Button
             android:id="@+id/btnCandBadgeCanc"
-            android:text="ANNULER"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:text="@string/strBtnAnnuler"
+            style="@style/btn_dialog_cand_badge_red" />
 
     </LinearLayout>
 

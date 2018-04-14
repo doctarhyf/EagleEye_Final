@@ -91,7 +91,14 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
         }
 
         if(item.getItemId() == R.id.actionAbout){
-            Toast.makeText(this, "CENI 2018 All rights reserved", Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "CENI 2018 All rights reserved", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, ActivityAbout.class);
+            startActivity(intent);
+        }
+
+        if(item.getItemId() == R.id.actionLoisElec){
+            Intent intent = new Intent(this, ActivityLoisElec.class);
+            startActivity(intent);
         }
 
         return true;

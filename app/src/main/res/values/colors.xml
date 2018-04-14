@@ -11,4 +11,7 @@
     <color name="grayMenu">#5fdbdbdb</color>
     <color name="black">#000</color>
     <color name="colorPrimary">#00f</color>
+    <color name="cdGreen">#30874e</color>
+    <color name="cdGreenDark">#104121</color>
+    <color name="cdRedDark">#700613</color>
 </resources>
