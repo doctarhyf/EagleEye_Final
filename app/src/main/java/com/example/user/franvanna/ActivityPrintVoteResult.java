@@ -158,13 +158,13 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
 
 
 
-    @Override
+    /*@Override
     public void onBackPressed() {
 
         Intent intent = new Intent(this, ActivityVotes.class);
         startActivity(intent);
 
-    }
+    }*/
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -181,14 +181,13 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
             finish();
         }
 
-        if(item.getItemId() == R.id.actionMainMenu){
+        /*if(item.getItemId() == R.id.actionMainMenu){
             Intent intent = new Intent(this, ActivityMainMenu.class);
             startActivity(intent);
-        }
+        }*/
 
         if(item.getItemId() == R.id.actionRestartVote){
-            Intent intent = new Intent(this, ActivityVotes.class);
-            startActivity(intent);
+            onBackPressed();
         }
 
         return super.onOptionsItemSelected(item);

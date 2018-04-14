@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <item
+    <!--<item
         android:id="@+id/actionMainMenu"
         android:orderInCategory="100"
         android:title="@string/strActionMainMenu"
         android:icon="@android:drawable/ic_menu_help"
-        app:showAsAction="always" />
+        app:showAsAction="always" />-->
 
     <item
         android:id="@+id/actionRestartVote"

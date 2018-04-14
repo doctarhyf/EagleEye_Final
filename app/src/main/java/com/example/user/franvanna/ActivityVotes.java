@@ -62,9 +62,9 @@ public class ActivityVotes extends AppCompatActivity
 
 
 
-        //getSupportFragmentManager().beginTransaction().add(R.id.fragContVotes, fragmentVoteSimWarning).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragContVotes, fragmentVoteSimWarning).commit();
 
-        Utils.replaceFragmentWithAnimation(this, R.id.fragContVotes, fragmentVoteSimWarning,"CENI");
+        //Utils.replaceFragmentWithAnimation(this, R.id.fragContVotes, fragmentVoteSimWarning,"CENI");
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 
@@ -102,6 +102,16 @@ public class ActivityVotes extends AppCompatActivity
         Log.e(TAG, "ONRIZZZ" );
         //getSupportFragmentManager().beginTransaction().remove( fragmentCardAnim).commit();
         //getSupportFragmentManager().beginTransaction().add(R.id.fragContVotes, fragmentCardAnim).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragContVotes, fragmentVoteSimWarning).commit();
+        Utils.clearCandidatesData(this);
+        fragmentElections = FragmentElections.newInstance(Candidate.CAND_TYPE_PREZ);
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.e(TAG, "REZA" );
     }
 
     @Override
@@ -267,7 +277,7 @@ public class ActivityVotes extends AppCompatActivity
                 Intent intent = new Intent(this, ActivityPrintVoteResult.class);
                 startActivity(intent);
 
-                playVoteFX();
+                playVoteFXAndShowVotesResults();
 
                 break;
         }
@@ -297,13 +307,17 @@ public class ActivityVotes extends AppCompatActivity
             Utils.saveCandToPref(this, Utils.VOTE_KEY_CAND_DEP_PROV, candidate.getId());
             Intent intent = new Intent(this, ActivityPrintVoteResult.class);
             startActivity(intent);
+            //getSupportFragmentManager().beginTransaction().replace(R.id.fragContVotes, fragmentVoteSimWarning).commit();
 
-            playVoteFX();
+            playVoteFXAndShowVotesResults();
+
 
         }
     }
 
-    private void playVoteFX() {
+
+
+    private void playVoteFXAndShowVotesResults() {
 
         try {
             if (mp.isPlaying()) {
@@ -311,6 +325,8 @@ public class ActivityVotes extends AppCompatActivity
                 mp.release();
                 mp = MediaPlayer.create(this, R.raw.avote_plam);
             } mp.start();
+
+
 
             final Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
 

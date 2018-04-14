@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ import java.util.GregorianCalendar;
 public class ActivityVoteSimulation extends AppCompatActivity {
 
 
+    private static final String TAG = "CENI";
     TextView tvCoundDown;
     GregorianCalendar dueDate;
     Date curDate = new Date();
@@ -61,11 +63,12 @@ public class ActivityVoteSimulation extends AppCompatActivity {
     }
 
 
-    @Override
+   /* @Override
     public void onBackPressed() {
 
-        finish();
-    }
+        //finish();
+        Log.e(TAG, "onBackPressed: FUCK "  );
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

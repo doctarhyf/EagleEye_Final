@@ -96,7 +96,7 @@ public class AdapterVotesResults extends RecyclerView.Adapter<AdapterVotesResult
 
         switch (candidate.getCandType()){
             case Candidate.CAND_TYPE_PREZ:
-                holder.tvVotesResCandType.setText(context.getResources().getString(R.string.txt_vote_choice_prez));
+                holder.tvVotesResCandType.setText("ELECTIONS " + context.getResources().getString(R.string.txt_vote_choice_prez));
                 break;
 
             case Candidate.CAND_TYPE_LEG_NAT:

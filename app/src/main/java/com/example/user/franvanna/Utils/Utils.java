@@ -161,6 +161,7 @@ public class Utils {
         SharedPreferences.Editor editor = preference.edit();
 
         editor.clear();
+        //editor.apply();
 
         return  preference.getAll().size() == 0;
     }
