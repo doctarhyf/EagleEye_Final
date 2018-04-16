@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -84,6 +85,7 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
 
             if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                 Log.e(TAG, "onRequestPermissionsResult: PERMS GRANT" );
+                shareVotesResults();
             }else{
                 Toast.makeText(this, getResources().getString(R.string.strNeedWritePerms), Toast.LENGTH_SHORT).show();
             }
@@ -209,26 +211,34 @@ public class ActivityPrintVoteResult extends AppCompatActivity {
 
             case R.id.btnShareResultsImage:
 
-                if(checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
-                    String[] perms = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                    requestPermissions(perms, Utils.REQ_CODE);
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                        String[] perms = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                        requestPermissions(perms, Utils.REQ_CODE);
 
-                    Toast.makeText(this, getResources().getString(R.string.strNeedWritePerms), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, getResources().getString(R.string.strNeedWritePerms), Toast.LENGTH_SHORT).show();
 
-                }else {
+                    } else {
 
-                    LinearLayout linearLayout = findViewById(R.id.llResultsTicket);
-
-                    Bitmap bitmap = Utils.getBitmapFromView(linearLayout);
-
-                    String msg = String.format(getResources().getString(R.string.strVotesSimResultsShare), Utils.PLAYSTORE_URL);
-
-
-                    Utils.shareImage(this, bitmap, msg);
+                        shareVotesResults();
+                    }
+                }else{
+                    shareVotesResults();
                 }
 
                 break;
         }
+    }
+
+    private void shareVotesResults() {
+        LinearLayout linearLayout = findViewById(R.id.llResultsTicket);
+
+        Bitmap bitmap = Utils.getBitmapFromView(linearLayout);
+
+        String msg = String.format(getResources().getString(R.string.strVotesSimResultsShare), Utils.PLAYSTORE_URL);
+
+
+        Utils.shareImage(this, bitmap, msg);
     }
 
 

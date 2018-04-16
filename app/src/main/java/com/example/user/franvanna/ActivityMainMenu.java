@@ -3,6 +3,7 @@ package com.example.user.franvanna;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -50,11 +51,13 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
 
 
 
-        if(checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
-            String[] perms = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
-            requestPermissions(perms, Utils.REQ_CODE);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                String[] perms = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                requestPermissions(perms, Utils.REQ_CODE);
 
 
+            }
         }
 
     }

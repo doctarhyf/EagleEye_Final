@@ -13,6 +13,7 @@ import android.hardware.camera2.CameraManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.MediaStore;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
@@ -222,20 +223,18 @@ public class Utils {
     public static void toggleTorchMode(Context context, CameraManager cameraManager, boolean torchModeOn) {
 
 
-
-
-
-
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             try {
                 String cameraId = cameraManager.getCameraIdList()[0];
-
-
-                    cameraManager.setTorchMode(cameraId,torchModeOn);
+                cameraManager.setTorchMode(cameraId, torchModeOn);
 
             } catch (CameraAccessException e) {
 
-                Log.e(TAG, "toggleTorchMode: " );
+                Log.e(TAG, "toggleTorchMode: ");
             }
+        }else{
+
+        }
 
 
     }
