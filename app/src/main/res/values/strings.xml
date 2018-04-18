@@ -679,4 +679,5 @@ Directeur de Cabinet
     <string name="strHintPOB">votre lieu de naissance</string>
     <string name="strHintMotherPrenom">prenom de votre mere</string>
     <string name="btnCheckListElec">Suis-je inscrit a la liste electorale ?</string>
+    <string name="strBtnInsererCarte">INSERER LA CARTE</string>
 </resources>

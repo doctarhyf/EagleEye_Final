@@ -6,15 +6,25 @@
     tools:context="com.example.user.franvanna.Fragments.FragmentCardAnim">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <VideoView
+        android:id="@+id/vvCardIntro"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
     <Button
         android:id="@+id/btnInsertCard"
-
-        android:text="INSERT CARD"
+        android:background="@drawable/color_state_btn_green"
+        android:textColor="@color/white"
         android:layout_width="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/strBtnInsererCarte"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_height="wrap_content" />
+        app:layout_constraintRight_toRightOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

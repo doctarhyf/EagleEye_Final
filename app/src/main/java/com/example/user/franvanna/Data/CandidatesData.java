@@ -23,7 +23,7 @@ public class CandidatesData {
         HashMap<String, Integer> partiLogos = new HashMap<>();
 
         partiLogos.put("eps", R.drawable.pt_eps);
-        partiLogos.put("independant", R.drawable.pt_independant);
+        partiLogos.put("indep.", R.drawable.pt_independant);
         partiLogos.put("kozi", R.drawable.pt_kozi);
         partiLogos.put("lion", R.drawable.pt_lion);
         partiLogos.put("loboko", R.drawable.pt_loboko);

@@ -8,7 +8,6 @@ package com.example.user.franvanna.Adapters;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import android.widget.TextView;
 
 import com.example.user.franvanna.Objects.Candidate;
 import com.example.user.franvanna.R;
-import com.example.user.franvanna.Utils.Utils;
 
 import java.util.List;
 
@@ -79,7 +77,7 @@ public class AdapterVotesResults extends RecyclerView.Adapter<AdapterVotesResult
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.layout_result_candidate_badge, parent, false);
+        View view = layoutInflater.inflate(R.layout.layout_cand_badge_result, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }

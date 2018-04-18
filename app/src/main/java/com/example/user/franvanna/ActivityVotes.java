@@ -16,9 +16,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.user.franvanna.Fragments.FragmentCardAnim;
@@ -178,6 +180,8 @@ public class ActivityVotes extends AppCompatActivity
 
         View view = getLayoutInflater().inflate(R.layout.layout_dialog_cand_badge, null);
 
+        adjustDialogLayoutToScreenDensity(view);
+
         ImageView ivPartiLogo = view.findViewById(R.id.cbIvPartiLogo);
         ImageView ivCandPic = view.findViewById(R.id.cbIvCandPic);
         TextView tvFullName = view.findViewById(R.id.cbTvFullName);
@@ -191,6 +195,9 @@ public class ActivityVotes extends AppCompatActivity
         tvPrenom.setText(Utils.UCFirst(candidate.getPrenom()));
         tvPartiName.setText(candidate.getPartiName());
         tvCandNum.setText((candidate.getId() + 1) + "");//candidate.getId());
+
+
+
 
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -225,6 +232,28 @@ public class ActivityVotes extends AppCompatActivity
         //Toast.makeText(this, "CAND CLICKED", Toast.LENGTH_LONG).show();
 
 
+
+    }
+
+    private void adjustDialogLayoutToScreenDensity(View view) {
+
+        int density = Utils.getScreenDensity(this);
+
+        if(density <= 250){
+
+            ImageView ivCandPic = view.findViewById(R.id.cbIvCandPic);
+            ImageView ivPartiLogo = view.findViewById(R.id.cbIvPartiLogo);
+            TextView tvPartiName = view.findViewById(R.id.cbTvPartiName);
+
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(60,60);
+            ivCandPic.setLayoutParams(params);
+
+            params = new LinearLayout.LayoutParams(60,60);
+            ivPartiLogo.setLayoutParams(params);
+
+            tvPartiName.setTextSize(9);
+
+        }
 
     }
 

@@ -1,6 +1,7 @@
 package com.example.user.franvanna.Fragments;
 
 import android.content.Context;
+import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -43,11 +44,13 @@ public class FragmentElections extends Fragment
         FragmentElections fragment = new FragmentElections();
         Bundle data = new Bundle();
         data.putInt(Candidate.KEY_CAND_TYPE, candsType);
+        //data.putInt(Utils.KEY_SCREEN_DENSITY, screenDensity);
         fragment.setArguments(data);
         return fragment;
     }
 
     private int candType;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +60,7 @@ public class FragmentElections extends Fragment
 
         if(null != data){
             candType = data.getInt(Candidate.KEY_CAND_TYPE);
+
         }else{
             Log.e(TAG, "Candtype not set." );
         }

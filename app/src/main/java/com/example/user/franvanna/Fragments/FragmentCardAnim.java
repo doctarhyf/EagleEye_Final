@@ -1,12 +1,15 @@
 package com.example.user.franvanna.Fragments;
 
 import android.content.Context;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.VideoView;
 
 import com.example.user.franvanna.R;
 
@@ -59,12 +62,30 @@ public class FragmentCardAnim extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_fragment_card_anim, container, false);
+
+        final VideoView videoView = view.findViewById(R.id.vvCardIntro);
+
+        Uri uri = Uri.parse("android.resource://"+getActivity().getPackageName()+"/"+R.raw.card_intro);
+        videoView.setVideoURI(uri);
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                mListener.onInsertCard();
+            }
+        });
+
+        videoView.seekTo(1000);
+
+        //videoView.start();
+
         btnInsertCard = view.findViewById(R.id.btnInsertCard);
 
         btnInsertCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onButtonPressed();
+                //onButtonPressed();
+                videoView.start();
+                btnInsertCard.setVisibility(View.GONE);
             }
         });
 

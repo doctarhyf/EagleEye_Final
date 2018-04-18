@@ -2,12 +2,16 @@ package com.example.user.franvanna;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Point;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.VideoView;
+
+import com.example.user.franvanna.Utils.Utils;
 
 public class ActivityIntroVid extends AppCompatActivity {
 
@@ -33,6 +37,15 @@ public class ActivityIntroVid extends AppCompatActivity {
         });
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+        /*
+        Point size = Utils.getScreenSize(this);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Screen size")
+                .setMessage("Width : " + size.x + "\nHeight : " + size.y + "\nDensity : " + Utils.getScreenDensity(this));
+
+        builder.show();*/
 
     }
 

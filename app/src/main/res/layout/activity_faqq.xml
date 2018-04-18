@@ -17,6 +17,9 @@
 
     <TextView
         android:text="And yes this is the answear"
+        android:singleLine="false"
+
+
         android:padding="10dp"
         android:id="@+id/tvFAQQARep"
         android:background="@color/lightGrayA"

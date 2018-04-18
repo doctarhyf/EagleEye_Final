@@ -18,6 +18,7 @@ import android.provider.MediaStore;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
@@ -42,6 +43,7 @@ public class Utils {
     public static final int REQ_CODE = 1001;
     public static final String PLAYSTORE_URL = "http://jtminvestment.com/ceni_beta.apk";
     private static final String TAG = "UTILS";
+    public static final String KEY_SCREEN_DENSITY = "screenDensity";
 
     public static  boolean isOnline(Context context){
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -239,6 +241,35 @@ public class Utils {
 
     }
 
+    /*public static Point getScreenSize(AppCompatActivity activity){
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
+        return new Point(width, height);
+
+    }*/
+
+    public static int getScreenDensity(AppCompatActivity activity){
+        DisplayMetrics metrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        return metrics.densityDpi;
+
+        /*{
+            case DisplayMetrics.DENSITY_LOW:
+                break;
+
+            case DisplayMetrics.DENSITY_MEDIUM:
+                break;
+
+            case DisplayMetrics.DENSITY_HIGH:
+                break;
+        }*/
+    }
+
     public static Point getScreenSize(AppCompatActivity activity){
 
         Display display = activity.getWindowManager().getDefaultDisplay();
@@ -263,4 +294,6 @@ public class Utils {
 
         return builder.create();
     }
+
+
 }

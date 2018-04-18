@@ -22,7 +22,10 @@ public class ActivityFAQQA extends AppCompatActivity {
         Bundle data = getIntent().getExtras();
 
         tvQ.setText(data.getString(ActivityFAQ.KEY_FAQ_Q));
-        tvR.setText(data.getString(ActivityFAQ.KEY_FAQ_R));
+        String rep = data.getString(ActivityFAQ.KEY_FAQ_R);
+        rep = rep.replace("\\\n", System.getProperty("line.separator"));
+
+        tvR.setText(rep);
 
     }
 

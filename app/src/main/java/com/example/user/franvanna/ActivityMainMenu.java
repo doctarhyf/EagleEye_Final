@@ -63,6 +63,19 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
     }
 
     @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        //finish();
+
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        finish();
+        System.exit(0);
+    }
+
+    @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
         if(requestCode == REQ_CODE){
