@@ -680,4 +680,6 @@ Directeur de Cabinet
     <string name="strHintMotherPrenom">prenom de votre mere</string>
     <string name="btnCheckListElec">Suis-je inscrit a la liste electorale ?</string>
     <string name="strBtnInsererCarte">INSERER LA CARTE</string>
+    <string name="strCENI">CENI</string>
+    <string name="strRDC">RDC</string>
 </resources>
