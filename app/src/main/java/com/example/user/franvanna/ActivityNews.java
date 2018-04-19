@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.user.franvanna.Adapters.AdapterListNewsList;
 import com.example.user.franvanna.Adapters.AdapterListVotesTypes;
@@ -27,16 +28,18 @@ public class ActivityNews extends AppCompatActivity implements AdapterListNewsLi
     AdapterListNewsList adapterListNewsList;
     private ArrayList<NewsItem> newsItems = new ArrayList<>();
     private AlertDialog alertDialog = null;
+    TextView tvError;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
+        tvError = findViewById(R.id.tvError);
         alertDialog = Utils.getNoConnDialog(this);
 
         lvNewsList = findViewById(R.id.lvNewsList);
-        newsItems = NewsItem.getDummyData();
+        newsItems = new ArrayList<>(); //NewsItem.getDummyData();
         adapterListNewsList = new AdapterListNewsList(this, newsItems, this);
 
         lvNewsList.setAdapter(adapterListNewsList);
@@ -44,6 +47,12 @@ public class ActivityNews extends AppCompatActivity implements AdapterListNewsLi
         getSupportActionBar().setTitle(getResources().getString(R.string.title_news));
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if(newsItems.size() == 0){
+            lvNewsList.setVisibility(View.GONE);
+            tvError.setVisibility(View.VISIBLE);
+            tvError.setText(getResources().getString(R.string.strErrNoNewsItems));
+        }
 
 
         lvNewsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -58,6 +67,12 @@ public class ActivityNews extends AppCompatActivity implements AdapterListNewsLi
 
             if(alertDialog != null) {
                 alertDialog.show();
+                lvNewsList.setVisibility(View.GONE);
+                tvError.setVisibility(View.VISIBLE);
+                tvError.setText(getResources().getString(R.string.strNoConnMsg));
+            }else {
+                tvError.setVisibility(View.GONE);
+                lvNewsList.setVisibility(View.VISIBLE);
             }
 
         }

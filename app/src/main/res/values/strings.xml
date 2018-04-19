@@ -682,4 +682,6 @@ Directeur de Cabinet
     <string name="strBtnInsererCarte">INSERER LA CARTE</string>
     <string name="strCENI">CENI</string>
     <string name="strRDC">RDC</string>
+    <string name="strNoConnection">Assurez vous d\'etre connecte a internet.</string>
+    <string name="strErrNoNewsItems">Pas de news dispo pour l\'instant.</string>
 </resources>
