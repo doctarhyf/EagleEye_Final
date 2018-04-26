@@ -2,14 +2,20 @@ package com.example.user.franvanna;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Display;
 import android.view.MenuItem;
-import android.view.View;
+import android.view.WindowManager;
+import android.webkit.WebView;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class ActivityLoisElec extends AppCompatActivity {
+
+    WebView wbLoisElec;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +30,43 @@ public class ActivityLoisElec extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        wbLoisElec= findViewById(R.id.wvLoisElec);
+
+        wbLoisElec.setInitialScale(1);
+        wbLoisElec.getSettings().setJavaScriptEnabled(true);
+        wbLoisElec.getSettings().setLoadWithOverviewMode(true);
+        wbLoisElec.getSettings().setUseWideViewPort(true);
+        wbLoisElec.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+        wbLoisElec.setScrollbarFadingEnabled(false);
+        wbLoisElec.loadDataWithBaseURL(null, readTextFromResource(R.raw.lois_elec_page), "text/html", "utf-8", null);
+
 
     }
 
 
 
+    private String readTextFromResource(int resId) {
 
+        InputStream raw = getResources().openRawResource(resId);
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        int i;
+        try{
+            i = raw.read();
+            while(i != -1)
+            {
+                stream.write(i);
+                i = raw.read();
+            }
 
+            raw.close();
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
+        return stream.toString();
+
+    }
 
 
     @Override

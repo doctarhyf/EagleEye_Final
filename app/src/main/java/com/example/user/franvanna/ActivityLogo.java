@@ -16,6 +16,9 @@ public class ActivityLogo extends AppCompatActivity {
 
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
+
+
+
         th = new Thread(){
 
             @Override

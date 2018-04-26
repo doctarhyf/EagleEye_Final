@@ -39,7 +39,7 @@ public class ActivityNews extends AppCompatActivity implements AdapterListNewsLi
         alertDialog = Utils.getNoConnDialog(this);
 
         lvNewsList = findViewById(R.id.lvNewsList);
-        newsItems = new ArrayList<>(); //NewsItem.getDummyData();
+        newsItems = NewsItem.getDummyData();
         adapterListNewsList = new AdapterListNewsList(this, newsItems, this);
 
         lvNewsList.setAdapter(adapterListNewsList);
@@ -59,22 +59,33 @@ public class ActivityNews extends AppCompatActivity implements AdapterListNewsLi
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.e(TAG, "onItemClick: " );
+
+                String url = "https://developer.android.com/reference/android/webkit/WebView.html";
+                Intent intent = new Intent(ActivityNews.this, ActivityNewsWebView.class);
+                Bundle data = new Bundle();
+                data.putInt(Utils.KEY_NEWS_ID, position);
+                data.putString(Utils.KEY_NEWS_URL, url);
+                intent.putExtras(data);
+                startActivity(intent);
+
             }
         });
+
 
         if (!Utils.isOnline(this)){
 
 
             if(alertDialog != null) {
                 alertDialog.show();
+            }
                 lvNewsList.setVisibility(View.GONE);
                 tvError.setVisibility(View.VISIBLE);
                 tvError.setText(getResources().getString(R.string.strNoConnMsg));
-            }else {
-                tvError.setVisibility(View.GONE);
-                lvNewsList.setVisibility(View.VISIBLE);
-            }
 
+
+        }else {
+            tvError.setVisibility(View.GONE);
+            lvNewsList.setVisibility(View.VISIBLE);
         }
     }
 

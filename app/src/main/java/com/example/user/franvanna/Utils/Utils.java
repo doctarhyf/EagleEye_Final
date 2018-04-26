@@ -44,6 +44,8 @@ public class Utils {
     public static final String PLAYSTORE_URL = "http://jtminvestment.com/ceni_beta.apk";
     private static final String TAG = "UTILS";
     public static final String KEY_SCREEN_DENSITY = "screenDensity";
+    public static final String KEY_NEWS_ID = "newsId";
+    public static final String KEY_NEWS_URL = "newsUrl";
 
     public static  boolean isOnline(Context context){
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
