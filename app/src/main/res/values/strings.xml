@@ -646,7 +646,7 @@ Directeur de Cabinet
     <string name="strActionRestartVote">Refaire</string>
     <string name="strActionSimulationHome">Simuler un vote</string>
     <string name="strActionMainMenu">Menu Principal</string>
-    <string name="strVoteSimDisclaimer">Ceci n\'est qu\'une simulation de vote, tous les candidats representes ici ne sont que des acteurs. Cette option ete creee uniquement dans le but d\'habituer l\'electeur a l\'interface graphique de la machine a vote.</string>
+    <string name="strVoteSimDisclaimer">Ceci n\'est qu\'une simulation de vote, tous les candidats representes ici ne sont que des acteurs. Cette option a ete creee uniquement dans le but d\'habituer l\'electeur a l\'interface graphique de la machine a voter.</string>
     <string name="strWarning">ATTENTION!</string>
     <string name="btnSimulerVote">SIMULER UN VOTE</string>
     <string name="strSuffrage">SUFFRAGE(S) EXPRIME(S)</string>
@@ -659,7 +659,7 @@ Directeur de Cabinet
     <string name="sub_menu_contact_us">N\'h\u00e9sitez pas a nous contacter</string>
     <string name="menu_contact_us">Contactez-nous</string>
     <string name="strShareImage">PARTAGER MES RESULTATS</string>
-    <string name="strContactUs">CONTACTEZ la CENI</string>
+    <string name="strContactUs">NOUS CONTACTER</string>
     <string name="strEmail">votre addresse email</string>
     <string name="strName">votre nom</string>
     <string name="strMessage">votre message</string>
@@ -667,7 +667,7 @@ Directeur de Cabinet
     <string name="strBureauVote">Mon bureau de vote</string>
     <string name="strMandatoryFields">Tous les champs sont obligatoires.</string>
     <string name="strCountDownd">%1$d J %2$d H %1$d M %1$d S</string>
-    <string name="strActionLoisElec">Lois electorale</string>
+    <string name="strActionLoisElec">Loi electorale</string>
     <string name="strNoConn">Connexion impossible</string>
     <string name="strNoConnMsg">Merci de vous assurer que vous \u00eates bien connect\u00e9s \u00e0 internet.</string>
     <string name="strBtnConfirmer">CONFIRMER</string>

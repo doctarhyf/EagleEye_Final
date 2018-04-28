@@ -2,10 +2,14 @@ package com.example.user.franvanna;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 public class ActivityFAQQA extends AppCompatActivity {
+
+    private static final String TAG = "EE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,9 +27,14 @@ public class ActivityFAQQA extends AppCompatActivity {
 
         tvQ.setText(data.getString(ActivityFAQ.KEY_FAQ_Q));
         String rep = data.getString(ActivityFAQ.KEY_FAQ_R);
-        rep = rep.replace("\\\n", System.getProperty("line.separator"));
+        //rep = rep.replace("\\\n", System.getProperty("line.separator"));
 
-        tvR.setText(rep);
+        String ls = System.getProperty("line.separator");
+
+        String r = "Line one \n Line 2";
+
+        tvR.setText(rep.replace("\\n", ls));
+        //Log.e(TAG, "LINE_SEP -> " + ls );
 
     }
 

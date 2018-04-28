@@ -24,7 +24,7 @@ public class ActivityLoisElec extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        getSupportActionBar().setTitle("Lois Electorale 2011");
+        getSupportActionBar().setTitle("Loi Electorale 2011");
 
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
