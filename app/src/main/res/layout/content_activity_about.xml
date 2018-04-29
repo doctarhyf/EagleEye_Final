@@ -11,6 +11,8 @@
 
 
     <ImageView
+        android:clickable="true"
+        android:onClick="onIvCeniClicked"
         android:id="@+id/iv_ceni"
         android:layout_width="200dp"
         android:layout_height="198dp"

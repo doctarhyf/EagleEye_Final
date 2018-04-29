@@ -27,6 +27,8 @@ import android.view.ViewGroup;
 import com.example.user.franvanna.R;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Date;
@@ -94,8 +96,22 @@ public class Utils {
                 elapsedDays,
                 elapsedHours, elapsedMinutes, elapsedSeconds);
 
-        return elapsedDays + " J, " + elapsedHours + " H, " + elapsedMinutes + " M, " + elapsedSeconds + " S.";
 
+        return " J - " + elapsedDays + "    " + Utils.addLeadingZero(elapsedHours) + ":" + Utils.addLeadingZero(elapsedMinutes) + ":" + Utils.addLeadingZero(elapsedSeconds) + "\"";
+
+    }
+
+    private static String addLeadingZero(long num) {
+
+        String lz = "";
+
+        if(num < 10){
+            lz = lz.concat("0" + num);
+        }else{
+            lz = "" + num;
+        }
+
+        return lz;
     }
 
 
@@ -298,4 +314,29 @@ public class Utils {
     }
 
 
+    public static String readTextFromResource(Context context, int resId) {
+
+
+
+            InputStream raw = context.getResources().openRawResource(resId);
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            int i;
+            try{
+                i = raw.read();
+                while(i != -1)
+                {
+                    stream.write(i);
+                    i = raw.read();
+                }
+
+                raw.close();
+            }
+            catch (IOException e){
+                e.printStackTrace();
+            }
+
+            return stream.toString();
+
+
+    }
 }

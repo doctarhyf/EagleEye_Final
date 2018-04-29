@@ -29,7 +29,7 @@ public class ActivityVoteSimulation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vote_simulation);
 
-        dueDate = new GregorianCalendar(2018, Calendar.DECEMBER, 15);
+        dueDate = new GregorianCalendar(2018, Calendar.DECEMBER, 23);
 
 
 
