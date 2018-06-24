@@ -28,7 +28,7 @@ public class ActivityListElectorral extends AppCompatActivity  {
 
         alertDialog = Utils.getNoConnDialog(this);
 
-        getSupportActionBar().setTitle("Liste electorale");
+        getSupportActionBar().setTitle("Candidats");
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -68,6 +68,11 @@ public class ActivityListElectorral extends AppCompatActivity  {
             if(alertDialog != null) {
                 alertDialog.show();
             }
+
+        }else{
+
+            Utils.showDialogWithMessage(this, true, getResources().getString(R.string.strOptTitleNotAvail),
+                    getResources().getString(R.string.strOptMsgNotAvail));
 
         }
     }

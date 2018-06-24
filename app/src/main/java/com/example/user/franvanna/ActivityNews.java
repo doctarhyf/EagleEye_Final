@@ -39,7 +39,7 @@ public class ActivityNews extends AppCompatActivity implements AdapterListNewsLi
         alertDialog = Utils.getNoConnDialog(this);
 
         lvNewsList = findViewById(R.id.lvNewsList);
-        newsItems = NewsItem.getDummyData();
+        //newsItems = NewsItem.getDummyData();
         adapterListNewsList = new AdapterListNewsList(this, newsItems, this);
 
         lvNewsList.setAdapter(adapterListNewsList);
@@ -72,6 +72,7 @@ public class ActivityNews extends AppCompatActivity implements AdapterListNewsLi
         });
 
 
+        /*
         if (!Utils.isOnline(this)){
 
 
@@ -86,7 +87,7 @@ public class ActivityNews extends AppCompatActivity implements AdapterListNewsLi
         }else {
             tvError.setVisibility(View.GONE);
             lvNewsList.setVisibility(View.VISIBLE);
-        }
+        }*/
     }
 
 

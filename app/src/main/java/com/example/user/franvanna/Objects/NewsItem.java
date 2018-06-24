@@ -56,7 +56,7 @@ public class NewsItem {
     public static ArrayList<NewsItem> getDummyData() {
         ArrayList<NewsItem> newsItems = new ArrayList<>();
 
-        for(int i = 0; i < 10; i++){
+        for(int i = 0; i < 1; i++){
             newsItems.add(new NewsItem(i, "https://www.washingtonpost.com/rf/image_1248x832/2010-2019/WashingtonPost/2018/04/12/Style/Images/TV-Elvis_Documentary_52991.jpg-99389.jpg?t=20170517a", "News Item " + i, "Dummy content goes here ..."));
         }
 

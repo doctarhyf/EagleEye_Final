@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.example.user.franvanna.Adapters.AdapterListVotesTypes;
 import com.example.user.franvanna.Objects.VoteType;
+import com.example.user.franvanna.Utils.Utils;
 
 import java.util.ArrayList;
 
@@ -44,6 +45,8 @@ public class ActivityCandidates extends AppCompatActivity implements AdapterList
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.e(TAG, "onItemClick: " );
+                Utils.showDialogWithMessage(ActivityCandidates.this, true, getResources().getString(R.string.strOptTitleNotAvail),
+                        getResources().getString(R.string.strOptMsgNotAvail));
             }
         });
     }

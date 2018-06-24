@@ -8,11 +8,11 @@
     <string name="about">A propos</string>
     <string name="welcome">Accueil</string>
     <string name="txt_ceni">Votons pour le bien être du pays.</string>
-    <string name="menu_list_elec">Liste électorale</string>
+    <string name="menu_cands">Candidats</string>
     <string name="subemenu_list_elec">Suis-je inscrit sur la liste électorale</string>
     <string name="menu_buro_vote">Mon bureau de vote</string>
     <string name="subemenu_buro_vote">Où se trouve mon bureau de vote</string>
-    <string name="menu_cands">Candidats</string>
+    <string name="menu_list_cands">Liste des Candidats</string>
     <string name="subemenu_cands">Candidat inscrits aux scrutins</string>
     <string name="menu_results">Résultats Officiels</string>
     <string name="subemenu_results">Résultats officiels des scrutins</string>
@@ -22,9 +22,9 @@
     <string name="txt_about">Elections Générales 2018</string>
     <string name="txt_vesion">Version 1.0</string>
     <string name="txt_copyright">Copyright &#169; 2018 CENI. Tous droits réserves.</string>
-    <string name="title_about">A propos</string>
+    <string name="title_about">\u00c0 propos</string>
     <string name="title_activity_candidates">ActivityCandidates</string>
-    <string name="title_activity_cands">Choix de l\'échécance</string>
+    <string name="title_activity_cands">Liste des candidats</string>
     <string name="menu_cands_prez">Présidentielle</string>
     <string name="txt_vote_choice_prez">PRESIDENTIELLE</string>
     <string name="txt_vote_choice_legs">LEGISTLATIVES</string>
@@ -634,14 +634,14 @@ Directeur de Cabinet
     <string name="strElecLegProv">Election Legislatives Provinciales</string>
     <string name="title_print_vote_results">Résultats des votes</string>
     <string name="sub_menu_vote_sim">Comment utiliser la machine à voter?</string>
-    <string name="sub_menu_list_elec">Suis-je inscrit sur la liste électorale?</string>
+    <string name="sub_menu_cands">Suis-je inscrit sur la liste des candidats?</string>
     <string name="sub_menu_buro_vote">Où se trouve mon bureau de vote?</string>
-    <string name="sub_menu_cands">Candidats inscrits aux scrutins</string>
+    <string name="sub_menu_list_cands">Candidats inscrits aux scrutins</string>
     <string name="sub_menu_results">Résultats officiels des scrutins</string>
     <string name="sub_menu_faq">Questions frequentes sur les élections</string>
     <string name="btnTxtSkip">SAUTER</string>
     <string name="strActionPlayIntroVid">Play</string>
-    <string name="strActionAbout">\u00c0propos</string>
+    <string name="strActionAbout">\u00c0 propos</string>
     <string name="titleVoteSimulation">Simuler un vote</string>
     <string name="strActionRestartVote">Refaire</string>
     <string name="strActionSimulationHome">Simuler un vote</string>
@@ -652,7 +652,7 @@ Directeur de Cabinet
     <string name="strSuffrage">SUFFRAGE(S) EXPRIME(S)</string>
     <string name="strNeedWritePerms">Nous avons besoin de votre permission pour que vous soyez capables de partager les résultats de votre simulation.</string>
     <string name="strWaterMark">Resultats simulation de vote. CENI \u00a9 2018. Tous droits réserves.</string>
-    <string name="strVotesSimResultsShare">Voici les résultats de ma simulation de vote. Toi aussi tu peu peux télécharger l\'appli à cette adresse : %1$s.</string>
+    <string name="strVotesSimResultsShare">Voici les résultats de ma simulation de vote. Toi aussi tu peux télécharger l\'appli CENI RDC sur playstore.</string>
     <string name="strShareResultSim">Partager les résultats de la simulation</string>
     <string name="menu_news">News</string>
     <string name="sub_menu_news">Informations officielles de la CENI</string>
@@ -678,11 +678,13 @@ Directeur de Cabinet
     <string name="strHintDOB">votre date de naissance (dd/mm/yyyy)</string>
     <string name="strHintPOB">votre lieu de naissance</string>
     <string name="strHintMotherPrenom">prénom de votre mère</string>
-    <string name="btnCheckListElec">Suis-je inscrit a la liste electorale ?</string>
+    <string name="btnCheckListElec">Suis-je inscrit a la liste des candidats?</string>
     <string name="strBtnInsererCarte">INSERER LA CARTE</string>
     <string name="strCENI">CENI</string>
     <string name="strRDC">RDC</string>
     <string name="strNoConnection">Assurez vous d\'être connect\u00e9 à internet.</string>
     <string name="strErrNoNewsItems">Pas de news dispo pour l\'instant.</string>
     <string name="txtOk">OK</string>
+    <string name="strOptTitleNotAvail">Option pas encore disponible</string>
+    <string name="strOptMsgNotAvail">Cette option sera disponible tres prochainement.</string>
 </resources>

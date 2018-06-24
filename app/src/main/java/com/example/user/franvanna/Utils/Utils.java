@@ -1,6 +1,7 @@
 package com.example.user.franvanna.Utils;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -336,6 +337,26 @@ public class Utils {
             }
 
             return stream.toString();
+
+
+    }
+
+    public static void showDialogWithMessage(Context context, boolean show, String title, String message){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                });
+
+
+
+        AlertDialog alertDialog = builder.create();
+
+        if(show) alertDialog.show();
 
 
     }

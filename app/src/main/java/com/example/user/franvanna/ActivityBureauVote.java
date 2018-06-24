@@ -64,8 +64,10 @@ public class ActivityBureauVote extends AppCompatActivity {
             }
 
         }else {
-            String numElec = etNumeroElec.getText().toString();
-            Toast.makeText(this, "Numero : " + numElec, Toast.LENGTH_LONG).show();
+            //String numElec = etNumeroElec.getText().toString();
+            //Toast.makeText(this, "Numero : " + numElec, Toast.LENGTH_LONG).show();
+            Utils.showDialogWithMessage(this, true, getResources().getString(R.string.strOptTitleNotAvail),
+                    getResources().getString(R.string.strOptMsgNotAvail));
         }
     }
 }

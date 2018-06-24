@@ -1,6 +1,7 @@
 package com.example.user.franvanna.Data;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.example.user.franvanna.Objects.Candidate;
 import com.example.user.franvanna.Utils.Utils;
@@ -14,7 +15,7 @@ import java.util.Scanner;
 public class CandidatesData {
     public static final int CAND_TYPE_PREZ = 0;
     private static final String TAG = "CENI";
-    private static final int MAX_CAND_PIX_NUM = 15;
+    private static final int MAX_CAND_PIX_NUM = 18;
 
     public static  int getPartiLogoByName(String partiName){
 
@@ -117,6 +118,9 @@ public class CandidatesData {
                     if(!line.isEmpty()){
                         String[] candData = line.split(",");
                         int picId = Utils.GRIDBN("cd" + picIdx, R.drawable.class);
+
+                        //Log.e(TAG, "LEG_NAT_PIC_ID -> cd" + picIdx );
+
                         Candidate candidate = new Candidate(j,candData[0], candData[1],picId,getPartiLogoByName(candData[2]), candType);
                         candidate.setPartiName(candData[2]);
                         candidates.add(candidate);

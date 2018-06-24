@@ -70,7 +70,7 @@
 
 
             <TextView
-                android:text="@string/menu_list_elec"
+                android:text="@string/menu_cands"
                 style="@style/MenuTextLarge" />
 
             <TextView
@@ -138,7 +138,7 @@
 
 
             <TextView
-                android:text="@string/menu_cands"
+                android:text="@string/menu_list_cands"
                 style="@style/MenuTextLarge" />
 
             <TextView

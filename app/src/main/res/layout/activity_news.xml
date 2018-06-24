@@ -22,7 +22,7 @@
     <TextView
         android:id="@+id/tvError"
         android:textColor="@color/black"
-        android:text="@string/strNoConnection"
+        android:text="@string/strErrNoNewsItems"
         android:gravity="center"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
