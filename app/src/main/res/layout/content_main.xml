@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.user.franvanna.MainActivity"
+    tools:context="com.koziengineering.user.franvanna.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
 
