@@ -14,4 +14,15 @@
     <color name="cdGreen">#30874e</color>
     <color name="cdGreenDark">#104121</color>
     <color name="cdRedDark">#700613</color>
+    <color name="darkGray">#393f46</color>
+
+    <color name="menu_item_col_1">#fdaa2c</color>
+    <color name="menu_item_col_2">#00977c</color>
+    <color name="menu_item_col_3">#fa1a5f</color>
+    <color name="menu_item_col_4">#ff712a</color>
+    <color name="menu_item_col_5">#08d033</color>
+
+    <color name="menu_item_col_6">#b83ffd</color>
+    <color name="menu_item_col_7">#3862cc</color>
+
 </resources>

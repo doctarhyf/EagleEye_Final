@@ -5,7 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/darkGray"
     tools:context="com.koziengineering.user.franvanna.ActivityMainMenu">
+
+    <TextView
+        android:text="- CENI 2018 -"
+        android:textSize="28sp"
+        android:padding="@dimen/padding_normal"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"

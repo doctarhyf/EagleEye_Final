@@ -4,6 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/cdBlue</item>
+        <item name="android:fontFamily">@font/montserrat_light</item>
         <item name="colorPrimaryDark">@color/cdBlueDark</item>
         <item name="colorAccent">@color/cdRed</item>
         <item name="editTextColor">@color/cdYellow</item>

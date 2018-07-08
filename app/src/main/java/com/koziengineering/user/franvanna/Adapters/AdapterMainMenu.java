@@ -6,7 +6,9 @@ package com.koziengineering.user.franvanna.Adapters;
 
 
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +29,17 @@ public class AdapterMainMenu extends RecyclerView.Adapter<AdapterMainMenu.ViewHo
 
 
     private static final String TAG = "ADP_REC_IT";
+    private static final int BG_COLS_IDS[] = new int[]{
+            R.color.menu_item_col_1,
+            R.color.menu_item_col_2,
+            R.color.menu_item_col_3,
+            R.color.menu_item_col_4,
+            R.color.menu_item_col_5,
+            R.color.menu_item_col_6,
+            R.color.menu_item_col_7,
+
+    };
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
@@ -73,12 +86,14 @@ public class AdapterMainMenu extends RecyclerView.Adapter<AdapterMainMenu.ViewHo
 
         final MenuItem menuItem = menuItemList.get(position);
 
-
-
         holder.tvMenuTitle.setText(menuItem.getMenuText());
         holder.tvMenuSubtitle.setText(menuItem.getMenuSubtitle());
         holder.ivMenuIco.setImageDrawable(context.getResources().getDrawable(menuItem.getMenuIco()));
 
+
+        final int colIdx = position % BG_COLS_IDS.length;
+        final int colId = BG_COLS_IDS[colIdx];
+        holder.layout.setBackgroundColor(context.getResources().getColor(colId));
 
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,8 +101,11 @@ public class AdapterMainMenu extends RecyclerView.Adapter<AdapterMainMenu.ViewHo
 
                 callbacksAdapterMenuItems.onMenuItemClicked(menuItem);
 
+
             }
         });
+
+        //Log.e("XXX", " : " +  () );
     }
 
     @Override

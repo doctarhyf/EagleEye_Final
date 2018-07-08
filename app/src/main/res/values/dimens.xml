@@ -8,4 +8,5 @@
     <dimen name="padding_badge">8dp</dimen>
     <dimen name="list_arrow_size">20dp</dimen>
     <dimen name="radiusDialogBtn">4dp</dimen>
+    <dimen name="padding_normal">8dp</dimen>
 </resources>
