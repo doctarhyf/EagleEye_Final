@@ -24,8 +24,8 @@
             android:id="@+id/ivMenuIco"
             android:layout_gravity="center"
             android:src="@drawable/cands"
-            android:layout_width="30dp"
-            android:layout_height="30dp" />
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
 
         <TextView
             android:textColor="@color/white"
