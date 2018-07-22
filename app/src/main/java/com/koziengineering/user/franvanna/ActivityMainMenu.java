@@ -19,10 +19,12 @@ import com.koziengineering.user.franvanna.Objects.MenuItem;
 import com.koziengineering.user.franvanna.Utils.Utils;
 
 import java.util.List;
+import java.util.Map;
 
 public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMenu.CallbacksAdapterMenuItems {
 
     private static final int REQ_CODE = 1001;
+    private static final int PERM_CODE_READ_SMS = 1002;
     private List<MenuItem> menuItemList;
     private static final String TAG = "EE2";
     private RecyclerView recyclerView;
@@ -53,11 +55,14 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                String[] perms = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE};
+                String[] perms = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,Manifest.permission.READ_SMS};
                 requestPermissions(perms, Utils.REQ_CODE);
 
 
             }
+
+
+
         }
 
     }
@@ -84,6 +89,18 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
                 Log.e(TAG, "onRequestPermissionsResult: PERMS GRANT" );
             }else{
                 Toast.makeText(this, "On a besoin de votre permission pour exporter le resultat de la simulation des votes.", Toast.LENGTH_SHORT).show();
+            }
+
+            if(grantResults.length > 0 && grantResults[1] == PackageManager.PERMISSION_GRANTED){
+                Log.e(TAG, "onRequestPermissionsResult: PERMS SMS GRANT" );
+            }else{
+                Toast.makeText(this, "On a besoin de votre permission pour assurer la bon fonctionement de l'appli.", Toast.LENGTH_SHORT).show();
+            }
+
+            if(grantResults.length > 0 && grantResults[2] == PackageManager.PERMISSION_GRANTED){
+                Log.e(TAG, "onRequestPermissionsResult: PERMS SMS GRANT" );
+            }else{
+                Toast.makeText(this, "On a besoin de votre permission pour assurer la bon fonctionement de l'appli.", Toast.LENGTH_SHORT).show();
             }
 
         }
