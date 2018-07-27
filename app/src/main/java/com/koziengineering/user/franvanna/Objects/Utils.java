@@ -7,8 +7,10 @@ import android.os.Bundle;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.Locale;
 
 public class Utils {
     public static String Ellipsize(String str, int size) {
@@ -72,5 +74,12 @@ public class Utils {
 
         return date;
 
+    }
+
+    public static String fromattedDateFromMillis(long millis) {
+        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
+        cal.setTimeInMillis(millis);
+        String date = android.text.format.DateFormat.format("dd-MM-yyyy hh:mm a", cal).toString();
+        return date;
     }
 }

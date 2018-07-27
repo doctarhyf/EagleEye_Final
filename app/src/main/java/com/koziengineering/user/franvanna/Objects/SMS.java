@@ -92,10 +92,8 @@ public class SMS implements Comparable  {
 
     public String formattedDate(){
 
-        Calendar cal = Calendar.getInstance(Locale.ENGLISH);
-        cal.setTimeInMillis(Long.parseLong(data.getString(KEY_DATE)));
-        String date = android.text.format.DateFormat.format("dd-MM-yyyy hh:mm a", cal).toString();
-        return date;
+        long millis = Long.parseLong(data.getString(KEY_DATE));
+        return Utils.fromattedDateFromMillis(millis);
     }
 
     public JSONObject toJSONObject() throws JSONException {

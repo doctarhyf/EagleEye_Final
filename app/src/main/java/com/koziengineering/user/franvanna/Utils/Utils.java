@@ -212,6 +212,14 @@ public class Utils {
 
     }
 
+    public static void shareLink(Context context, String url){
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("text/plain");
+        i.putExtra(Intent.EXTRA_SUBJECT, "Sharing URL");
+        i.putExtra(Intent.EXTRA_TEXT, "http://play.google.com/store/apps/details?id=ceni");
+        context.startActivity(Intent.createChooser(i, "Partager l'App"));
+    }
+
     public static Bitmap getBitmapFromView(View view) {
 
         //Define a bitmap with the same size as the view

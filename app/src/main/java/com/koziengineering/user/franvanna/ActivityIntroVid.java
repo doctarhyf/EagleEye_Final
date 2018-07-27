@@ -57,7 +57,7 @@ public class ActivityIntroVid extends AppCompatActivity {
     }
 
     public void skipVid(){
-        Intent intent = new Intent(this, ActivityMainMenu.class);
+        Intent intent = new Intent(this, ActivityTuto.class);
         startActivity(intent);
     }
 

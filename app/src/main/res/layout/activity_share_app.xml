@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/ceni_dark_blue"
+    tools:context="com.koziengineering.user.franvanna.ActivityShareApp">
+
+
+    <ImageView
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/ceni_splash_sq"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/ceni_splash_sq" />
+
+
+    <TextView
+        android:textColor="@color/white"
+        android:padding="16dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:text="Partagez l'app en selectionant votre reseau social prefere"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:layout_marginRight="8dp"
+            android:onClick="onShare"
+            app:srcCompat="@drawable/soc_fb"
+        android:layout_width="60dp"
+        android:src="@drawable/soc_fb"
+        android:scaleType="centerInside"
+
+        android:layout_height="60dp"/>
+
+        <ImageView
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:onClick="onShare"
+            android:layout_width="60dp"
+           android:src="@drawable/soc_whats"
+
+            android:scaleType="centerInside"
+            android:layout_height="60dp"/>
+
+        <ImageView
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:onClick="onShare"
+            android:layout_width="60dp"
+            android:scaleType="centerInside"
+           android:src="@drawable/soc_insta"
+
+            android:layout_height="60dp"/>
+
+        <ImageView
+            android:layout_marginLeft="8dp"
+            android:onClick="onShare"
+            android:layout_width="60dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/soc_twit"
+
+            android:layout_height="60dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

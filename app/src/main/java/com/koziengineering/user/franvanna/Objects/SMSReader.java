@@ -61,10 +61,10 @@ public class SMSReader {
                             String key = cursor.getColumnName(idx);
                             String val = cursor.getString(idx);
 
-                            //if (keysList.contains(key)) {
+                            if (keysList.contains(key)) {
 
                                 bundle.putString(key, val);
-                            //}
+                            }
 
 
                         }

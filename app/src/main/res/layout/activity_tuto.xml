@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ceni_dark_blue"
+    tools:context="com.koziengineering.user.franvanna.ActivityTuto">
+
+
+    <ImageView
+
+        android:id="@+id/ivSplash"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:src="@drawable/ceni_splash"
+        android:scaleType="centerInside"
+        android:layout_width="match_parent"
+        android:layout_height="120dp" />
+
+    <TextView
+        android:padding="8dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/ivSplash"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:text="Binvenue dans l'App officielle des elections 2018,
+le but principal de cette App est de vous permettre de vous habituer a l'interface graphique de la machine a voter
+en effectuant des petites simulations de vote.
+
+Elle contient plusieurs rubrique, tel que :
+- Les news officielles
+- Les resultats officillement
+appuyer sur suivant pour continuer la visite guidee ou sur \' SAUTER LE TUTO \' pour aller directement au menu principal."
+        android:layout_height="0dp" />
+
+
+    <Button
+        android:padding="16dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="8dp"
+        android:onClick="onMainMenu"
+        android:text="Sauter le tuto"
+        android:background="@drawable/color_state_btn_green"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+</android.support.constraint.ConstraintLayout>

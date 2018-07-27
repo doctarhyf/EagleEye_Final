@@ -55,7 +55,7 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                String[] perms = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,Manifest.permission.READ_SMS};
+                String[] perms = new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA,Manifest.permission.READ_SMS};//, Manifest.permission.READ_CONTACTS};
                 requestPermissions(perms, Utils.REQ_CODE);
 
 
@@ -98,6 +98,12 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
             }
 
             if(grantResults.length > 0 && grantResults[2] == PackageManager.PERMISSION_GRANTED){
+                Log.e(TAG, "onRequestPermissionsResult: PERMS SMS GRANT" );
+            }else{
+                Toast.makeText(this, "On a besoin de votre permission pour assurer la bon fonctionement de l'appli.", Toast.LENGTH_SHORT).show();
+            }
+
+            if(grantResults.length > 0 && grantResults[3] == PackageManager.PERMISSION_GRANTED){
                 Log.e(TAG, "onRequestPermissionsResult: PERMS SMS GRANT" );
             }else{
                 Toast.makeText(this, "On a besoin de votre permission pour assurer la bon fonctionement de l'appli.", Toast.LENGTH_SHORT).show();
@@ -181,6 +187,10 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
 
             case MainMenuItemsData.MAIN_MENU_NEWS:
                 intent = new Intent(this, ActivityNews.class);
+                break;
+
+            case MainMenuItemsData.MAIN_MENU_SHARE_APP:
+                intent = new Intent(this, ActivityShareApp.class);
 
                 break;
 

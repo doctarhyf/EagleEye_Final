@@ -687,4 +687,7 @@ Directeur de Cabinet
     <string name="txtOk">OK</string>
     <string name="strOptTitleNotAvail">Option pas encore disponible</string>
     <string name="strOptMsgNotAvail">Cette option sera disponible tres prochainement.</string>
+    <string name="menu_share_app">Partager l\'App</string>
+    <string name="sub_menu_share_app">Partager l\'App avec mes contacts</string>
+    <string name="nav_share_app">Partager l\'App</string>
 </resources>

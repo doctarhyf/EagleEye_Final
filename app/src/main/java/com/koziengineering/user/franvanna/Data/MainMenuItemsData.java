@@ -22,6 +22,7 @@ public class MainMenuItemsData {
     public static final int MAIN_MENU_OFFICIAL_RESULTS = 5;
     public static final int MAIN_MENU_FAQ = 6;
     public static final int MAIN_MENU_CONTACT_US = 7;
+    public static final int MAIN_MENU_SHARE_APP = 8;
 
     public static List<MenuItem> getMainMenuItems(Resources res)
 
@@ -37,6 +38,7 @@ public class MainMenuItemsData {
         menuItems.add(new MenuItem(R.drawable.res, res.getString(R.string.menu_results) ,MAIN_MENU_OFFICIAL_RESULTS, res.getString(R.string.sub_menu_results)));
         menuItems.add(new MenuItem(R.drawable.ic_faq, res.getString(R.string.menu_faq),MAIN_MENU_FAQ, res.getString(R.string.sub_menu_faq) ));
         menuItems.add(new MenuItem(R.drawable.ic_contacts, res.getString(R.string.menu_contact_us),MAIN_MENU_CONTACT_US, res.getString(R.string.sub_menu_contact_us) ));
+        menuItems.add(new MenuItem(R.drawable.ic_share_app, res.getString(R.string.menu_share_app),MAIN_MENU_SHARE_APP, res.getString(R.string.sub_menu_share_app) ));
 
 
 
