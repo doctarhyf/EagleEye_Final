@@ -28,7 +28,7 @@ public class AdapterNatCands extends ArrayAdapter<LenNat> {
         this.listener = listener;
         this.lenNatArrayList = legNatsList;
 
-        //Log.e("KOK", "getTerritoriesData: -> legNatSize : " + legNatsList.size() );
+        //Log.e("KOK", "getCandLIstData: -> legNatSize : " + legNatsList.size() );
 
     }
 
@@ -46,13 +46,6 @@ public class AdapterNatCands extends ArrayAdapter<LenNat> {
         tvLegNat.setText(lenNat.getCandName());
 
 
-        tvLegNat.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.e("CENI_NAT_CAND", "onClick: Question : "  );
-                //listener.onN(voteType);
-            }
-        });
 
         return convertView;
     }
@@ -62,6 +55,6 @@ public class AdapterNatCands extends ArrayAdapter<LenNat> {
 
 
     public interface Listener{
-        void onLegCandClicked(VoteType voteType);
+        //void onCandListDataClicked(String dataPath);
     }
 }

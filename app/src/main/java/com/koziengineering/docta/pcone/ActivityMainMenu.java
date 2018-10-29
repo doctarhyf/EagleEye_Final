@@ -131,7 +131,7 @@ public class ActivityMainMenu extends AppCompatActivity implements AdapterMainMe
         switch (id){
 
             case MainMenuItemsData.MAIN_MENU_CANDS:
-                intent = new Intent(this, ActivityCandidates.class);
+                intent = new Intent(this, ActivityCandidatesList.class);
                 break;
 
             case MainMenuItemsData.MAIN_MENU_VOTE_SIMULATION:

@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity
         switch (id){
 
             case R.id.mainMenuCands:
-                intent = new Intent(this, ActivityCandidates.class);
+                intent = new Intent(this, ActivityCandidatesList.class);
                 break;
 
             case R.id.mainMenuVoteSimulation:

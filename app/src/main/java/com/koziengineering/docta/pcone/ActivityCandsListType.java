@@ -4,28 +4,32 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.koziengineering.docta.pcone.Adapters.AdapterNatCands;
 import com.koziengineering.docta.pcone.Objects.LenNat;
-import com.koziengineering.docta.pcone.Objects.VoteType;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ActivityNationals extends AppCompatActivity implements AdapterNatCands.Listener {
+public class ActivityCandsListType extends AppCompatActivity implements AdapterNatCands.Listener {
 
 
 
     ListView lvNatCands;
     AdapterNatCands adapterNatCands;
     private ArrayList<LenNat> legNatCandsList;
+    private TextView tvCandListTypeDataLabel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nationals);
 
+        tvCandListTypeDataLabel = findViewById(R.id.tvCandListTypeDataLabel);
         lvNatCands = findViewById(R.id.lvNatCands);
 
         getSupportActionBar().setTitle(R.string.cands_legs);
@@ -34,7 +38,10 @@ public class ActivityNationals extends AppCompatActivity implements AdapterNatCa
 
 
 
-        legNatCandsList = getTerritoriesData();
+        final int listType = getIntent().getIntExtra(ActivityCandidatesList.CAND_LIST_TYPE, -1);
+        legNatCandsList = getCandLIstData(listType);
+
+
 
 
         adapterNatCands = new AdapterNatCands(this, legNatCandsList, this);
@@ -43,34 +50,22 @@ public class ActivityNationals extends AppCompatActivity implements AdapterNatCa
 
 
 
-
-        //legNatCandsList.add(new LenNat(0, "KAND", "Yes"));
-        //legNatCandsList.add(new LenNat(1, "KAND", "Yes"));
-        //legNatCandsList.add(new LenNat(2, "KAND", "Yes"));
-
-
-
-        /*lvNatCands.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvNatCands.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                onNatCandClicked(legNatCandsList.get(position));
-                Log.e("CENI_RDC", "onItemClick: dans le bon" );
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+                int listRowID = i;
+                //int datalisType = listType;
+
+                Log.e("TAG", "listRow : " + listRowID + ", " + listType);
             }
-        });*/
+        });
 
 
     }
 
-    //@Override
-    public void onNatCandClicked(LenNat lenNat) {
-        Log.e("NAT_KAND", "onQuestionClicked: listener");
-        //Intent intent = new Intent(this, ActivityFAQQA.class);
-        //Bundle data = new Bundle();
-        //data.putString(KEY_FAQ_Q, question.getCandName());
-        //data.putString(KEY_FAQ_R, question.getReponse());
-        //intent.putExtras(data);
-        //startActivity(intent);
-    }
+
 
 
     @Override
@@ -83,11 +78,30 @@ public class ActivityNationals extends AppCompatActivity implements AdapterNatCa
     }
 
 
-    public ArrayList<LenNat> getTerritoriesData() {
+    public ArrayList<LenNat> getCandLIstData(int dataType) {
 
         ArrayList<LenNat> curLegNatList = new ArrayList<>();
 
-        Scanner scanner = new Scanner(getResources().openRawResource(R.raw.province));
+        Scanner scanner = null;
+        switch (dataType){
+
+            case ActivityCandidatesList.CAND_LIST_ELECTIONS_TYPE_LEG_NAT:
+                scanner = new Scanner(getResources().openRawResource(R.raw.el_type_leg_nat));
+                tvCandListTypeDataLabel.setText(getResources().getString(R.string.txtChooseProvince));
+            break;
+
+            //case ActivityCandidatesList.CAND_LIST_TYPE_TERRITORIES_HAUT_KAT:
+                //scanner = new Scanner(getResources().openRawResource(R.raw.territoires_haut_katanga));
+                //tvCandListTypeDataLabel.setText(getResources().getString(R.strin
+                //
+                // g.txtChoseTerritories));
+                //break;
+
+            default:
+                scanner = new Scanner(getResources().openRawResource(R.raw.territoires_haut_katanga));
+                tvCandListTypeDataLabel.setText(getResources().getString(R.string.txtChoseTerritories));
+                break;
+        }
         //int k = 0;
         String faqData = "";
         while (scanner.hasNextLine()){
@@ -122,8 +136,5 @@ public class ActivityNationals extends AppCompatActivity implements AdapterNatCa
         return curLegNatList;
     }
 
-    @Override
-    public void onLegCandClicked(VoteType voteType) {
 
-    }
 }

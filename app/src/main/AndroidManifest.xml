@@ -24,7 +24,7 @@
             android:label="@string/title_activity_about"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ActivityCandidates"
+            android:name=".ActivityCandidatesList"
             android:parentActivityName=".ActivityMainMenu" />
         <activity
             android:name=".ActivityVoteSimulation"
@@ -60,7 +60,7 @@
             android:name=".ActivityContactUs"
             android:parentActivityName=".ActivityMainMenu" />
         <activity android:name=".ActivityNewsWebView" />
-        <activity android:name=".ActivityNationals"></activity>
+        <activity android:name=".ActivityCandsListType"></activity>
     </application>
 
 </manifest>

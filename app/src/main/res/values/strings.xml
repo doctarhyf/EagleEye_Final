@@ -689,4 +689,5 @@ Directeur de Cabinet
     <string name="strOptMsgNotAvail">Cette option sera disponible tres prochainement.</string>
     <string name="cands_legs">LEGISLATIVES NATIONAL</string>
     <string name="txtChooseProvince">Veuillez selectioner une province</string>
+    <string name="txtChoseTerritories">Veuillez choisir un territoire</string>
 </resources>

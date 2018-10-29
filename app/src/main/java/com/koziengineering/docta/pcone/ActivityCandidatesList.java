@@ -10,16 +10,16 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.koziengineering.docta.pcone.Adapters.AdapterListVotesTypes;
-import com.koziengineering.docta.pcone.Data.MainMenuItemsData;
 import com.koziengineering.docta.pcone.Objects.VoteType;
 import com.koziengineering.docta.pcone.Utils.Utils;
 
 import java.util.ArrayList;
 
-public class ActivityCandidates extends AppCompatActivity implements AdapterListVotesTypes.Listener  {
+public class ActivityCandidatesList extends AppCompatActivity implements AdapterListVotesTypes.Listener  {
 
 
     private static final String TAG = "CENI";
+    public static final int CAND_LIST_TYPE_TERRITORIES_HAUT_KAT = 1;
     ListView lvVotesTypes;
     AdapterListVotesTypes adapterListVotesTypes;
     private ArrayList<VoteType> voteTypes = new ArrayList<>();
@@ -49,10 +49,13 @@ public class ActivityCandidates extends AppCompatActivity implements AdapterList
 
 
                 if(position == 1) {
+                    gotoProvinces();
+                }else if(position == 2) {
                     gotoTerritories();
+
                 }else{
                     Log.e(TAG, "onItemClick kak: " );
-                    Utils.showDialogWithMessage(ActivityCandidates.this, true, getResources().getString(R.string.strOptTitleNotAvail),
+                    Utils.showDialogWithMessage(ActivityCandidatesList.this, true, getResources().getString(R.string.strOptTitleNotAvail),
                             getResources().getString(R.string.strOptMsgNotAvail));
 
                 }
@@ -66,15 +69,32 @@ public class ActivityCandidates extends AppCompatActivity implements AdapterList
         });
     }
 
-    private void gotoTerritories() {
+    public static final int CAND_LIST_ELECTIONS_TYPE_LEG_NAT = 1;
+    public static final int CAND_LIST_TYPE_TERRITORIES = 2;
+    public static final String CAND_LIST_TYPE = "candListStep";
 
 
-        Intent intent = new Intent(this, ActivityNationals.class);
+    private void gotoProvinces() {
+
+
+        Intent intent = new Intent(this, ActivityCandsListType.class);
+        intent.putExtra(CAND_LIST_TYPE, CAND_LIST_ELECTIONS_TYPE_LEG_NAT);
         startActivity(intent);
 
 
 
     }
+
+    private void gotoTerritories(){
+        Intent intent = new Intent(this, ActivityCandsListType.class);
+        intent.putExtra(CAND_LIST_TYPE, CAND_LIST_TYPE_TERRITORIES);
+        startActivity(intent);
+
+    }
+
+
+
+
 
     public void onVoteTypeClicked(View view) {
 
@@ -110,6 +130,8 @@ public class ActivityCandidates extends AppCompatActivity implements AdapterList
 
     @Override
     public void onVoteTypeClicked(VoteType voteType) {
+
+        Log.e(TAG, "onVoteTypeClicked: " );
 
     }
 
