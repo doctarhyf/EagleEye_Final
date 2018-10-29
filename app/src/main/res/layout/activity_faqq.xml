@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.koziengineering.user.franvanna.ActivityFAQQA">
+    tools:context="com.koziengineering.docta.pcone.ActivityFAQQA">
 
     <TextView
         android:textColor="@color/black"
         android:textStyle="bold"
-        android:text="This is the question?"
+        android:text="This is the candName?"
         android:padding="10dp"
         android:id="@+id/tvFAQQAQuest"
         android:layout_width="match_parent"

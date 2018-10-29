@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.koziengineering.user.franvanna">
+    package="com.koziengineering.docta.pcone">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -59,7 +59,8 @@
         <activity
             android:name=".ActivityContactUs"
             android:parentActivityName=".ActivityMainMenu" />
-        <activity android:name=".ActivityNewsWebView"></activity>
+        <activity android:name=".ActivityNewsWebView" />
+        <activity android:name=".ActivityNationals"></activity>
     </application>
 
 </manifest>

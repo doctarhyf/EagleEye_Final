@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.koziengineering.user.franvanna.Fragments.FragmentElections">
+    tools:context="com.koziengineering.docta.pcone.Fragments.FragmentElections">
 
 
     <LinearLayout

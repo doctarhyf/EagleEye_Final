@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/cdRed"
     android:layout_gravity="center"
-    tools:context="com.koziengineering.user.franvanna.Fragments.FragmentElectionsPane">
+    tools:context="com.koziengineering.docta.pcone.Fragments.FragmentElectionsPane">
 
     <!-- TODO: Update blank fragment layout -->
 

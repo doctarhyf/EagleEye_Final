@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.koziengineering.user.franvanna.ActivityFAQ">
+    tools:context="com.koziengineering.docta.pcone.ActivityFAQ">
 
     <ListView
         android:id="@+id/lvFAQQuestions"

@@ -687,4 +687,6 @@ Directeur de Cabinet
     <string name="txtOk">OK</string>
     <string name="strOptTitleNotAvail">Option pas encore disponible</string>
     <string name="strOptMsgNotAvail">Cette option sera disponible tres prochainement.</string>
+    <string name="cands_legs">LEGISLATIVES NATIONAL</string>
+    <string name="txtChooseProvince">Veuillez selectioner une province</string>
 </resources>
