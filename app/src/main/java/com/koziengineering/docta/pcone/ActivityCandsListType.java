@@ -1,5 +1,6 @@
 package com.koziengineering.docta.pcone;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.koziengineering.docta.pcone.Adapters.AdapterNatCands;
+import com.koziengineering.docta.pcone.Objects.ELECT_DATA;
 import com.koziengineering.docta.pcone.Objects.LenNat;
 
 import java.util.ArrayList;
@@ -38,8 +40,8 @@ public class ActivityCandsListType extends AppCompatActivity implements AdapterN
 
 
 
-        final int listType = getIntent().getIntExtra(ActivityCandidatesList.CAND_LIST_TYPE, -1);
-        legNatCandsList = getCandLIstData(listType);
+        final int elecType = getIntent().getIntExtra(ActivityCandidatesList.CAND_LIST_TYPE, -1);
+        legNatCandsList = getCandLIstData(elecType);
 
 
 
@@ -56,16 +58,47 @@ public class ActivityCandsListType extends AppCompatActivity implements AdapterN
 
 
                 int listRowID = i;
-                //int datalisType = listType;
 
-                Log.e("TAG", "listRow : " + listRowID + ", " + listType);
+
+
+                Log.e("TAG", "listRow : " + listRowID + ", " + elecType);
+
+                if(elecType == ELECT_DATA.ELECT_TYPES_LEG_NAT){
+
+                    //Log.e("EL!", "gota show territories" );
+                    showTerritories(listRowID);
+                }else{
+                    Log.e("EL", "fuck " );
+                }
+
+
             }
         });
 
 
     }
 
+    private void showTerritories(int provID) {
 
+        switch (provID){
+
+            case ELECT_DATA.TERRITORIES_HAUT_KATANGA:
+                Log.e("OK", "showTerritories: katanga " );
+                adapterNatCands.clear();
+                legNatCandsList = getCandLIstData(provID);
+
+                adapterNatCands = new AdapterNatCands(this, legNatCandsList, this);
+                //adapterNatCands.notifyAll();
+                lvNatCands.setAdapter(adapterNatCands);
+                break;
+
+
+                default:
+                    Log.e("TAG", "duuuuudeee" );
+                    break;
+        }
+
+    }
 
 
     @Override
@@ -89,6 +122,11 @@ public class ActivityCandsListType extends AppCompatActivity implements AdapterN
                 scanner = new Scanner(getResources().openRawResource(R.raw.el_type_leg_nat));
                 tvCandListTypeDataLabel.setText(getResources().getString(R.string.txtChooseProvince));
             break;
+
+            case ELECT_DATA.TERRITORIES_LIST_HAUT_KATANGA:
+                scanner = new Scanner(getResources().openRawResource(R.raw.territoires_haut_katanga));
+                tvCandListTypeDataLabel.setText(getResources().getString(R.string.txtChooseTerritories));
+                break;
 
             //case ActivityCandidatesList.CAND_LIST_TYPE_TERRITORIES_HAUT_KAT:
                 //scanner = new Scanner(getResources().openRawResource(R.raw.territoires_haut_katanga));
@@ -124,15 +162,16 @@ public class ActivityCandsListType extends AppCompatActivity implements AdapterN
 
 
             //legNatCandsList.add(new LenNat(k,"Test", splits[k + 1]));
-            //Log.e("KKK",  splits[k] + k );
+            Log.e("KKK",  splits[k] + k );
             curLegNatList.add(new LenNat(k, splits[k]));
 
 
             k++;
         }
 
-
-
+        if(adapterNatCands != null) {
+            adapterNatCands.notifyDataSetChanged();
+        }
         return curLegNatList;
     }
 

@@ -47,11 +47,16 @@ public class ActivityCandidatesList extends AppCompatActivity implements Adapter
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
+                if(position == 0){
 
-                if(position == 1) {
-                    gotoProvinces();
+                    gotoDataDisplay(DataDisplay.PRESIDENTS);
+
+                }else if(position == 1) {
+                    //gotoProvinces();
+                    gotoDataDisplay(DataDisplay.PROVINCES);
                 }else if(position == 2) {
-                    gotoTerritories();
+                    //gotoTerritories();
+                    gotoDataDisplay(DataDisplay.TERRITORIES);
 
                 }else{
                     Log.e(TAG, "onItemClick kak: " );
@@ -67,6 +72,18 @@ public class ActivityCandidatesList extends AppCompatActivity implements Adapter
 
             }
         });
+    }
+
+    private void gotoDataDisplay(String dataDisplayType) {
+
+
+        Intent intent = new Intent(this, ActivityDataDisplay.class);
+        intent.putExtra(DataDisplay.KEY_DATA_DISPLAY_TYPE, dataDisplayType);
+
+        intent.putExtra(DataDisplay.KEY_DATA_DISPLAY_TYPE_WINDOW_TITLE, DataDisplay.GetWindowTitle(this, dataDisplayType));
+        startActivity(intent);
+
+
     }
 
     public static final int CAND_LIST_ELECTIONS_TYPE_LEG_NAT = 1;

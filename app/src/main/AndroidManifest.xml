@@ -36,6 +36,7 @@
         <activity android:name=".ActivityListElectorral" />
         <activity android:name=".ActivityOfficialResults" />
         <activity android:name=".ActivityIntroVid" />
+        <activity android:name=".ActivityDataDisplay" />
         <activity
             android:name=".ActivityLogo"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
@@ -60,7 +61,7 @@
             android:name=".ActivityContactUs"
             android:parentActivityName=".ActivityMainMenu" />
         <activity android:name=".ActivityNewsWebView" />
-        <activity android:name=".ActivityCandsListType"></activity>
+        <activity android:name=".ActivityCandsListType" />
     </application>
 
 </manifest>
