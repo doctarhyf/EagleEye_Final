@@ -50,13 +50,17 @@ public class ActivityCandidatesList extends AppCompatActivity implements Adapter
                 if(position == 0){
 
                     gotoDataDisplay(DataDisplay.PRESIDENTS);
+                    Utils.setPrompTextListData(getApplicationContext(), DataDisplay.CUR_WINDOW_TITLE, null);
 
                 }else if(position == 1) {
                     //gotoProvinces();
                     gotoDataDisplay(DataDisplay.PROVINCES);
+                    Utils.setPrompTextListData(getApplicationContext(), DataDisplay.CUR_WINDOW_TITLE, getResources().getString(R.string.wt_first_choose_province));
+                    Utils.putStringData(getApplicationContext(), DataDisplay.KEY_DATA_PROV_LEVEL_NAT_OR_PROV, DataDisplay.DATA_PROV_LEVEL_NAT_OR_LEG_NATIONAL);
                 }else if(position == 2) {
                     //gotoTerritories();
                     gotoDataDisplay(DataDisplay.TERRITORIES);
+                    Utils.setPrompTextListData(getApplicationContext(), DataDisplay.CUR_WINDOW_TITLE, getResources().getString(R.string.wt_first_choose_province));
 
                 }else{
                     Log.e(TAG, "onItemClick kak: " );
@@ -80,7 +84,6 @@ public class ActivityCandidatesList extends AppCompatActivity implements Adapter
         Intent intent = new Intent(this, ActivityDataDisplay.class);
         intent.putExtra(DataDisplay.KEY_DATA_DISPLAY_TYPE, dataDisplayType);
 
-        intent.putExtra(DataDisplay.KEY_DATA_DISPLAY_TYPE_WINDOW_TITLE, DataDisplay.GetWindowTitle(this, dataDisplayType));
         startActivity(intent);
 
 

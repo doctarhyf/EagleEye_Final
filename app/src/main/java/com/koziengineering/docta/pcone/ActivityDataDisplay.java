@@ -7,12 +7,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.koziengineering.docta.pcone.Fragments.FragmentListData;
 import com.koziengineering.docta.pcone.Fragments.dummy.DummyContent;
 import com.koziengineering.docta.pcone.Objects.ELECT_DATA;
 import com.koziengineering.docta.pcone.Objects.LenNat;
+import com.koziengineering.docta.pcone.Utils.Utils;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -26,6 +29,7 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
     FragmentManager fragmentManager;
     LinearLayout fragCont;
     private String windowTitle = "CENI 2018";
+    private TextView listDataPromptText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,16 +37,17 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
         setContentView(R.layout.activity_data_display);
 
 
-
+        listDataPromptText = findViewById(R.id.listDataPromptText);
 
 
 
         dataDisplayType = getIntent().getStringExtra(DataDisplay.KEY_DATA_DISPLAY_TYPE);
-        windowTitle = getIntent().getStringExtra(DataDisplay.KEY_DATA_DISPLAY_TYPE_WINDOW_TITLE);
-        Log.e("TAG", "onCreate: -> " + dataDisplayType );
+        windowTitle = Utils.getPrompTextListData(getApplicationContext(), DataDisplay.CUR_WINDOW_TITLE, "CENI 2018");//getIntent().getStringExtra(DataDisplay.CUR_WINDOW_TITLE);
 
         fragCont = findViewById(R.id.fragCont);
         fragmentManager = getSupportFragmentManager();
+
+
 
 
 
@@ -53,7 +58,13 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
         }
 
 
-        getSupportActionBar().setTitle(windowTitle);
+        getSupportActionBar().setTitle("CENI 2018");
+        if(!windowTitle.equals(Utils.NO_PROMP_TEXT_DATA)) {
+            listDataPromptText.setText(windowTitle);
+        }else{
+            listDataPromptText.setVisibility(View.GONE);
+
+        }
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -90,6 +101,18 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
             fragmentManager.beginTransaction().add(R.id.fragCont, fragmentListData).commit();
             Log.e(TAG, "loadData: showing provinces" );
 
+
+        }
+
+        if(dataDisplayType.equals(DataDisplay.TERRITORIES)){
+
+
+            String territoriesData = getListData(DataDisplay.TERRITORIES);
+
+            fragmentListData = FragmentListData.newInstance(-1, territoriesData);
+            fragmentManager.beginTransaction().add(R.id.fragCont, fragmentListData).commit();
+            Log.e(TAG, "loadData: showing territories" );
+
         }
 
     }
@@ -103,7 +126,7 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
 
 
 
-        Scanner scanner = new Scanner(getResources().openRawResource(dataFileID));;
+        Scanner scanner = new Scanner(getResources().openRawResource(dataFileID));
 
         String listData = "";
         //Reading Data into String

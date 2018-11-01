@@ -7,16 +7,31 @@ class DataDisplay {
     public static final String PROVINCES = "ddProvs";
     public static final String TERRITORIES = "ddTerrz";
     public static final String KEY_DATA_DISPLAY_TYPE = "keyDataDisplayType";
-    public static final String KEY_DATA_DISPLAY_TYPE_WINDOW_TITLE = "ddWindowTile";
+    public static final String CUR_WINDOW_TITLE = "ddWindowTile";
+    public static final String PROMP_TEXT_LIST_DATA_TILE = "wt_listPrez";
+    public static final String KEY_DATA_PROV_LEVEL_NAT_OR_PROV = "KprovLegDataNationalOrProv";
+    public static final String DATA_PROV_LEVEL_NAT_OR_LEG_NATIONAL = "provinceLevenceLevelNational";
 
-    public static String GetWindowTitle(Context context, String dataDisplayType){
+    public static String GetWindowTitle(Context context, String dataDisplayType, String customTime){
 
 
         String windowTitle = "CENI 2018";
 
 
+
+
         if(dataDisplayType == PROVINCES){
-            windowTitle = context.getResources().getString(R.string.txt_vote_choice_leg_nat);
+            windowTitle = context.getResources().getString(R.string.txt_prov_choice);
+        }
+
+
+        if(dataDisplayType == TERRITORIES){
+            windowTitle = context.getResources().getString(R.string.txt_territory_choice);
+        }
+
+
+        if(customTime != null){
+            windowTitle = customTime;
         }
 
 
@@ -28,6 +43,10 @@ class DataDisplay {
 
         int dataFileID = -1;
         if(dataID == PROVINCES){
+            dataFileID = R.raw.ld_provinces;
+        }
+
+        if(dataID == TERRITORIES){
             dataFileID = R.raw.ld_provinces;
         }
 

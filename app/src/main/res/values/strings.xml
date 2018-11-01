@@ -30,7 +30,7 @@
     <string name="txt_vote_choice_legs">LEGISTLATIVES</string>
     <string name="txt_vote_choice_leg_nat">LEGISTLATIVES NATIONALES</string>
     <string name="txt_vote_choice_leg_prov">LEGISTLATIVES PROVINCIALES</string>
-    <string name="txt_vote_choice_prov">PROVINCIALES</string>
+    <string name="txt_vote_prov_choice">PROVINCIALES</string>
     <string name="txt_vote_choice_urbs">URBAINES</string>
     <string name="txt_vote_choice_loc">LOCALES</string>
     <string name="menu_vote_sim">Simuler un vote</string>
@@ -691,4 +691,9 @@ Directeur de Cabinet
     <string name="txtChooseProvince">Veuillez selectioner une province</string>
     <string name="txtChoseTerritories">Veuillez choisir un territoire</string>
     <string name="txtChooseTerritories">Choise territoir</string>
+    <string name="txt_territory_choice">Choix du territoire</string>
+    <string name="txt_prov_choice">Choisir une province</string>
+    <string name="wt_choose_president">Choisir votre president</string>
+    <string name="wt_first_choose_province">Veuillez d\'abord choisir votre province</string>
+
 </resources>

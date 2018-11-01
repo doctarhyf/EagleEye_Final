@@ -49,6 +49,8 @@ public class Utils {
     public static final String KEY_SCREEN_DENSITY = "screenDensity";
     public static final String KEY_NEWS_ID = "newsId";
     public static final String KEY_NEWS_URL = "newsUrl";
+    public static final String NO_PROMP_TEXT_DATA = "No promp data";
+    private static final String NO_DATA = "no_data";
 
     public static  boolean isOnline(Context context){
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -165,6 +167,48 @@ public class Utils {
         editor.putInt(key, val);
         editor.commit();
 
+    }
+
+
+
+    public static void setPrompTextListData(Context context, String key, String val){
+
+        SharedPreferences preference = context.getSharedPreferences(CENI_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preference.edit();
+
+        editor.putString(key, val);
+        editor.commit();
+
+    }
+
+    public static String getPrompTextListData(Context context, String key, String val){
+
+        SharedPreferences preference = context.getSharedPreferences(CENI_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preference.edit();
+
+
+
+        return preference.getString(key, NO_PROMP_TEXT_DATA);
+
+    }
+
+    public static void putStringData(Context context, String key, String data) {
+
+        SharedPreferences preference = context.getSharedPreferences(CENI_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preference.edit();
+
+        editor.putString(key, data);
+        editor.commit();
+
+    }
+
+    public static String getStringData(Context context, String key, String data) {
+        SharedPreferences preference = context.getSharedPreferences(CENI_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preference.edit();
+
+
+
+        return preference.getString(key, NO_DATA);
     }
 
     public static int getCandFromPref(Context context, String key ){
@@ -360,4 +404,6 @@ public class Utils {
 
 
     }
+
+
 }
