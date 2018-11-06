@@ -273,6 +273,7 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
             String terr_data = DataDisplay.TERRIRTORI_DATA_PREFIX + id;
 
             Log.e(TAG, "onListFragmentInteraction: terr_data -> " + terr_data );
+            //ok
 
 
         }
