@@ -12,6 +12,7 @@ class DataDisplay {
     public static final String KEY_DATA_PROV_LEVEL_NAT_OR_PROV = "KprovLegDataNationalOrProv";
     public static final String DATA_PROV_LEVEL_NAT_OR_LEG_NATIONAL = "provinceLevenceLevelNational";
 
+
     public static String GetWindowTitle(Context context, String dataDisplayType, String customTime){
 
 

@@ -125,8 +125,8 @@ public class Utils {
             Field idField = c.getDeclaredField(resName);
             return idField.getInt(idField);
         }catch (Exception e){
-            throw new RuntimeException("No resource ID found for : "
-            + resName + " / " + c, e);
+            throw new RuntimeException("No resource ID found for Da REZ -> "
+            + resName + " " + c, e);
         }
     }
 

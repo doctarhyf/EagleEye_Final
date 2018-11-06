@@ -3,12 +3,15 @@ package com.koziengineering.docta.pcone;
 
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.koziengineering.docta.pcone.Fragments.FragmentListData;
@@ -30,6 +33,8 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
     LinearLayout fragCont;
     private String windowTitle = "CENI 2018";
     private TextView listDataPromptText;
+    ListView listViewPrezoe;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,8 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
         listDataPromptText = findViewById(R.id.listDataPromptText);
 
 
+        //recyclerView = new RecyclerView()
+        listViewPrezoe = findViewById(R.id.rvListPres);
 
         dataDisplayType = getIntent().getStringExtra(DataDisplay.KEY_DATA_DISPLAY_TYPE);
         windowTitle = Utils.getPrompTextListData(getApplicationContext(), DataDisplay.CUR_WINDOW_TITLE, "CENI 2018");//getIntent().getStringExtra(DataDisplay.CUR_WINDOW_TITLE);
@@ -79,7 +86,11 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
 
 
         if(item.getItemId() == android.R.id.home){
-            finish();
+            //finish();
+            intent = new Intent(this, ActivityCandidatesList.class);
+            startActivity(intent);
+
+            Log.e(TAG, "onOptionsItemSelected: -> koo" );
         }
 
 
@@ -91,6 +102,21 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
 
 
 
+        if(dataDisplayType.equals(DataDisplay.PRESIDENTS)){
+
+
+            //Log.e(TAG, "loadData: presidents" );
+
+            Intent intent = new Intent(this, ActivityPresident.class);
+            startActivity(intent);
+
+
+
+
+
+
+
+        }
 
         if(dataDisplayType.equals(DataDisplay.PROVINCES)){
 
@@ -216,6 +242,17 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
 
     @Override
     public void onListFragmentInteraction(DummyContent.ListItem item) {
-        Log.e(TAG, "onListFragmentInteraction: touched" );
+        //Log.e(TAG, "onListFragmentInteraction: touched" );
+
+        String data = Utils.getPrompTextListData(this, DataDisplay.KEY_DATA_PROV_LEVEL_NAT_OR_PROV, null);
+        //Log.e(TAG, "onListFragmentInteraction: data -> " + data );
+
+        //if(true){//dataDisplayType.equals(DataDisplay.DATA_PROV_LEVEL_NAT_OR_LEG_NATIONAL)){
+            //Log.e(TAG, "onListFragmentInteraction: legNat, prov " + item.content );
+        //}
+
+        Log.e(TAG, "onListFragmentInteraction: ddt -> " + dataDisplayType );
+
+
     }
 }
