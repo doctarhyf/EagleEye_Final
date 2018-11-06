@@ -245,13 +245,33 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
         //Log.e(TAG, "onListFragmentInteraction: touched" );
 
         String data = Utils.getPrompTextListData(this, DataDisplay.KEY_DATA_PROV_LEVEL_NAT_OR_PROV, null);
-        //Log.e(TAG, "onListFragmentInteraction: data -> " + data );
 
-        //if(true){//dataDisplayType.equals(DataDisplay.DATA_PROV_LEVEL_NAT_OR_LEG_NATIONAL)){
-            //Log.e(TAG, "onListFragmentInteraction: legNat, prov " + item.content );
-        //}
+        String province = item.content;
+        String id = (item.id);
+        String depNatFileName;
+        Intent intent;
 
-        Log.e(TAG, "onListFragmentInteraction: ddt -> " + dataDisplayType );
+
+        if(dataDisplayType.equals(DataDisplay.PROVINCES)){
+
+            //String province = item.content;
+            depNatFileName = "depNatFileName_" + id;
+            Log.e(TAG, "onListFragmentInteraction: showing dep nat of province : " + province + ", id : " + id + ", fname " + depNatFileName );
+
+            intent = new Intent(this, ActivityBigImageView.class);
+            intent.putExtra(DataDisplay.KEY_DATA_TO_DISPLAY, DataDisplay.DATA_TO_DISPLAY_DEP_NAT);
+            intent.putExtra(DataDisplay.KEY_FILE_ID, depNatFileName);
+
+            startActivity(intent);
+
+
+        }
+
+
+        if(dataDisplayType.equals(DataDisplay.TERRITORIES)){
+            Log.e(TAG, "onListFragmentInteraction: showing territoires of province : " + province + ", id : " + id );
+        }
+
 
 
     }

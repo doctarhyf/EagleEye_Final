@@ -62,7 +62,8 @@
             android:parentActivityName=".ActivityMainMenu" />
         <activity android:name=".ActivityNewsWebView" />
         <activity android:name=".ActivityCandsListType" />
-        <activity android:name=".ActivityPresident"></activity>
+        <activity android:name=".ActivityPresident" />
+        <activity android:name=".ActivityBigImageView"></activity>
     </application>
 
 </manifest>

@@ -11,6 +11,9 @@ class DataDisplay {
     public static final String PROMP_TEXT_LIST_DATA_TILE = "wt_listPrez";
     public static final String KEY_DATA_PROV_LEVEL_NAT_OR_PROV = "KprovLegDataNationalOrProv";
     public static final String DATA_PROV_LEVEL_NAT_OR_LEG_NATIONAL = "provinceLevenceLevelNational";
+    public static final String KEY_DATA_TO_DISPLAY = "kDataToDisplay";
+    public static final String DATA_TO_DISPLAY_DEP_NAT = "dataToDisplayDepNat";
+    public static final String KEY_FILE_ID = "kFileID";
 
 
     public static String GetWindowTitle(Context context, String dataDisplayType, String customTime){
