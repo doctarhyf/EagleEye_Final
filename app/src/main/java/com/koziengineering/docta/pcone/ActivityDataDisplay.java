@@ -269,7 +269,12 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
 
 
         if(dataDisplayType.equals(DataDisplay.TERRITORIES)){
-            Log.e(TAG, "onListFragmentInteraction: showing territoires of province : " + province + ", id : " + id );
+            //Log.e(TAG, "onListFragmentInteraction: showing territoires of province : " + province + ", id : " + id );
+            String terr_data = DataDisplay.TERRIRTORI_DATA_PREFIX + id;
+
+            Log.e(TAG, "onListFragmentInteraction: terr_data -> " + terr_data );
+
+
         }
 
 

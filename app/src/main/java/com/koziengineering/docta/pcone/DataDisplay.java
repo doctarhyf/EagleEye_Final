@@ -14,6 +14,7 @@ class DataDisplay {
     public static final String KEY_DATA_TO_DISPLAY = "kDataToDisplay";
     public static final String DATA_TO_DISPLAY_DEP_NAT = "dataToDisplayDepNat";
     public static final String KEY_FILE_ID = "kFileID";
+    public static final String TERRIRTORI_DATA_PREFIX = "terr_data_";
 
 
     public static String GetWindowTitle(Context context, String dataDisplayType, String customTime){

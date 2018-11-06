@@ -138,5 +138,6 @@ public class FragmentListData extends Fragment {
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
         void onListFragmentInteraction(ListItem item);
+
     }
 }
