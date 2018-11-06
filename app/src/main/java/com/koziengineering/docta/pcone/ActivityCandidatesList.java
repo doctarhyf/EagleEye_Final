@@ -47,27 +47,7 @@ public class ActivityCandidatesList extends AppCompatActivity implements Adapter
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
-                if(position == 0){
-
-                    gotoDataDisplay(DataDisplay.PRESIDENTS);
-                    Utils.setPrompTextListData(getApplicationContext(), DataDisplay.CUR_WINDOW_TITLE, null);
-
-                }else if(position == 1) {
-                    //gotoProvinces();
-                    gotoDataDisplay(DataDisplay.PROVINCES);
-                    Utils.setPrompTextListData(getApplicationContext(), DataDisplay.CUR_WINDOW_TITLE, getResources().getString(R.string.wt_first_choose_province));
-                    Utils.putStringData(getApplicationContext(), DataDisplay.KEY_DATA_PROV_LEVEL_NAT_OR_PROV, DataDisplay.DATA_PROV_LEVEL_NAT_OR_LEG_NATIONAL);
-                }else if(position == 2) {
-                    //gotoTerritories();
-                    gotoDataDisplay(DataDisplay.TERRITORIES);
-                    Utils.setPrompTextListData(getApplicationContext(), DataDisplay.CUR_WINDOW_TITLE, getResources().getString(R.string.wt_first_choose_province));
-
-                }else{
-                    Log.e(TAG, "onItemClick kak: " );
-                    Utils.showDialogWithMessage(ActivityCandidatesList.this, true, getResources().getString(R.string.strOptTitleNotAvail),
-                            getResources().getString(R.string.strOptMsgNotAvail));
-
-                }
+                showDataFromVoteType(position);
 
 
 
@@ -151,8 +131,39 @@ public class ActivityCandidatesList extends AppCompatActivity implements Adapter
     @Override
     public void onVoteTypeClicked(VoteType voteType) {
 
-        Log.e(TAG, "onVoteTypeClicked: " );
 
+        showDataFromVoteType(voteType.getId());
+
+
+    }
+
+    private void showDataFromVoteType(int position){
+
+        //Log.e(TAG, "onVoteTypeClicked: -> " + voteType.getId() );
+
+        //int position = voteType.getId();
+
+        if(position == 0){
+
+            gotoDataDisplay(DataDisplay.PRESIDENTS);
+            Utils.setPrompTextListData(getApplicationContext(), DataDisplay.CUR_WINDOW_TITLE, null);
+
+        }else if(position == 1) {
+            //gotoProvinces();
+            gotoDataDisplay(DataDisplay.PROVINCES);
+            Utils.setPrompTextListData(getApplicationContext(), DataDisplay.CUR_WINDOW_TITLE, getResources().getString(R.string.wt_first_choose_province));
+            Utils.putStringData(getApplicationContext(), DataDisplay.KEY_DATA_PROV_LEVEL_NAT_OR_PROV, DataDisplay.DATA_PROV_LEVEL_NAT_OR_LEG_NATIONAL);
+        }else if(position == 2) {
+            //gotoTerritories();
+            gotoDataDisplay(DataDisplay.TERRITORIES);
+            Utils.setPrompTextListData(getApplicationContext(), DataDisplay.CUR_WINDOW_TITLE, getResources().getString(R.string.wt_first_choose_province));
+
+        }else{
+            Log.e(TAG, "onItemClick kak: " );
+            Utils.showDialogWithMessage(ActivityCandidatesList.this, true, getResources().getString(R.string.strOptTitleNotAvail),
+                    getResources().getString(R.string.strOptMsgNotAvail));
+
+        }
     }
 
 
