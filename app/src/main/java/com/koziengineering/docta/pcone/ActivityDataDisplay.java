@@ -1,6 +1,7 @@
 package com.koziengineering.docta.pcone;
 
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
@@ -130,16 +131,20 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
 
         }
 
-        if(dataDisplayType.equals(DataDisplay.TERRITORIES)){
+        if(dataDisplayType.equals(DataDisplay.PROVINCES_FOR_TERRITOIRES)){
 
 
-            String territoriesData = getListData(DataDisplay.TERRITORIES);
+            String provincesForTerritoires = getListData(DataDisplay.TERRITORIES);
 
-            fragmentListData = FragmentListData.newInstance(-1, territoriesData);
+            fragmentListData = FragmentListData.newInstance(-1, provincesForTerritoires);
             fragmentManager.beginTransaction().add(R.id.fragCont, fragmentListData).commit();
-            Log.e(TAG, "loadData: showing territories" );
+            //Log.e(TAG, "loadData: showing territories" );
 
         }
+
+
+
+
 
     }
 
@@ -261,6 +266,7 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
             intent = new Intent(this, ActivityBigImageView.class);
             intent.putExtra(DataDisplay.KEY_DATA_TO_DISPLAY, DataDisplay.DATA_TO_DISPLAY_DEP_NAT);
             intent.putExtra(DataDisplay.KEY_FILE_ID, depNatFileName);
+            intent.putExtra(DataDisplay.CUR_WINDOW_TITLE, province);
 
             startActivity(intent);
 
@@ -268,17 +274,91 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
         }
 
 
-        if(dataDisplayType.equals(DataDisplay.TERRITORIES)){
-            //Log.e(TAG, "onListFragmentInteraction: showing territoires of province : " + province + ", id : " + id );
-            String terr_data = DataDisplay.TERRIRTORI_DATA_PREFIX + id;
+        if(dataDisplayType.equals(DataDisplay.PROVINCES_FOR_TERRITOIRES)){
+            Log.e(TAG, "onListFragmentInteraction: showing territoires of province : " + province + ", id : " + id );
+            //String terr_data = DataDisplay.TERRIRTORI_DATA_PREFIX + id;
 
-            Log.e(TAG, "onListFragmentInteraction: terr_data -> " + terr_data );
+
+
+            //Log.e(TAG, "onListFragmentInteraction: terr_data -> " + terr_data );
+
             //ok
 
+            //int province_id = id;
+            String territoires = getTerritoiresDataByProvinceID(Integer.decode(id));
+            //Log.e(TAG, " da terr data -> " + territoires  );
+            showTerritoires(territoires);
+            Log.e(TAG, "la terre: " );
 
         }
 
 
 
+
+
+    }
+
+    private void showTerritoires(String territories){
+
+
+        //String territoriesData = getTerritoiresDataByProvinceID()
+
+        FragmentListData fld = FragmentListData.newInstance(-1, territories);
+        fragmentManager.beginTransaction().replace(R.id.fragCont, fld).commit();
+        Log.e(TAG, "loadData: showing territories -> data : " + territories );
+
+    }
+
+
+    private String getTerritoiresDataByProvinceID(int dataID) {
+
+
+
+        //int dataFileID = DataDisplay.GetListDataFileID(dataID);
+        Scanner scanner = new Scanner(getResources().openRawResource(R.raw.terr_data));
+
+        String listData = "";
+        //Reading Data into String
+        while (scanner.hasNextLine()){
+
+            listData = listData.concat(scanner.nextLine());
+            //Log.e("TAG", "List Data Terr : -> " + listData );
+        }
+
+        String[] splits = listData.split(";");
+
+
+
+
+        String data = "no_data";
+
+        if( dataID-1 < splits.length && splits.length > 0){
+            data = splits[dataID-1];
+        }else{
+
+            showNoDataDialog();
+        }
+
+
+
+
+        return data;
+
+    }
+
+    private void showNoDataDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Liste non disponible");
+        builder.setMessage("Sorry cette liste n'est pas ecncore dispo!");
+        builder.setPositiveButton(getResources().getString(R.string.txtOk), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+
+
+        builder.show();
     }
 }

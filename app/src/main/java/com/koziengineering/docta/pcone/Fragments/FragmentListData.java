@@ -29,6 +29,7 @@ public class FragmentListData extends Fragment {
     private static final String ARG_COLUMN_COUNT = "column-count";
     private static final String ARG_LIST_DATA = "listData";
     private static final String TAG = "CENI";
+    private static final String ARG_OMMIT_FIRST = "omitFirst";
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
@@ -51,6 +52,7 @@ public class FragmentListData extends Fragment {
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         args.putString(ARG_LIST_DATA, listData);
+        //args.putBoolean(ARG_OMMIT_FIRST, omitFirst);
 
         fragment.setArguments(args);
 
@@ -79,6 +81,8 @@ public class FragmentListData extends Fragment {
 
 
         String[] splits = mListData.split(",");
+
+
 
         for(int i = 0; i < splits.length; i++) {
             ListItem listItem = new ListItem("" + (i+1), splits[i], "details");

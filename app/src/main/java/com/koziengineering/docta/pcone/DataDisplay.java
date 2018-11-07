@@ -6,6 +6,7 @@ class DataDisplay {
     public static final String PRESIDENTS = "ddPrez";
     public static final String PROVINCES = "ddProvs";
     public static final String TERRITORIES = "ddTerrz";
+    public static final String PROVINCES_FOR_TERRITOIRES = "ddProvForTerzz";
     public static final String KEY_DATA_DISPLAY_TYPE = "keyDataDisplayType";
     public static final String CUR_WINDOW_TITLE = "ddWindowTile";
     public static final String PROMP_TEXT_LIST_DATA_TILE = "wt_listPrez";

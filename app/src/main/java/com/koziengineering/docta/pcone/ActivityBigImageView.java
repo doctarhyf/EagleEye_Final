@@ -3,9 +3,12 @@ package com.koziengineering.docta.pcone;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 
 public class ActivityBigImageView extends AppCompatActivity {
+
+    private static final String TAG = "CENI2018";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -13,7 +16,17 @@ public class ActivityBigImageView extends AppCompatActivity {
         setContentView(R.layout.activity_scrolable_view);
 
 
-        getSupportActionBar().setTitle("Data Title");
+        String windowTitle = "CENI 2018";
+
+        String curWindowTitle = getIntent().getStringExtra(DataDisplay.CUR_WINDOW_TITLE);
+
+        if(curWindowTitle != null){
+            windowTitle = curWindowTitle;
+        }
+
+        Log.e(TAG, "onCreate: curwititle : " + curWindowTitle );
+
+        getSupportActionBar().setTitle(curWindowTitle);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

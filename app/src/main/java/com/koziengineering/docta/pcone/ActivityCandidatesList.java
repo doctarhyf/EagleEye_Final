@@ -155,7 +155,7 @@ public class ActivityCandidatesList extends AppCompatActivity implements Adapter
             Utils.putStringData(getApplicationContext(), DataDisplay.KEY_DATA_PROV_LEVEL_NAT_OR_PROV, DataDisplay.DATA_PROV_LEVEL_NAT_OR_LEG_NATIONAL);
         }else if(position == 2) {
             //gotoTerritories();
-            gotoDataDisplay(DataDisplay.TERRITORIES);
+            gotoDataDisplay(DataDisplay.PROVINCES_FOR_TERRITOIRES);
             Utils.setPrompTextListData(getApplicationContext(), DataDisplay.CUR_WINDOW_TITLE, getResources().getString(R.string.wt_first_choose_province));
 
         }else{
