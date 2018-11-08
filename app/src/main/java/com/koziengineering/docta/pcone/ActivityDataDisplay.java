@@ -62,7 +62,7 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
         if(dataDisplayType != null) {
             loadData(dataDisplayType);
         }else {
-            Log.e(TAG, "onCreate: dataDisplayType is null"  );
+            //Log.e(TAG, "onCreate: dataDisplayType is null"  );
         }
 
 
