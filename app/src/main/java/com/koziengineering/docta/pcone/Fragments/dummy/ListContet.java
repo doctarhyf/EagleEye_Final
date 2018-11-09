@@ -11,7 +11,7 @@ import java.util.Map;
  * <p>
  * TODO: Replace all uses of this class before publishing your app.
  */
-public class DummyContent {
+public class ListContet {
 
     /**
      * An array of sample (dummy) items.
@@ -38,7 +38,7 @@ public class DummyContent {
     }
 
     private static ListItem createDummyItem(int position) {
-        return new ListItem(String.valueOf(position), "Item " + position, makeDetails(position));
+        return new ListItem(String.valueOf(position), "Item " + position, makeDetails(position), "dummy");
     }
 
     private static String makeDetails(int position) {
@@ -54,19 +54,39 @@ public class DummyContent {
      * A dummy item representing a piece of content.
      */
     public static class ListItem {
-        public final String id;
-        public final String content;
-        public final String details;
+        public  String id;
+        public  String content;
+        public  String details;
+        public  String territoire;
+        private String listType;
 
-        public ListItem(String id, String content, String details) {
+        public ListItem(String id, String content, String details, String listType) {
             this.id = id;
             this.content = content;
             this.details = details;
+            this.territoire = "NO_TERITOIRE_DATA";
+            this.listType = listType;
         }
 
         @Override
         public String toString() {
             return content;
+        }
+
+        public String getTerritoire() {
+            return territoire;
+        }
+
+        public void setTerritoire(String newTerritoire){
+            this.territoire = newTerritoire;
+        }
+
+        public String getListType() {
+            return listType;
+        }
+
+        public void setListType(String listType){
+            this.listType = listType;
         }
     }
 }

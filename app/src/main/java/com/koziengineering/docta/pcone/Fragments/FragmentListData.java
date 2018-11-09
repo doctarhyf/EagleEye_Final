@@ -11,8 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.koziengineering.docta.pcone.R;
-import com.koziengineering.docta.pcone.Fragments.dummy.DummyContent;
-import com.koziengineering.docta.pcone.Fragments.dummy.DummyContent.ListItem;
+import com.koziengineering.docta.pcone.Fragments.dummy.ListContet.ListItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,12 +27,16 @@ public class FragmentListData extends Fragment {
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
     private static final String ARG_LIST_DATA = "listData";
+    private static final String ARG_IS_TERR = "isTerr";
     private static final String TAG = "CENI";
     private static final String ARG_OMMIT_FIRST = "omitFirst";
+    private static final String ARG_LIST_TYPE = "listType";
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
     private String mListData;
+    private boolean mIsTerritories = false;
+    private String mListType;
     private List<ListItem> itemsList = new ArrayList<>();
 
     /**
@@ -47,12 +50,13 @@ public class FragmentListData extends Fragment {
 
     // TODO: Customize parameter initialization
     @SuppressWarnings("unused")
-    public static FragmentListData newInstance(int columnCount, String listData) {
+    public static FragmentListData newInstance(int columnCount, String listData, boolean isTerritories) {
         FragmentListData fragment = new FragmentListData();
         Bundle args = new Bundle();
         args.putInt(ARG_COLUMN_COUNT, columnCount);
         args.putString(ARG_LIST_DATA, listData);
         //args.putBoolean(ARG_OMMIT_FIRST, omitFirst);
+        args.putBoolean(ARG_IS_TERR, isTerritories);
 
         fragment.setArguments(args);
 
@@ -72,12 +76,14 @@ public class FragmentListData extends Fragment {
         if (getArguments() != null) {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
             mListData = getArguments().getString(ARG_LIST_DATA);
-            prepareLisData();
+            mIsTerritories = getArguments().getBoolean(ARG_IS_TERR);
+            mListType = getArguments().getString(ARG_LIST_TYPE);
+            prepareLisData(mListType);
 
         }
     }
 
-    private void prepareLisData() {
+    private void prepareLisData(String listType) {
 
 
         String[] splits = mListData.split(",");
@@ -85,7 +91,10 @@ public class FragmentListData extends Fragment {
 
 
         for(int i = 0; i < splits.length; i++) {
-            ListItem listItem = new ListItem("" + (i+1), splits[i], "details");
+            ListItem listItem = new ListItem("" + (i+1), splits[i], "details", listType);
+            if(mIsTerritories) {
+                listItem.setTerritoire(splits[i]);
+            }
             itemsList.add(listItem);
         }
     }
@@ -141,7 +150,7 @@ public class FragmentListData extends Fragment {
      */
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(ListItem item);
+        void onListFragmentInteraction(ListItem item, String listType);
 
     }
 }

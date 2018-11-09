@@ -169,6 +169,14 @@ public class Utils {
 
     }
 
+    public static void saveIntValue(Context context, String key, int val){
+        SharedPreferences preference = context.getSharedPreferences(CENI_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preference.edit();
+
+        editor.putInt(key, val);
+        editor.commit();
+    }
+
 
 
     public static void setPrompTextListData(Context context, String key, String val){
@@ -216,8 +224,15 @@ public class Utils {
         SharedPreferences preference = context.getSharedPreferences(CENI_PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preference.edit();
 
-        return preference.getInt(key, NO_CANDIDATE);
+        return preference.getInt(key, -1);
 
+    }
+
+    public static int getIntValue(Context context, String key){
+        SharedPreferences preference = context.getSharedPreferences(CENI_PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preference.edit();
+
+        return preference.getInt(key, NO_CANDIDATE);
     }
 
     public static boolean clearCandidatesData(Context context){

@@ -16,7 +16,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.koziengineering.docta.pcone.Fragments.FragmentListData;
-import com.koziengineering.docta.pcone.Fragments.dummy.DummyContent;
+import com.koziengineering.docta.pcone.Fragments.dummy.ListContet;
 import com.koziengineering.docta.pcone.Objects.ELECT_DATA;
 import com.koziengineering.docta.pcone.Objects.LenNat;
 import com.koziengineering.docta.pcone.Utils.Utils;
@@ -50,6 +50,7 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
         listViewPrezoe = findViewById(R.id.rvListPres);
 
         dataDisplayType = getIntent().getStringExtra(DataDisplay.KEY_DATA_DISPLAY_TYPE);
+
         windowTitle = Utils.getPrompTextListData(getApplicationContext(), DataDisplay.CUR_WINDOW_TITLE, "CENI 2018");//getIntent().getStringExtra(DataDisplay.CUR_WINDOW_TITLE);
 
         fragCont = findViewById(R.id.fragCont);
@@ -124,7 +125,7 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
 
             String provinceData = getListData(DataDisplay.PROVINCES);
 
-            fragmentListData = FragmentListData.newInstance(-1, provinceData);
+            fragmentListData = FragmentListData.newInstance(-1, provinceData, false);
             fragmentManager.beginTransaction().add(R.id.fragCont, fragmentListData).commit();
             Log.e(TAG, "loadData: showing provinces" );
 
@@ -136,7 +137,7 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
 
             String provincesForTerritoires = getListData(DataDisplay.TERRITORIES);
 
-            fragmentListData = FragmentListData.newInstance(-1, provincesForTerritoires);
+            fragmentListData = FragmentListData.newInstance(-1, provincesForTerritoires, false);
             fragmentManager.beginTransaction().add(R.id.fragCont, fragmentListData).commit();
             //Log.e(TAG, "loadData: showing territories" );
 
@@ -246,8 +247,12 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.ListItem item) {
+    public void onListFragmentInteraction(ListContet.ListItem item, String listType) {
+
+
+
         //Log.e(TAG, "onListFragmentInteraction: touched" );
+        //Log.e(TAG, "onListFragmentInteraction: proof " + item.getTerritoire() );
 
         String data = Utils.getPrompTextListData(this, DataDisplay.KEY_DATA_PROV_LEVEL_NAT_OR_PROV, null);
 
@@ -261,7 +266,7 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
 
             //String province = item.content;
             depNatFileName = "depNatFileName_" + id;
-            Log.e(TAG, "onListFragmentInteraction: showing dep nat of province : " + province + ", id : " + id + ", fname " + depNatFileName );
+            //Log.e(TAG, "onListFragmentInteraction: showing dep nat of province : " + province + ", id : " + id + ", fname " + depNatFileName );
 
             intent = new Intent(this, ActivityBigImageView.class);
             intent.putExtra(DataDisplay.KEY_DATA_TO_DISPLAY, DataDisplay.DATA_TO_DISPLAY_DEP_NAT);
@@ -269,13 +274,13 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
             intent.putExtra(DataDisplay.CUR_WINDOW_TITLE, province);
 
             startActivity(intent);
-
+            //dataDisplayType = DataDisplay.PROVINCES_FOR_TERRITOIRES;
 
         }
 
 
         if(dataDisplayType.equals(DataDisplay.PROVINCES_FOR_TERRITOIRES)){
-            Log.e(TAG, "onListFragmentInteraction: showing territoires of province : " + province + ", id : " + id );
+            //Log.e(TAG, "onListFragmentInteraction: showing territoires of province : " + province + ", id : " + id );
             //String terr_data = DataDisplay.TERRIRTORI_DATA_PREFIX + id;
 
 
@@ -284,15 +289,33 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
 
             //ok
 
-            //int province_id = id;
-            String territoires = getTerritoiresDataByProvinceID(Integer.decode(id));
+            int province_id = Integer.decode(id);
+            Utils.saveIntValue(this, DataDisplay.KEY_CURRENT_PROVINCE_ID, province_id);
+            String territoires = getTerritoiresDataByProvinceID(province_id);
             //Log.e(TAG, " da terr data -> " + territoires  );
             showTerritoires(territoires);
-            Log.e(TAG, "la terre: " );
+
+            //Log.e(TAG, "la terre: " );
 
         }
 
+        //Log.e(TAG, "dadis -> " + dataDisplayType );
 
+        if(dataDisplayType.equals(DataDisplay.TERRITORIES)){
+            int territory_id = Integer.decode(id);
+            int prov_id = Utils.getIntValue(this, DataDisplay.KEY_CURRENT_PROVINCE_ID);
+            Utils.saveIntValue(this, DataDisplay.KEY_CURRENT_TERRITORY_ID, territory_id);
+
+
+            String terrFileName = item.content;
+
+
+
+            //Log.e(TAG, "onListFragmentInteraction: show terr cands of terr_id : " + territory_id + ", prov id : " + prov_id + ", terr file name : " + terrFileName );
+
+        }
+
+        Log.e(TAG, "daltype: " + listType );
 
 
 
@@ -303,8 +326,9 @@ public class ActivityDataDisplay extends AppCompatActivity implements FragmentLi
 
         //String territoriesData = getTerritoiresDataByProvinceID()
 
-        FragmentListData fld = FragmentListData.newInstance(-1, territories);
+        FragmentListData fld = FragmentListData.newInstance(-1, territories, true);
         fragmentManager.beginTransaction().replace(R.id.fragCont, fld).commit();
+        dataDisplayType = DataDisplay.TERRITORIES;
         Log.e(TAG, "loadData: showing territories -> data : " + territories );
 
     }

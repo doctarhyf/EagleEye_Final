@@ -1,13 +1,14 @@
 package com.koziengineering.docta.pcone.Fragments;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.koziengineering.docta.pcone.Fragments.FragmentListData.OnListFragmentInteractionListener;
-import com.koziengineering.docta.pcone.Fragments.dummy.DummyContent.ListItem;
+import com.koziengineering.docta.pcone.Fragments.dummy.ListContet.ListItem;
 import com.koziengineering.docta.pcone.R;
 
 import java.util.List;
@@ -46,7 +47,8 @@ public class RecyclerViewListItem extends RecyclerView.Adapter<RecyclerViewListI
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
+                    Log.e("TEST", "onClick: dater Data " + holder.mItem.getTerritoire() );
+                    mListener.onListFragmentInteraction(holder.mItem, holder.mItem.getListType());
                 }
             }
         });
