@@ -58,14 +58,14 @@ public class ListContet {
         public  String content;
         public  String details;
         public  String territoire;
-        private String listType;
+        private String listName;
 
-        public ListItem(String id, String content, String details, String listType) {
+        public ListItem(String id, String content, String details, String listName) {
             this.id = id;
             this.content = content;
             this.details = details;
             this.territoire = "NO_TERITOIRE_DATA";
-            this.listType = listType;
+            this.listName = listName;
         }
 
         @Override
@@ -81,12 +81,12 @@ public class ListContet {
             this.territoire = newTerritoire;
         }
 
-        public String getListType() {
-            return listType;
+        public String getListName() {
+            return listName;
         }
 
-        public void setListType(String listType){
-            this.listType = listType;
+        public void setListName(String listName){
+            this.listName = listName;
         }
     }
 }

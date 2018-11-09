@@ -2,7 +2,7 @@ package com.koziengineering.docta.pcone;
 
 import android.content.Context;
 
-class DataDisplay {
+public  class DataDisplay {
     public static final String PRESIDENTS = "ddPrez";
     public static final String PROVINCES = "ddProvs";
     public static final String TERRITORIES = "ddTerrz";
@@ -18,6 +18,7 @@ class DataDisplay {
     public static final String TERRIRTORI_DATA_PREFIX = "terr_data_";
     public static final String KEY_CURRENT_TERRITORY_ID = "curTerrID";
     public static final String KEY_CURRENT_PROVINCE_ID = "curProvID";
+    public static final String DATA_TO_DISPLAY_DEP_PROV = "ddDepProv";
 
 
     public static String GetWindowTitle(Context context, String dataDisplayType, String customTime){
