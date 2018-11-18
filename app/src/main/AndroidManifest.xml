@@ -16,29 +16,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.koziengineering.user.franvanna.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ActivityAbout"
+            android:name="com.koziengineering.user.franvanna.ActivityAbout"
             android:label="@string/title_activity_about"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ActivityCandidatesList"
-            android:parentActivityName=".ActivityMainMenu" />
+            android:name="com.koziengineering.user.franvanna.ActivityCandidatesList"
+            android:parentActivityName="com.koziengineering.user.franvanna.ActivityMainMenu" />
         <activity
-            android:name=".ActivityVoteSimulation"
-            android:parentActivityName=".ActivityMainMenu" />
+            android:name="com.koziengineering.user.franvanna.ActivityVoteSimulation"
+            android:parentActivityName="com.koziengineering.user.franvanna.ActivityMainMenu" />
         <activity
-            android:name=".ActivityLoisElec"
+            android:name="com.koziengineering.user.franvanna.ActivityLoisElec"
             android:label="@string/title_activity_lois_elec"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ActivityListElectorral" />
-        <activity android:name=".ActivityOfficialResults" />
-        <activity android:name=".ActivityIntroVid" />
-        <activity android:name=".ActivityDataDisplay" />
+        <activity android:name="com.koziengineering.user.franvanna.ActivityListElectorral" />
+        <activity android:name="com.koziengineering.user.franvanna.ActivityOfficialResults" />
+        <activity android:name="com.koziengineering.user.franvanna.ActivityIntroVid" />
+        <activity android:name="com.koziengineering.user.franvanna.ActivityDataDisplay" />
         <activity
-            android:name=".ActivityLogo"
+            android:name="com.koziengineering.user.franvanna.ActivityLogo"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -46,24 +46,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityBureauVote" />
-        <activity android:name=".ActivityNews" />
-        <activity android:name=".ActivityMainMenu" />
+        <activity android:name="com.koziengineering.user.franvanna.ActivityBureauVote" />
+        <activity android:name="com.koziengineering.user.franvanna.ActivityNews" />
+        <activity android:name="com.koziengineering.user.franvanna.ActivityMainMenu" />
         <activity
-            android:name=".ActivityVotes"
-            android:parentActivityName=".ActivityVoteSimulation" />
-        <activity android:name=".ActivityFAQ" />
-        <activity android:name=".ActivityFAQQA" />
+            android:name="com.koziengineering.user.franvanna.ActivityVotes"
+            android:parentActivityName="com.koziengineering.user.franvanna.ActivityVoteSimulation" />
+        <activity android:name="com.koziengineering.user.franvanna.ActivityFAQ" />
+        <activity android:name="com.koziengineering.user.franvanna.ActivityFAQQA" />
         <activity
-            android:name=".ActivityPrintVoteResult"
-            android:parentActivityName=".ActivityVotes" />
+            android:name="com.koziengineering.user.franvanna.ActivityPrintVoteResult"
+            android:parentActivityName="com.koziengineering.user.franvanna.ActivityVotes" />
         <activity
-            android:name=".ActivityContactUs"
-            android:parentActivityName=".ActivityMainMenu" />
-        <activity android:name=".ActivityNewsWebView" />
-        <activity android:name=".ActivityCandsListType" />
-        <activity android:name=".ActivityPresident" />
-        <activity android:name=".ActivityBigImageView"></activity>
+            android:name="com.koziengineering.user.franvanna.ActivityContactUs"
+            android:parentActivityName="com.koziengineering.user.franvanna.ActivityMainMenu" />
+        <activity android:name="com.koziengineering.user.franvanna.ActivityNewsWebView" />
+        <activity android:name="com.koziengineering.user.franvanna.ActivityCandsListType" />
+        <activity android:name="com.koziengineering.user.franvanna.ActivityPresident" />
+        <activity android:name="com.koziengineering.user.franvanna.ActivityBigImageView"></activity>
     </application>
 
 </manifest>

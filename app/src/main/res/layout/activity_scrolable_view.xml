@@ -8,14 +8,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
 
-    tools:context=".ActivityBigImageView"
+    tools:context="com.koziengineering.user.franvanna.ActivityBigImageView"
         android:id="@+id/svBigImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.koziengineering.docta.pcone.Utils.TouchImageView
+        <com.koziengineering.user.franvanna.Utils.TouchImageView
             android:contentDescription="@string/about"
-            android:src="@drawable/pt_losambo"
+            android:src="@drawable/ceni"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
